@@ -11,7 +11,7 @@
         public decimal TongCong { get; set; }
 
         public virtual TaiKhoan TaiKhoan { get; set; } = null!;
-        public virtual Ban Ban { get; set; } = null!;
+        public virtual ICollection<Ban> Ban { get; } = new List<Ban>();
         public virtual ICollection<HoaDonChiTiet> HoaDonChiTiet { get; } = new List<HoaDonChiTiet>();
     }
 }

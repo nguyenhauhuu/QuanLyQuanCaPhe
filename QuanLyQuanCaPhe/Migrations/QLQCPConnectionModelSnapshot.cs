@@ -30,6 +30,9 @@ namespace QuanLyQuanCaPhe.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<int>("HoaDonID")
+                        .HasColumnType("int");
+
                     b.Property<string>("TenBan")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -39,6 +42,8 @@ namespace QuanLyQuanCaPhe.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("HoaDonID");
 
                     b.ToTable("Ban");
                 });
@@ -87,8 +92,6 @@ namespace QuanLyQuanCaPhe.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("BanID");
 
                     b.HasIndex("TaiKhoanID");
 
@@ -239,21 +242,24 @@ namespace QuanLyQuanCaPhe.Migrations
                     b.ToTable("ThucUong");
                 });
 
-            modelBuilder.Entity("QuanLyQuanCaPhe.Data.HoaDon", b =>
+            modelBuilder.Entity("Ban", b =>
                 {
-                    b.HasOne("Ban", "Ban")
-                        .WithMany("HoaDon")
-                        .HasForeignKey("BanID")
+                    b.HasOne("QuanLyQuanCaPhe.Data.HoaDon", "HoaDon")
+                        .WithMany("Ban")
+                        .HasForeignKey("HoaDonID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("HoaDon");
+                });
+
+            modelBuilder.Entity("QuanLyQuanCaPhe.Data.HoaDon", b =>
+                {
                     b.HasOne("QuanLyQuanCaPhe.Data.TaiKhoan", "TaiKhoan")
                         .WithMany("HoaDon")
                         .HasForeignKey("TaiKhoanID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Ban");
 
                     b.Navigation("TaiKhoan");
                 });
@@ -299,11 +305,6 @@ namespace QuanLyQuanCaPhe.Migrations
                     b.Navigation("DanhMuc");
                 });
 
-            modelBuilder.Entity("Ban", b =>
-                {
-                    b.Navigation("HoaDon");
-                });
-
             modelBuilder.Entity("QuanLyQuanCaPhe.Data.DanhMuc", b =>
                 {
                     b.Navigation("ThucUongs");
@@ -311,6 +312,8 @@ namespace QuanLyQuanCaPhe.Migrations
 
             modelBuilder.Entity("QuanLyQuanCaPhe.Data.HoaDon", b =>
                 {
+                    b.Navigation("Ban");
+
                     b.Navigation("HoaDonChiTiet");
                 });
 

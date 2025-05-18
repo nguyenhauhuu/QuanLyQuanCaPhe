@@ -12,20 +12,6 @@ namespace QuanLyQuanCaPhe.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Ban",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TenBan = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Ban", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "DanhMuc",
                 columns: table => new
                 {
@@ -130,15 +116,30 @@ namespace QuanLyQuanCaPhe.Migrations
                 {
                     table.PrimaryKey("PK_HoaDon", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_HoaDon_Ban_BanID",
-                        column: x => x.BanID,
-                        principalTable: "Ban",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_HoaDon_TaiKhoan_TaiKhoanID",
                         column: x => x.TaiKhoanID,
                         principalTable: "TaiKhoan",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Ban",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenBan = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HoaDonID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ban", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Ban_HoaDon_HoaDonID",
+                        column: x => x.HoaDonID,
+                        principalTable: "HoaDon",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -174,9 +175,9 @@ namespace QuanLyQuanCaPhe.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_HoaDon_BanID",
-                table: "HoaDon",
-                column: "BanID");
+                name: "IX_Ban_HoaDonID",
+                table: "Ban",
+                column: "HoaDonID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HoaDon_TaiKhoanID",
@@ -208,6 +209,9 @@ namespace QuanLyQuanCaPhe.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Ban");
+
+            migrationBuilder.DropTable(
                 name: "HoaDonChiTiet");
 
             migrationBuilder.DropTable(
@@ -221,9 +225,6 @@ namespace QuanLyQuanCaPhe.Migrations
 
             migrationBuilder.DropTable(
                 name: "NguyenLieu");
-
-            migrationBuilder.DropTable(
-                name: "Ban");
 
             migrationBuilder.DropTable(
                 name: "TaiKhoan");
