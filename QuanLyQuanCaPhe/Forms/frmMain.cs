@@ -6,7 +6,7 @@ namespace QuanLyQuanCaPhe
     public partial class frmMain : Form
     {
 
-        QLQCPConnection context = new QLQCPConnection();
+        QLQCPContext context = new QLQCPContext();
         frmDangNhap? dangNhap = null;
         string hoVaTenNhanVien = ""; 
 
@@ -14,8 +14,6 @@ namespace QuanLyQuanCaPhe
         {
             InitializeComponent();
         }
-
-        
 
     }
 }

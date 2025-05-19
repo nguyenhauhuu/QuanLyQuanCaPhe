@@ -76,7 +76,7 @@ namespace QuanLyQuanCaPhe.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Khos",
+                name: "Kho",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -90,9 +90,9 @@ namespace QuanLyQuanCaPhe.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Khos", x => x.ID);
+                    table.PrimaryKey("PK_Kho", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Khos_NguyenLieu_NguyenLieuID",
+                        name: "FK_Kho_NguyenLieu_NguyenLieuID",
                         column: x => x.NguyenLieuID,
                         principalTable: "NguyenLieu",
                         principalColumn: "ID",
@@ -195,8 +195,8 @@ namespace QuanLyQuanCaPhe.Migrations
                 column: "ThucUongID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Khos_NguyenLieuID",
-                table: "Khos",
+                name: "IX_Kho_NguyenLieuID",
+                table: "Kho",
                 column: "NguyenLieuID");
 
             migrationBuilder.CreateIndex(
@@ -215,7 +215,7 @@ namespace QuanLyQuanCaPhe.Migrations
                 name: "HoaDonChiTiet");
 
             migrationBuilder.DropTable(
-                name: "Khos");
+                name: "Kho");
 
             migrationBuilder.DropTable(
                 name: "HoaDon");

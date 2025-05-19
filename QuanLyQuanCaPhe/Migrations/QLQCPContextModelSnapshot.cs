@@ -3,7 +3,6 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuanLyBanHang.Data;
 
@@ -11,12 +10,10 @@ using QuanLyBanHang.Data;
 
 namespace QuanLyQuanCaPhe.Migrations
 {
-    [DbContext(typeof(QLQCPConnection))]
-    [Migration("20250518183102_KhoiTaoCSDL")]
-    partial class KhoiTaoCSDL
+    [DbContext(typeof(QLQCPContext))]
+    partial class QLQCPContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,7 +165,7 @@ namespace QuanLyQuanCaPhe.Migrations
 
                     b.HasIndex("NguyenLieuID");
 
-                    b.ToTable("Khos");
+                    b.ToTable("Kho");
                 });
 
             modelBuilder.Entity("QuanLyQuanCaPhe.Data.NguyenLieu", b =>
@@ -300,7 +297,7 @@ namespace QuanLyQuanCaPhe.Migrations
             modelBuilder.Entity("QuanLyQuanCaPhe.Data.ThucUong", b =>
                 {
                     b.HasOne("QuanLyQuanCaPhe.Data.DanhMuc", "DanhMuc")
-                        .WithMany("ThucUongs")
+                        .WithMany("ThucUong")
                         .HasForeignKey("DanhMucID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -310,7 +307,7 @@ namespace QuanLyQuanCaPhe.Migrations
 
             modelBuilder.Entity("QuanLyQuanCaPhe.Data.DanhMuc", b =>
                 {
-                    b.Navigation("ThucUongs");
+                    b.Navigation("ThucUong");
                 });
 
             modelBuilder.Entity("QuanLyQuanCaPhe.Data.HoaDon", b =>

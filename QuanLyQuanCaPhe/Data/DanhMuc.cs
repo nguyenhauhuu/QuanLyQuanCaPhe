@@ -11,6 +11,6 @@ namespace QuanLyQuanCaPhe.Data
         public int ID { get; set; }
         public string TenDanhMuc { get; set; } = null!;
 
-        public virtual ICollection<ThucUong> ThucUongs { get; } = new List<ThucUong>();
+        public virtual ICollection<ThucUong> ThucUong { get; } = new List<ThucUong>();
     }
 }
