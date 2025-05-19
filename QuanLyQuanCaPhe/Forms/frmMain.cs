@@ -1,12 +1,11 @@
-﻿using QuanLyBanHang.Data;
-using QuanLyQuanCaPhe.Forms;
+﻿using QuanLyQuanCaPhe.Forms;
 
 namespace QuanLyQuanCaPhe
 {
     public partial class frmMain : Form
     {
 
-        QLQCPContext context = new QLQCPContext();
+        //QLQCPContext context = new QLQCPContext();
         frmDangNhap? dangNhap = null;
         string hoVaTenNhanVien = "";
 

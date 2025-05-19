@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuanLyQuanCaPhe.Data;
 using System.Configuration;
 
 namespace QuanLyQuanCaPhe.Data

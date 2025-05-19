@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using QuanLyBanHang.Data;
+using QuanLyQuanCaPhe.Data;
 
 #nullable disable
 
@@ -22,7 +22,7 @@ namespace QuanLyQuanCaPhe.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Ban", b =>
+            modelBuilder.Entity("QuanLyQuanCaPhe.Data.Ban", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()

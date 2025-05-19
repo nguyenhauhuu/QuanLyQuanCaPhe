@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using QuanLyBanHang.Data;
+using QuanLyQuanCaPhe.Data;
 
 #nullable disable
 
 namespace QuanLyQuanCaPhe.Migrations
 {
     [DbContext(typeof(QLQCPContext))]
-    [Migration("20250519100209_KhoiTaoCSDL")]
+    [Migration("20250519110618_KhoiTaoCSDL")]
     partial class KhoiTaoCSDL
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace QuanLyQuanCaPhe.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Ban", b =>
+            modelBuilder.Entity("QuanLyQuanCaPhe.Data.Ban", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()

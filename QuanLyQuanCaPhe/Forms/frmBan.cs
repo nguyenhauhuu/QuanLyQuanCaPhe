@@ -50,6 +50,7 @@ namespace QuanLyQuanCaPhe.Forms
             id = 0;
             BatTatChucNang(true);
             txtTenBan.Text = "";
+            txtID.Text = "";
             txtTenBan.Focus();
         }
 

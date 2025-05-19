@@ -51,6 +51,7 @@ namespace QuanLyQuanCaPhe.Forms
             id = 0;
             BatTatChucNang(true);
             txtTenNguyenLieu.Text = "";
+            txtID.Text = "";
             txtTenNguyenLieu.Focus();
         }
 
