@@ -11,46 +11,47 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCaPhe.Forms
 {
-    public partial class frmBan : Form
+    public partial class frmDanhMuc : Form
     {
         QLQCPContext context = new QLQCPContext(); // Khởi tạo biến ngữ cảnh CSDL 
         int id;
-        public frmBan()
+        public frmDanhMuc()
         {
             InitializeComponent();
         }
+
         private void BatTatChucNang(bool giaTri)
         {
             btnLuu.Enabled = giaTri;
             btnHuyBo.Enabled = giaTri;
-            txtTenBan.Enabled = giaTri;
+            txtTenDanhMuc.Enabled = giaTri;
 
             btnThem.Enabled = !giaTri;
             btnSua.Enabled = !giaTri;
             btnXoa.Enabled = !giaTri;
         }
 
-        private void frmBan_Load(object sender, EventArgs e)
+        private void frmDanhMuc_Load(object sender, EventArgs e)
         {
             BatTatChucNang(false);
             dataGridView.AutoGenerateColumns = false;
 
-            var ban = context.Ban.ToList();
-            dataGridView.DataSource = ban;
+            var DanhMuc = context.DanhMuc.ToList();
+            dataGridView.DataSource = DanhMuc;
 
-            txtTenBan.DataBindings.Clear();
-            txtTenBan.DataBindings.Add("Text", ban, "TenBan", false, DataSourceUpdateMode.Never);
+            txtTenDanhMuc.DataBindings.Clear();
+            txtTenDanhMuc.DataBindings.Add("Text", DanhMuc, "TenDanhMuc", false, DataSourceUpdateMode.Never);
 
             txtID.DataBindings.Clear();
-            txtID.DataBindings.Add("Text", ban, "ID", false, DataSourceUpdateMode.Never);
+            txtID.DataBindings.Add("Text", DanhMuc, "ID", false, DataSourceUpdateMode.Never);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             id = 0;
             BatTatChucNang(true);
-            txtTenBan.Text = "";
-            txtTenBan.Focus();
+            txtTenDanhMuc.Text = "";
+            txtTenDanhMuc.Focus();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace QuanLyQuanCaPhe.Forms
             {
                 BatTatChucNang(true);
                 id = Convert.ToInt32(dataGridView.CurrentRow?.Cells[0].Value?.ToString());
-                txtTenBan.Focus();
+                txtTenDanhMuc.Focus();
             }
             else
             {
@@ -69,31 +70,31 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTenBan.Text))
+            if (string.IsNullOrWhiteSpace(txtTenDanhMuc.Text))
                 MessageBox.Show("Vui lòng nhập tên loại sản phẩm?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 if (id == 0)
                 {
-                    Ban ban = new Ban();
-                    ban.TenBan = txtTenBan.Text;
-                    context.Ban.Add(ban);
+                    DanhMuc danhMuc = new DanhMuc();
+                    danhMuc.TenDanhMuc = txtTenDanhMuc.Text;
+                    context.DanhMuc.Add(danhMuc);
 
                     context.SaveChanges();
                 }
                 else
                 {
-                    Ban ban = context.Ban.Find(id)!;
-                    if (ban != null)
+                    DanhMuc danhMuc = context.DanhMuc.Find(id)!;
+                    if (danhMuc != null)
                     {
-                        ban.TenBan = txtTenBan.Text;
-                        context.Ban.Update(ban);
+                        danhMuc.TenDanhMuc = txtTenDanhMuc.Text;
+                        context.DanhMuc.Update(danhMuc);
 
                         context.SaveChanges();
                     }
                 }
 
-                frmBan_Load(sender, e);
+                frmDanhMuc_Load(sender, e);
             }
         }
 
@@ -101,16 +102,16 @@ namespace QuanLyQuanCaPhe.Forms
         {
             if (dataGridView.CurrentRow != null)
             {
-                if (MessageBox.Show("Xác nhận xóa " + txtTenBan.Text + "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Xác nhận xóa " + txtTenDanhMuc.Text + "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     id = Convert.ToInt32(dataGridView.CurrentRow?.Cells[0].Value?.ToString());
-                    Ban ban = context.Ban.Find(id)!;
-                    if (ban != null)
+                    DanhMuc danhMuc = context.DanhMuc.Find(id)!;
+                    if (danhMuc != null)
                     {
-                        context.Ban.Remove(ban);
+                        context.DanhMuc.Remove(danhMuc);
                         context.SaveChanges();
                     }
-                    frmBan_Load(sender, e);
+                    frmDanhMuc_Load(sender, e);
                 }
             }
             else
@@ -121,7 +122,7 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
-            frmBan_Load(sender, e);
+            frmDanhMuc_Load(sender, e);
         }
     }
 }

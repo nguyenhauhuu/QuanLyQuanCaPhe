@@ -2,7 +2,7 @@
 using QuanLyQuanCaPhe.Data;
 using System.Configuration;
 
-namespace QuanLyBanHang.Data
+namespace QuanLyQuanCaPhe.Data
 {
     public class QLQCPContext : DbContext
     {
