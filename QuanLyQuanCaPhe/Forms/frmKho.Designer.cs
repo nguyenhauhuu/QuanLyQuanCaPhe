@@ -33,9 +33,18 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKho));
             dataGridView = new ReaLTaiizor.Controls.PoisonDataGridView();
-            cboQuyenTruyCap = new ReaLTaiizor.Controls.AloneComboBox();
-            dtpNgaySinh = new ReaLTaiizor.Controls.PoisonDateTime();
+            ID = new DataGridViewTextBoxColumn();
+            NguyenLieu = new DataGridViewTextBoxColumn();
+            MoTa = new DataGridViewTextBoxColumn();
+            SoLuong = new DataGridViewTextBoxColumn();
+            DonVi = new DataGridViewTextBoxColumn();
+            Gia = new DataGridViewTextBoxColumn();
+            NgayHetHan = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            numGia = new NumericUpDown();
+            dtpNgayHetHan = new ReaLTaiizor.Controls.PoisonDateTime();
+            cboDonVi = new ReaLTaiizor.Controls.AloneComboBox();
+            cboNguyenLieu = new ReaLTaiizor.Controls.AloneComboBox();
             btnThoat = new ReaLTaiizor.Controls.Button();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
             btnLuu = new ReaLTaiizor.Controls.Button();
@@ -43,10 +52,11 @@
             btnSua = new ReaLTaiizor.Controls.Button();
             btnThem = new ReaLTaiizor.Controls.Button();
             txtTenDayDu = new ReaLTaiizor.Controls.AloneTextBox();
+            label3 = new Label();
             label2 = new Label();
             lblNguyenLieu = new Label();
             label1 = new Label();
-            lblTenDayDu = new Label();
+            lblMoTa = new Label();
             txtID = new ReaLTaiizor.Controls.AloneTextBox();
             lblID = new Label();
             toolStrip1 = new ToolStrip();
@@ -55,17 +65,12 @@
             toolStripSeparator1 = new ToolStripSeparator();
             btnNhap = new ToolStripButton();
             btnXuat = new ToolStripButton();
-            ID = new DataGridViewTextBoxColumn();
-            NguyenLieu = new DataGridViewTextBoxColumn();
-            MoTa = new DataGridViewTextBoxColumn();
-            SoLuong = new DataGridViewTextBoxColumn();
-            DonVi = new DataGridViewTextBoxColumn();
-            Gia = new DataGridViewTextBoxColumn();
-            NgayHetHan = new DataGridViewTextBoxColumn();
-            cboNguyenLieu = new ReaLTaiizor.Controls.AloneComboBox();
+            numSL = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numGia).BeginInit();
             toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numSL).BeginInit();
             SuspendLayout();
             // 
             // dataGridView
@@ -118,37 +123,62 @@
             dataGridView.TabIndex = 5;
             dataGridView.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
             // 
-            // cboQuyenTruyCap
+            // ID
             // 
-            cboQuyenTruyCap.DrawMode = DrawMode.OwnerDrawFixed;
-            cboQuyenTruyCap.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboQuyenTruyCap.EnabledCalc = true;
-            cboQuyenTruyCap.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboQuyenTruyCap.FormattingEnabled = true;
-            cboQuyenTruyCap.ItemHeight = 20;
-            cboQuyenTruyCap.Items.AddRange(new object[] { "user", "admin" });
-            cboQuyenTruyCap.Location = new Point(124, 190);
-            cboQuyenTruyCap.Name = "cboQuyenTruyCap";
-            cboQuyenTruyCap.Size = new Size(191, 26);
-            cboQuyenTruyCap.TabIndex = 8;
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
             // 
-            // dtpNgaySinh
+            // NguyenLieu
             // 
-            dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
-            dtpNgaySinh.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dtpNgaySinh.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            dtpNgaySinh.Format = DateTimePickerFormat.Custom;
-            dtpNgaySinh.Location = new Point(124, 151);
-            dtpNgaySinh.MinimumSize = new Size(0, 29);
-            dtpNgaySinh.Name = "dtpNgaySinh";
-            dtpNgaySinh.Size = new Size(191, 29);
-            dtpNgaySinh.TabIndex = 7;
+            NguyenLieu.DataPropertyName = "NguyenLieu";
+            NguyenLieu.HeaderText = "Nguyên liệu";
+            NguyenLieu.Name = "NguyenLieu";
+            NguyenLieu.ReadOnly = true;
+            // 
+            // MoTa
+            // 
+            MoTa.DataPropertyName = "MoTa";
+            MoTa.HeaderText = "Mô tả";
+            MoTa.Name = "MoTa";
+            MoTa.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            SoLuong.DataPropertyName = "SoLuong";
+            SoLuong.HeaderText = "Số Lượng";
+            SoLuong.Name = "SoLuong";
+            SoLuong.ReadOnly = true;
+            // 
+            // DonVi
+            // 
+            DonVi.DataPropertyName = "DonVi";
+            DonVi.HeaderText = "Đơn vị";
+            DonVi.Name = "DonVi";
+            DonVi.ReadOnly = true;
+            // 
+            // Gia
+            // 
+            Gia.DataPropertyName = "Gia";
+            Gia.HeaderText = "Giá";
+            Gia.Name = "Gia";
+            Gia.ReadOnly = true;
+            // 
+            // NgayHetHan
+            // 
+            NgayHetHan.DataPropertyName = "NgayHetHan";
+            NgayHetHan.HeaderText = "Ngày hết hạn";
+            NgayHetHan.Name = "NgayHetHan";
+            NgayHetHan.ReadOnly = true;
             // 
             // panel1
             // 
+            panel1.Controls.Add(numSL);
+            panel1.Controls.Add(numGia);
+            panel1.Controls.Add(dtpNgayHetHan);
+            panel1.Controls.Add(cboDonVi);
             panel1.Controls.Add(cboNguyenLieu);
-            panel1.Controls.Add(cboQuyenTruyCap);
-            panel1.Controls.Add(dtpNgaySinh);
             panel1.Controls.Add(btnThoat);
             panel1.Controls.Add(btnHuyBo);
             panel1.Controls.Add(btnLuu);
@@ -156,10 +186,11 @@
             panel1.Controls.Add(btnSua);
             panel1.Controls.Add(btnThem);
             panel1.Controls.Add(txtTenDayDu);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(lblNguyenLieu);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(lblTenDayDu);
+            panel1.Controls.Add(lblMoTa);
             panel1.Controls.Add(txtID);
             panel1.Controls.Add(lblID);
             panel1.Controls.Add(toolStrip1);
@@ -168,6 +199,55 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(337, 450);
             panel1.TabIndex = 4;
+            // 
+            // numGia
+            // 
+            numGia.BorderStyle = BorderStyle.FixedSingle;
+            numGia.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numGia.Location = new Point(124, 191);
+            numGia.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
+            numGia.Name = "numGia";
+            numGia.Size = new Size(191, 25);
+            numGia.TabIndex = 15;
+            numGia.ThousandsSeparator = true;
+            // 
+            // dtpNgayHetHan
+            // 
+            dtpNgayHetHan.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dtpNgayHetHan.CustomFormat = "dd/MM/yyyy";
+            dtpNgayHetHan.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            dtpNgayHetHan.Format = DateTimePickerFormat.Custom;
+            dtpNgayHetHan.Location = new Point(124, 224);
+            dtpNgayHetHan.MinimumSize = new Size(0, 29);
+            dtpNgayHetHan.Name = "dtpNgayHetHan";
+            dtpNgayHetHan.Size = new Size(191, 29);
+            dtpNgayHetHan.TabIndex = 14;
+            // 
+            // cboDonVi
+            // 
+            cboDonVi.DrawMode = DrawMode.OwnerDrawFixed;
+            cboDonVi.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboDonVi.EnabledCalc = true;
+            cboDonVi.FormattingEnabled = true;
+            cboDonVi.ItemHeight = 20;
+            cboDonVi.Items.AddRange(new object[] { "g", "l", "kg", "ml" });
+            cboDonVi.Location = new Point(226, 154);
+            cboDonVi.Name = "cboDonVi";
+            cboDonVi.Size = new Size(89, 26);
+            cboDonVi.TabIndex = 12;
+            // 
+            // cboNguyenLieu
+            // 
+            cboNguyenLieu.DrawMode = DrawMode.OwnerDrawFixed;
+            cboNguyenLieu.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboNguyenLieu.EnabledCalc = true;
+            cboNguyenLieu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboNguyenLieu.FormattingEnabled = true;
+            cboNguyenLieu.ItemHeight = 20;
+            cboNguyenLieu.Location = new Point(124, 84);
+            cboNguyenLieu.Name = "cboNguyenLieu";
+            cboNguyenLieu.Size = new Size(191, 26);
+            cboNguyenLieu.TabIndex = 9;
             // 
             // btnThoat
             // 
@@ -299,15 +379,25 @@
             txtTenDayDu.TextAlign = HorizontalAlignment.Left;
             txtTenDayDu.UseSystemPasswordChar = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F);
+            label3.Location = new Point(19, 230);
+            label3.Name = "label3";
+            label3.Size = new Size(89, 17);
+            label3.TabIndex = 1;
+            label3.Text = "Ngày hết hạn:";
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F);
             label2.Location = new Point(19, 195);
             label2.Name = "label2";
-            label2.Size = new Size(99, 17);
+            label2.Size = new Size(30, 17);
             label2.TabIndex = 1;
-            label2.Text = "Quyền truy cập:";
+            label2.Text = "Giá:";
             // 
             // lblNguyenLieu
             // 
@@ -325,19 +415,19 @@
             label1.Font = new Font("Segoe UI", 9.75F);
             label1.Location = new Point(19, 159);
             label1.Name = "label1";
-            label1.Size = new Size(69, 17);
+            label1.Size = new Size(64, 17);
             label1.TabIndex = 1;
-            label1.Text = "Ngày sinh:";
+            label1.Text = "Số lượng:";
             // 
-            // lblTenDayDu
+            // lblMoTa
             // 
-            lblTenDayDu.AutoSize = true;
-            lblTenDayDu.Font = new Font("Segoe UI", 9.75F);
-            lblTenDayDu.Location = new Point(19, 123);
-            lblTenDayDu.Name = "lblTenDayDu";
-            lblTenDayDu.Size = new Size(75, 17);
-            lblTenDayDu.TabIndex = 1;
-            lblTenDayDu.Text = "Tên đầy đủ:";
+            lblMoTa.AutoSize = true;
+            lblMoTa.Font = new Font("Segoe UI", 9.75F);
+            lblMoTa.Location = new Point(19, 123);
+            lblMoTa.Name = "lblMoTa";
+            lblMoTa.Size = new Size(46, 17);
+            lblMoTa.TabIndex = 1;
+            lblMoTa.Text = "Mô tả:";
             // 
             // txtID
             // 
@@ -409,67 +499,16 @@
             btnXuat.Size = new Size(60, 22);
             btnXuat.Text = "Xuất...";
             // 
-            // ID
+            // numSL
             // 
-            ID.DataPropertyName = "ID";
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // NguyenLieu
-            // 
-            NguyenLieu.DataPropertyName = "NguyenLieu";
-            NguyenLieu.HeaderText = "Nguyên liệu";
-            NguyenLieu.Name = "NguyenLieu";
-            NguyenLieu.ReadOnly = true;
-            // 
-            // MoTa
-            // 
-            MoTa.DataPropertyName = "MoTa";
-            MoTa.HeaderText = "Mô tả";
-            MoTa.Name = "MoTa";
-            MoTa.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            SoLuong.DataPropertyName = "SoLuong";
-            SoLuong.HeaderText = "Số Lượng";
-            SoLuong.Name = "SoLuong";
-            SoLuong.ReadOnly = true;
-            // 
-            // DonVi
-            // 
-            DonVi.DataPropertyName = "DonVi";
-            DonVi.HeaderText = "Đơn vị";
-            DonVi.Name = "DonVi";
-            DonVi.ReadOnly = true;
-            // 
-            // Gia
-            // 
-            Gia.DataPropertyName = "Gia";
-            Gia.HeaderText = "Giá";
-            Gia.Name = "Gia";
-            Gia.ReadOnly = true;
-            // 
-            // NgayHetHan
-            // 
-            NgayHetHan.DataPropertyName = "NgayHetHan";
-            NgayHetHan.HeaderText = "Ngày hết hạn";
-            NgayHetHan.Name = "NgayHetHan";
-            NgayHetHan.ReadOnly = true;
-            // 
-            // cboNguyenLieu
-            // 
-            cboNguyenLieu.DrawMode = DrawMode.OwnerDrawFixed;
-            cboNguyenLieu.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboNguyenLieu.EnabledCalc = true;
-            cboNguyenLieu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboNguyenLieu.FormattingEnabled = true;
-            cboNguyenLieu.ItemHeight = 20;
-            cboNguyenLieu.Location = new Point(124, 84);
-            cboNguyenLieu.Name = "cboNguyenLieu";
-            cboNguyenLieu.Size = new Size(191, 26);
-            cboNguyenLieu.TabIndex = 9;
+            numSL.BorderStyle = BorderStyle.FixedSingle;
+            numSL.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numSL.Location = new Point(124, 155);
+            numSL.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
+            numSL.Name = "numSL";
+            numSL.Size = new Size(99, 25);
+            numSL.TabIndex = 15;
+            numSL.ThousandsSeparator = true;
             // 
             // frmKho
             // 
@@ -483,15 +522,15 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numGia).EndInit();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numSL).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private ReaLTaiizor.Controls.PoisonDataGridView dataGridView;
-        private ReaLTaiizor.Controls.AloneComboBox cboQuyenTruyCap;
-        private ReaLTaiizor.Controls.PoisonDateTime dtpNgaySinh;
         private ReaLTaiizor.Controls.Button btnKhoiPhucMatKhau;
         private Panel panel1;
         private ReaLTaiizor.Controls.Button btnThoat;
@@ -505,7 +544,7 @@
         private Label label2;
         private Label lblNguyenLieu;
         private Label label1;
-        private Label lblTenDayDu;
+        private Label lblMoTa;
         private ReaLTaiizor.Controls.AloneTextBox txtID;
         private Label lblID;
         private ToolStrip toolStrip1;
@@ -522,5 +561,12 @@
         private DataGridViewTextBoxColumn Gia;
         private DataGridViewTextBoxColumn NgayHetHan;
         private ReaLTaiizor.Controls.AloneComboBox cboNguyenLieu;
+        private ReaLTaiizor.Controls.SkyNumeric skyNumeric2;
+        private ReaLTaiizor.Controls.AloneComboBox cboDonVi;
+        private ReaLTaiizor.Controls.SkyNumeric numSoLuong;
+        private Label label3;
+        private ReaLTaiizor.Controls.PoisonDateTime dtpNgayHetHan;
+        private NumericUpDown numGia;
+        private NumericUpDown numSL;
     }
 }
