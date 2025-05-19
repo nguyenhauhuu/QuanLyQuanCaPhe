@@ -12,7 +12,7 @@ namespace QuanLyQuanCaPhe
         {
          
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmTaiKhoan());
+            Application.Run(new frmDanhMuc());
         }
     }
 }
