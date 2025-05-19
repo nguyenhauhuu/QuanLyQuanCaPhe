@@ -8,12 +8,13 @@ namespace QuanLyQuanCaPhe
 
         QLQCPContext context = new QLQCPContext();
         frmDangNhap? dangNhap = null;
-        string hoVaTenNhanVien = ""; 
+        string hoVaTenNhanVien = "";
 
         public frmMain()
         {
             InitializeComponent();
         }
 
+      
     }
 }

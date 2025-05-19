@@ -69,12 +69,14 @@
             dangXuatToolStripMenuItem.Size = new Size(73, 20);
             dangXuatToolStripMenuItem.Text = "Đăng xuất";
             // 
+          
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
+            Controls.Add(royalMenuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "frmMain";
             Text = "Form1";
@@ -91,5 +93,6 @@
         private ToolStripMenuItem chucNangToolStripMenuItem;
         private ToolStripMenuItem thongTinTaiKhoanToolStripMenuItem;
         private ToolStripMenuItem dangXuatToolStripMenuItem;
+        private ReaLTaiizor.Controls.RoyalMenuStrip royalMenuStrip1;
     }
 }

@@ -12,7 +12,7 @@ using QuanLyBanHang.Data;
 namespace QuanLyQuanCaPhe.Migrations
 {
     [DbContext(typeof(QLQCPContext))]
-    [Migration("20250519084840_KhoiTaoCSDL")]
+    [Migration("20250519100209_KhoiTaoCSDL")]
     partial class KhoiTaoCSDL
     {
         /// <inheritdoc />
@@ -33,7 +33,7 @@ namespace QuanLyQuanCaPhe.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("HoaDonID")
+                    b.Property<int>("IDHoaDon")
                         .HasColumnType("int");
 
                     b.Property<string>("TenBan")
@@ -45,8 +45,6 @@ namespace QuanLyQuanCaPhe.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("HoaDonID");
 
                     b.ToTable("Ban");
                 });
@@ -245,17 +243,6 @@ namespace QuanLyQuanCaPhe.Migrations
                     b.ToTable("ThucUong");
                 });
 
-            modelBuilder.Entity("Ban", b =>
-                {
-                    b.HasOne("QuanLyQuanCaPhe.Data.HoaDon", "HoaDon")
-                        .WithMany("Ban")
-                        .HasForeignKey("HoaDonID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("HoaDon");
-                });
-
             modelBuilder.Entity("QuanLyQuanCaPhe.Data.HoaDon", b =>
                 {
                     b.HasOne("QuanLyQuanCaPhe.Data.TaiKhoan", "TaiKhoan")
@@ -315,8 +302,6 @@ namespace QuanLyQuanCaPhe.Migrations
 
             modelBuilder.Entity("QuanLyQuanCaPhe.Data.HoaDon", b =>
                 {
-                    b.Navigation("Ban");
-
                     b.Navigation("HoaDonChiTiet");
                 });
 
