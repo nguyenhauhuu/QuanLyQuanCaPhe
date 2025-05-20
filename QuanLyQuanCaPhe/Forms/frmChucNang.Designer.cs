@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox = new GroupBox();
+            txtMoTa = new ReaLTaiizor.Controls.AloneTextBox();
+            numSoLuong = new ReaLTaiizor.Controls.HopeNumeric();
             btnTinhTien = new ReaLTaiizor.Controls.Button();
             txtTongTien = new ReaLTaiizor.Controls.AloneTextBox();
             label6 = new Label();
@@ -36,27 +38,29 @@
             numGiamGia = new NumericUpDown();
             btnGopBan = new ReaLTaiizor.Controls.Button();
             btnChuyenBan = new ReaLTaiizor.Controls.Button();
-            aloneComboBox4 = new ReaLTaiizor.Controls.AloneComboBox();
-            aloneComboBox3 = new ReaLTaiizor.Controls.AloneComboBox();
-            dataGridView1 = new DataGridView();
-            numSoLuong = new NumericUpDown();
+            cboBanDich = new ReaLTaiizor.Controls.AloneComboBox();
+            cboBanDau = new ReaLTaiizor.Controls.AloneComboBox();
+            dgvDanhSachThucUong = new DataGridView();
             label4 = new Label();
-            button2 = new ReaLTaiizor.Controls.Button();
-            button1 = new ReaLTaiizor.Controls.Button();
+            btnLuu = new ReaLTaiizor.Controls.Button();
+            btnXoa = new ReaLTaiizor.Controls.Button();
+            btnThem = new ReaLTaiizor.Controls.Button();
+            label7 = new Label();
             label3 = new Label();
             label2 = new Label();
-            aloneComboBox2 = new ReaLTaiizor.Controls.AloneComboBox();
-            aloneComboBox1 = new ReaLTaiizor.Controls.AloneComboBox();
+            cboThucUong = new ReaLTaiizor.Controls.AloneComboBox();
+            cboDanhMuc = new ReaLTaiizor.Controls.AloneComboBox();
             label1 = new Label();
             flpDanhSachBan = new FlowLayoutPanel();
             groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numGiamGia).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numSoLuong).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDanhSachThucUong).BeginInit();
             SuspendLayout();
             // 
             // groupBox
             // 
+            groupBox.Controls.Add(txtMoTa);
+            groupBox.Controls.Add(numSoLuong);
             groupBox.Controls.Add(btnTinhTien);
             groupBox.Controls.Add(txtTongTien);
             groupBox.Controls.Add(label6);
@@ -64,17 +68,18 @@
             groupBox.Controls.Add(numGiamGia);
             groupBox.Controls.Add(btnGopBan);
             groupBox.Controls.Add(btnChuyenBan);
-            groupBox.Controls.Add(aloneComboBox4);
-            groupBox.Controls.Add(aloneComboBox3);
-            groupBox.Controls.Add(dataGridView1);
-            groupBox.Controls.Add(numSoLuong);
+            groupBox.Controls.Add(cboBanDich);
+            groupBox.Controls.Add(cboBanDau);
+            groupBox.Controls.Add(dgvDanhSachThucUong);
             groupBox.Controls.Add(label4);
-            groupBox.Controls.Add(button2);
-            groupBox.Controls.Add(button1);
+            groupBox.Controls.Add(btnLuu);
+            groupBox.Controls.Add(btnXoa);
+            groupBox.Controls.Add(btnThem);
+            groupBox.Controls.Add(label7);
             groupBox.Controls.Add(label3);
             groupBox.Controls.Add(label2);
-            groupBox.Controls.Add(aloneComboBox2);
-            groupBox.Controls.Add(aloneComboBox1);
+            groupBox.Controls.Add(cboThucUong);
+            groupBox.Controls.Add(cboDanhMuc);
             groupBox.Controls.Add(label1);
             groupBox.Dock = DockStyle.Right;
             groupBox.Location = new Point(330, 0);
@@ -83,6 +88,47 @@
             groupBox.TabIndex = 2;
             groupBox.TabStop = false;
             groupBox.Text = "Bàn";
+            // 
+            // txtMoTa
+            // 
+            txtMoTa.BackColor = Color.Transparent;
+            txtMoTa.EnabledCalc = true;
+            txtMoTa.Font = new Font("Segoe UI", 9F);
+            txtMoTa.ForeColor = Color.FromArgb(124, 133, 142);
+            txtMoTa.Location = new Point(96, 118);
+            txtMoTa.MaxLength = 32767;
+            txtMoTa.MultiLine = false;
+            txtMoTa.Name = "txtMoTa";
+            txtMoTa.ReadOnly = false;
+            txtMoTa.Size = new Size(362, 29);
+            txtMoTa.TabIndex = 14;
+            txtMoTa.TextAlign = HorizontalAlignment.Left;
+            txtMoTa.UseSystemPasswordChar = false;
+            // 
+            // numSoLuong
+            // 
+            numSoLuong.BackColor = Color.White;
+            numSoLuong.BaseColor = Color.FromArgb(242, 246, 252);
+            numSoLuong.BorderColorA = Color.FromArgb(192, 196, 204);
+            numSoLuong.BorderColorB = Color.FromArgb(192, 196, 204);
+            numSoLuong.BorderHoverColorA = Color.FromArgb(64, 158, 255);
+            numSoLuong.ButtonTextColorA = Color.FromArgb(144, 147, 153);
+            numSoLuong.ButtonTextColorB = Color.FromArgb(144, 147, 153);
+            numSoLuong.EnterKey = true;
+            numSoLuong.Font = new Font("Segoe UI", 12F);
+            numSoLuong.ForeColor = Color.Black;
+            numSoLuong.HoverButtonTextColorA = Color.FromArgb(64, 158, 255);
+            numSoLuong.HoverButtonTextColorB = Color.FromArgb(64, 158, 255);
+            numSoLuong.Location = new Point(344, 76);
+            numSoLuong.MaxNum = 100F;
+            numSoLuong.MinNum = 1F;
+            numSoLuong.Name = "numSoLuong";
+            numSoLuong.Precision = 0;
+            numSoLuong.Size = new Size(120, 32);
+            numSoLuong.Step = 1F;
+            numSoLuong.Style = ReaLTaiizor.Controls.HopeNumeric.NumericStyle.LeftRight;
+            numSoLuong.TabIndex = 13;
+            numSoLuong.ValueNumber = 1F;
             // 
             // btnTinhTien
             // 
@@ -165,6 +211,7 @@
             btnGopBan.TabIndex = 8;
             btnGopBan.Text = "Gộp bàn";
             btnGopBan.TextAlignment = StringAlignment.Center;
+            btnGopBan.Click += btnGopBan_Click;
             // 
             // btnChuyenBan
             // 
@@ -184,93 +231,117 @@
             btnChuyenBan.TabIndex = 8;
             btnChuyenBan.Text = "Chuyển bàn";
             btnChuyenBan.TextAlignment = StringAlignment.Center;
+            btnChuyenBan.Click += btnChuyenBan_Click;
             // 
-            // aloneComboBox4
+            // cboBanDich
             // 
-            aloneComboBox4.DrawMode = DrawMode.OwnerDrawFixed;
-            aloneComboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
-            aloneComboBox4.EnabledCalc = true;
-            aloneComboBox4.FormattingEnabled = true;
-            aloneComboBox4.ItemHeight = 20;
-            aloneComboBox4.Location = new Point(90, 385);
-            aloneComboBox4.Name = "aloneComboBox4";
-            aloneComboBox4.Size = new Size(71, 26);
-            aloneComboBox4.TabIndex = 7;
+            cboBanDich.DrawMode = DrawMode.OwnerDrawFixed;
+            cboBanDich.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboBanDich.EnabledCalc = true;
+            cboBanDich.FormattingEnabled = true;
+            cboBanDich.ItemHeight = 20;
+            cboBanDich.Location = new Point(90, 385);
+            cboBanDich.Name = "cboBanDich";
+            cboBanDich.Size = new Size(71, 26);
+            cboBanDich.TabIndex = 7;
             // 
-            // aloneComboBox3
+            // cboBanDau
             // 
-            aloneComboBox3.DrawMode = DrawMode.OwnerDrawFixed;
-            aloneComboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            aloneComboBox3.EnabledCalc = true;
-            aloneComboBox3.FormattingEnabled = true;
-            aloneComboBox3.ItemHeight = 20;
-            aloneComboBox3.Location = new Point(13, 385);
-            aloneComboBox3.Name = "aloneComboBox3";
-            aloneComboBox3.Size = new Size(71, 26);
-            aloneComboBox3.TabIndex = 7;
+            cboBanDau.DrawMode = DrawMode.OwnerDrawFixed;
+            cboBanDau.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboBanDau.EnabledCalc = true;
+            cboBanDau.FormattingEnabled = true;
+            cboBanDau.ItemHeight = 20;
+            cboBanDau.Location = new Point(13, 385);
+            cboBanDau.Name = "cboBanDau";
+            cboBanDau.Size = new Size(71, 26);
+            cboBanDau.TabIndex = 7;
             // 
-            // dataGridView1
+            // dgvDanhSachThucUong
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 124);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(444, 250);
-            dataGridView1.TabIndex = 6;
-            // 
-            // numSoLuong
-            // 
-            numSoLuong.Location = new Point(358, 80);
-            numSoLuong.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            numSoLuong.Name = "numSoLuong";
-            numSoLuong.Size = new Size(77, 23);
-            numSoLuong.TabIndex = 5;
+            dgvDanhSachThucUong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDanhSachThucUong.Location = new Point(14, 162);
+            dgvDanhSachThucUong.Name = "dgvDanhSachThucUong";
+            dgvDanhSachThucUong.Size = new Size(444, 212);
+            dgvDanhSachThucUong.TabIndex = 6;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(295, 84);
+            label4.Location = new Point(287, 85);
             label4.Name = "label4";
             label4.Size = new Size(57, 15);
             label4.TabIndex = 4;
             label4.Text = "Số lượng:";
             // 
-            // button2
+            // btnLuu
             // 
-            button2.BackColor = Color.Transparent;
-            button2.BorderColor = Color.FromArgb(32, 34, 37);
-            button2.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            button2.EnteredColor = Color.FromArgb(32, 34, 37);
-            button2.Font = new Font("Microsoft Sans Serif", 12F);
-            button2.Image = null;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.InactiveColor = Color.FromArgb(192, 0, 0);
-            button2.Location = new Point(364, 36);
-            button2.Name = "button2";
-            button2.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            button2.PressedColor = Color.FromArgb(165, 37, 37);
-            button2.Size = new Size(60, 26);
-            button2.TabIndex = 3;
-            button2.Text = "Xóa";
-            button2.TextAlignment = StringAlignment.Center;
+            btnLuu.BackColor = Color.Transparent;
+            btnLuu.BorderColor = Color.FromArgb(32, 34, 37);
+            btnLuu.EnteredBorderColor = Color.FromArgb(165, 37, 37);
+            btnLuu.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnLuu.Font = new Font("Microsoft Sans Serif", 12F);
+            btnLuu.Image = null;
+            btnLuu.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLuu.InactiveColor = Color.Blue;
+            btnLuu.Location = new Point(405, 36);
+            btnLuu.Name = "btnLuu";
+            btnLuu.PressedBorderColor = Color.FromArgb(165, 37, 37);
+            btnLuu.PressedColor = Color.FromArgb(165, 37, 37);
+            btnLuu.Size = new Size(52, 26);
+            btnLuu.TabIndex = 3;
+            btnLuu.Text = "Lưu";
+            btnLuu.TextAlignment = StringAlignment.Center;
+            btnLuu.Click += btnLuu_Click;
             // 
-            // button1
+            // btnXoa
             // 
-            button1.BackColor = Color.Transparent;
-            button1.BorderColor = Color.FromArgb(32, 34, 37);
-            button1.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            button1.EnteredColor = Color.FromArgb(32, 34, 37);
-            button1.Font = new Font("Microsoft Sans Serif", 12F);
-            button1.Image = null;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.InactiveColor = Color.FromArgb(0, 192, 0);
-            button1.Location = new Point(292, 36);
-            button1.Name = "button1";
-            button1.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            button1.PressedColor = Color.FromArgb(165, 37, 37);
-            button1.Size = new Size(60, 26);
-            button1.TabIndex = 3;
-            button1.Text = "Thêm";
-            button1.TextAlignment = StringAlignment.Center;
+            btnXoa.BackColor = Color.Transparent;
+            btnXoa.BorderColor = Color.FromArgb(32, 34, 37);
+            btnXoa.EnteredBorderColor = Color.FromArgb(165, 37, 37);
+            btnXoa.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnXoa.Font = new Font("Microsoft Sans Serif", 12F);
+            btnXoa.Image = null;
+            btnXoa.ImageAlign = ContentAlignment.MiddleLeft;
+            btnXoa.InactiveColor = Color.FromArgb(192, 0, 0);
+            btnXoa.Location = new Point(346, 36);
+            btnXoa.Name = "btnXoa";
+            btnXoa.PressedBorderColor = Color.FromArgb(165, 37, 37);
+            btnXoa.PressedColor = Color.FromArgb(165, 37, 37);
+            btnXoa.Size = new Size(52, 26);
+            btnXoa.TabIndex = 3;
+            btnXoa.Text = "Xóa";
+            btnXoa.TextAlignment = StringAlignment.Center;
+            btnXoa.Click += btnXoa_Click;
+            // 
+            // btnThem
+            // 
+            btnThem.BackColor = Color.Transparent;
+            btnThem.BorderColor = Color.FromArgb(32, 34, 37);
+            btnThem.EnteredBorderColor = Color.FromArgb(165, 37, 37);
+            btnThem.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnThem.Font = new Font("Microsoft Sans Serif", 12F);
+            btnThem.Image = null;
+            btnThem.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThem.InactiveColor = Color.FromArgb(0, 192, 0);
+            btnThem.Location = new Point(287, 36);
+            btnThem.Name = "btnThem";
+            btnThem.PressedBorderColor = Color.FromArgb(165, 37, 37);
+            btnThem.PressedColor = Color.FromArgb(165, 37, 37);
+            btnThem.Size = new Size(52, 26);
+            btnThem.TabIndex = 3;
+            btnThem.Text = "Thêm";
+            btnThem.TextAlignment = StringAlignment.Center;
+            btnThem.Click += btnThem_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(13, 125);
+            label7.Name = "label7";
+            label7.Size = new Size(41, 15);
+            label7.TabIndex = 2;
+            label7.Text = "Mô tả:";
             // 
             // label3
             // 
@@ -290,29 +361,30 @@
             label2.TabIndex = 2;
             label2.Text = "Danh mục:";
             // 
-            // aloneComboBox2
+            // cboThucUong
             // 
-            aloneComboBox2.DrawMode = DrawMode.OwnerDrawFixed;
-            aloneComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            aloneComboBox2.EnabledCalc = true;
-            aloneComboBox2.FormattingEnabled = true;
-            aloneComboBox2.ItemHeight = 20;
-            aloneComboBox2.Location = new Point(96, 79);
-            aloneComboBox2.Name = "aloneComboBox2";
-            aloneComboBox2.Size = new Size(176, 26);
-            aloneComboBox2.TabIndex = 1;
+            cboThucUong.DrawMode = DrawMode.OwnerDrawFixed;
+            cboThucUong.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboThucUong.EnabledCalc = true;
+            cboThucUong.FormattingEnabled = true;
+            cboThucUong.ItemHeight = 20;
+            cboThucUong.Location = new Point(96, 79);
+            cboThucUong.Name = "cboThucUong";
+            cboThucUong.Size = new Size(176, 26);
+            cboThucUong.TabIndex = 1;
             // 
-            // aloneComboBox1
+            // cboDanhMuc
             // 
-            aloneComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            aloneComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            aloneComboBox1.EnabledCalc = true;
-            aloneComboBox1.FormattingEnabled = true;
-            aloneComboBox1.ItemHeight = 20;
-            aloneComboBox1.Location = new Point(96, 36);
-            aloneComboBox1.Name = "aloneComboBox1";
-            aloneComboBox1.Size = new Size(176, 26);
-            aloneComboBox1.TabIndex = 1;
+            cboDanhMuc.DrawMode = DrawMode.OwnerDrawFixed;
+            cboDanhMuc.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboDanhMuc.EnabledCalc = true;
+            cboDanhMuc.FormattingEnabled = true;
+            cboDanhMuc.ItemHeight = 20;
+            cboDanhMuc.Location = new Point(96, 36);
+            cboDanhMuc.Name = "cboDanhMuc";
+            cboDanhMuc.Size = new Size(176, 26);
+            cboDanhMuc.TabIndex = 1;
+            cboDanhMuc.SelectedIndexChanged += cboDanhMuc_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -344,8 +416,7 @@
             groupBox.ResumeLayout(false);
             groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numGiamGia).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numSoLuong).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDanhSachThucUong).EndInit();
             ResumeLayout(false);
         }
 
@@ -355,22 +426,25 @@
         private FlowLayoutPanel flpDanhSachBan;
         private Label label3;
         private Label label2;
-        private ReaLTaiizor.Controls.AloneComboBox aloneComboBox2;
-        private ReaLTaiizor.Controls.AloneComboBox aloneComboBox1;
+        private ReaLTaiizor.Controls.AloneComboBox cboThucUong;
+        private ReaLTaiizor.Controls.AloneComboBox cboDanhMuc;
         private Label label1;
-        private ReaLTaiizor.Controls.Button button2;
-        private ReaLTaiizor.Controls.Button button1;
+        private ReaLTaiizor.Controls.Button btnXoa;
+        private ReaLTaiizor.Controls.Button btnThem;
         private ReaLTaiizor.Controls.Button btnGopBan;
         private ReaLTaiizor.Controls.Button btnChuyenBan;
-        private ReaLTaiizor.Controls.AloneComboBox aloneComboBox4;
-        private ReaLTaiizor.Controls.AloneComboBox aloneComboBox3;
-        private DataGridView dataGridView1;
-        private NumericUpDown numSoLuong;
+        private ReaLTaiizor.Controls.AloneComboBox cboBanDich;
+        private ReaLTaiizor.Controls.AloneComboBox cboBanDau;
+        private DataGridView dgvDanhSachThucUong;
         private Label label4;
         private ReaLTaiizor.Controls.AloneTextBox txtTongTien;
         private Label label6;
         private Label label5;
         private NumericUpDown numGiamGia;
         private ReaLTaiizor.Controls.Button btnTinhTien;
+        private ReaLTaiizor.Controls.AloneTextBox txtMoTa;
+        private ReaLTaiizor.Controls.HopeNumeric numSoLuong;
+        private Label label7;
+        private ReaLTaiizor.Controls.Button btnLuu;
     }
 }

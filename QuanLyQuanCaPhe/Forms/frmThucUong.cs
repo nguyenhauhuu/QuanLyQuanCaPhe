@@ -12,48 +12,64 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCaPhe.Forms
 {
-    public partial class frmDanhMuc : Form
+    public partial class frmThucUong : Form
     {
         QLQCPContext context = new QLQCPContext(); // Khởi tạo biến ngữ cảnh CSDL 
         int id;
-        public frmDanhMuc()
+        public frmThucUong()
         {
             InitializeComponent();
+        }
+
+        private void LayDanhMucVaoComboBox()
+        {
+            var danhMuc = context.DanhMuc.ToList();
+            cboDanhMuc.DataSource = danhMuc;
+            cboDanhMuc.ValueMember = "ID";
+            cboDanhMuc.DisplayMember = "TenDanhMuc";
         }
 
         private void BatTatChucNang(bool giaTri)
         {
             btnLuu.Enabled = giaTri;
             btnHuyBo.Enabled = giaTri;
-            txtTenDanhMuc.Enabled = giaTri;
+            txtTenThucUong.Enabled = giaTri;
+            cboDanhMuc.Enabled = giaTri;
 
             btnThem.Enabled = !giaTri;
             btnSua.Enabled = !giaTri;
             btnXoa.Enabled = !giaTri;
         }
 
-        private void frmDanhMuc_Load(object sender, EventArgs e)
+        private void frmThucUong_Load(object sender, EventArgs e)
         {
+            LayDanhMucVaoComboBox();
             BatTatChucNang(false);
             dataGridView.AutoGenerateColumns = false;
 
-            var DanhMuc = context.DanhMuc.ToList();
-            dataGridView.DataSource = DanhMuc;
+            var ThucUong = context.ThucUong.Select(r => new
+            {
+                r.ID,
+                r.TenThucUong,
+                r.DanhMucID,
+                r.DanhMuc.TenDanhMuc,
+            }).ToList();
+            dataGridView.DataSource = ThucUong;
 
-            txtTenDanhMuc.DataBindings.Clear();
-            txtTenDanhMuc.DataBindings.Add("Text", DanhMuc, "TenDanhMuc", false, DataSourceUpdateMode.Never);
+            txtTenThucUong.DataBindings.Clear();
+            txtTenThucUong.DataBindings.Add("Text", ThucUong, "TenThucUong", false, DataSourceUpdateMode.Never);
 
             txtID.DataBindings.Clear();
-            txtID.DataBindings.Add("Text", DanhMuc, "ID", false, DataSourceUpdateMode.Never);
+            txtID.DataBindings.Add("Text", ThucUong, "ID", false, DataSourceUpdateMode.Never);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             id = 0;
             BatTatChucNang(true);
-            txtTenDanhMuc.Text = "";
+            txtTenThucUong.Text = "";
             txtID.Text = "";
-            txtTenDanhMuc.Focus();
+            txtTenThucUong.Focus();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -62,7 +78,7 @@ namespace QuanLyQuanCaPhe.Forms
             {
                 BatTatChucNang(true);
                 id = Convert.ToInt32(dataGridView.CurrentRow?.Cells[0].Value?.ToString());
-                txtTenDanhMuc.Focus();
+                txtTenThucUong.Focus();
             }
             else
             {
@@ -72,31 +88,33 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTenDanhMuc.Text))
-                MessageBox.Show("Vui lòng nhập tên loại sản phẩm?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (string.IsNullOrWhiteSpace(txtTenThucUong.Text))
+                MessageBox.Show("Vui lòng nhập tên thức uống?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 if (id == 0)
                 {
-                    DanhMuc danhMuc = new DanhMuc();
-                    danhMuc.TenDanhMuc = txtTenDanhMuc.Text;
-                    context.DanhMuc.Add(danhMuc);
+                    ThucUong thucUong = new ThucUong();
+                    thucUong.TenThucUong = txtTenThucUong.Text;
+                    thucUong.DanhMucID = Convert.ToInt32(cboDanhMuc.SelectedValue);
+                    context.ThucUong.Add(thucUong);
 
                     context.SaveChanges();
                 }
                 else
                 {
-                    DanhMuc danhMuc = context.DanhMuc.Find(id)!;
-                    if (danhMuc != null)
+                    ThucUong thucUong = context.ThucUong.Find(id)!;
+                    if (thucUong != null)
                     {
-                        danhMuc.TenDanhMuc = txtTenDanhMuc.Text;
-                        context.DanhMuc.Update(danhMuc);
+                        thucUong.DanhMucID = Convert.ToInt32(cboDanhMuc.SelectedValue);
+                        thucUong.TenThucUong = txtTenThucUong.Text;
+                        context.ThucUong.Update(thucUong);
 
                         context.SaveChanges();
                     }
                 }
 
-                frmDanhMuc_Load(sender, e);
+                frmThucUong_Load(sender, e);
             }
         }
 
@@ -104,16 +122,16 @@ namespace QuanLyQuanCaPhe.Forms
         {
             if (dataGridView.CurrentRow != null)
             {
-                if (MessageBox.Show("Xác nhận xóa " + txtTenDanhMuc.Text + "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Xác nhận xóa " + txtTenThucUong.Text + "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     id = Convert.ToInt32(dataGridView.CurrentRow?.Cells[0].Value?.ToString());
-                    DanhMuc danhMuc = context.DanhMuc.Find(id)!;
-                    if (danhMuc != null)
+                    ThucUong thucUong = context.ThucUong.Find(id)!;
+                    if (thucUong != null)
                     {
-                        context.DanhMuc.Remove(danhMuc);
+                        context.ThucUong.Remove(thucUong);
                         context.SaveChanges();
                     }
-                    frmDanhMuc_Load(sender, e);
+                    frmThucUong_Load(sender, e);
                 }
             }
             else
@@ -124,7 +142,7 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
-            frmDanhMuc_Load(sender, e);
+            frmThucUong_Load(sender, e);
         }
 
         private void btnNhap_Click(object sender, EventArgs e)
@@ -173,14 +191,15 @@ namespace QuanLyQuanCaPhe.Forms
                         {
                             foreach (DataRow r in table.Rows)
                             {
-                                DanhMuc danhMuc = new DanhMuc();
-                                danhMuc.TenDanhMuc = r["TenDanhMuc"].ToString() ?? "N/A";
-                                context.DanhMuc.Add(danhMuc);
+                                ThucUong thucUong = new ThucUong();
+                                thucUong.DanhMucID = Convert.ToInt32(r["DanhMucId"]);
+                                thucUong.TenThucUong = r["TenThucUong"].ToString() ?? "N/A";
+                                context.ThucUong.Add(thucUong);
                             }
                             context.SaveChanges();
 
                             MessageBox.Show("Đã nhập thành công " + table.Rows.Count + " dòng.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            frmDanhMuc_Load(sender, e);
+                            frmThucUong_Load(sender, e);
                         }
                         else
                             MessageBox.Show("Tập tin Excel rỗng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -198,7 +217,7 @@ namespace QuanLyQuanCaPhe.Forms
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Xuất dữ liệu ra tập tin Excel";
             saveFileDialog.Filter = "Tập tin Excel|*.xls;*.xlsx";
-            saveFileDialog.FileName = "DanhMuc_" + DateTime.Now.ToShortDateString().Replace("/", "_") + ".xlsx";
+            saveFileDialog.FileName = "ThucUong_" + DateTime.Now.ToShortDateString().Replace("/", "_") + ".xlsx";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -209,21 +228,22 @@ namespace QuanLyQuanCaPhe.Forms
 
                     table.Columns.AddRange(new DataColumn[] {
                         new DataColumn("ID", typeof(int)),
-                        new DataColumn("TenDanhMuc", typeof(string))
+                        new DataColumn("DanhMucID", typeof(int)),
+                        new DataColumn("TenThucUong", typeof(string))
 
                        });
 
-                    var danhMuc = context.DanhMuc.ToList();
-                    if (danhMuc != null)
+                    var thucUong = context.ThucUong.ToList();
+                    if (thucUong != null)
                     {
-                        foreach (var p in danhMuc)
-                            table.Rows.Add(p.ID, p.TenDanhMuc);
+                        foreach (var p in thucUong)
+                            table.Rows.Add(p.ID,p.DanhMucID,p.TenThucUong);
                     }
 
                     // Gán bảng tạm vào Sheet 1 của tập tin Excel 
                     using (XLWorkbook wb = new XLWorkbook())
                     {
-                        var sheet = wb.Worksheets.Add(table, "DanhMuc");
+                        var sheet = wb.Worksheets.Add(table, "ThucUong");
                         sheet.Columns().AdjustToContents();
                         wb.SaveAs(saveFileDialog.FileName);
 

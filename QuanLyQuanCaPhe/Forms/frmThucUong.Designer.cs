@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanCaPhe.Forms
 {
-    partial class frmDanhMuc
+    partial class frmThucUong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,152 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMuc));
-            dataGridView = new ReaLTaiizor.Controls.PoisonDataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            TenDanhMuc = new DataGridViewTextBoxColumn();
-            btnXuat = new ToolStripButton();
-            btnNhap = new ToolStripButton();
-            toolStripSeparator1 = new ToolStripSeparator();
-            btnTimKiem = new ToolStripButton();
-            txtTimKiem = new ToolStripTextBox();
-            panel1 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThucUong));
             btnThoat = new ReaLTaiizor.Controls.Button();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
             btnLuu = new ReaLTaiizor.Controls.Button();
             btnXoa = new ReaLTaiizor.Controls.Button();
             btnSua = new ReaLTaiizor.Controls.Button();
             btnThem = new ReaLTaiizor.Controls.Button();
-            txtTenDanhMuc = new ReaLTaiizor.Controls.AloneTextBox();
+            txtTenThucUong = new ReaLTaiizor.Controls.AloneTextBox();
             lblTenDanhMuc = new Label();
             txtID = new ReaLTaiizor.Controls.AloneTextBox();
             lblID = new Label();
             toolStrip1 = new ToolStrip();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
-            panel1.SuspendLayout();
+            txtTimKiem = new ToolStripTextBox();
+            btnTimKiem = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            btnNhap = new ToolStripButton();
+            btnXuat = new ToolStripButton();
+            panel1 = new Panel();
+            cboDanhMuc = new ReaLTaiizor.Controls.AloneComboBox();
+            label1 = new Label();
+            dataGridView = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            TenDanhMuc = new DataGridViewTextBoxColumn();
+            TenThucUong = new DataGridViewTextBoxColumn();
             toolStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridView
-            // 
-            dataGridView.AllowUserToAddRows = false;
-            dataGridView.AllowUserToDeleteRows = false;
-            dataGridView.AllowUserToResizeRows = false;
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView.BackgroundColor = Color.FromArgb(255, 255, 255);
-            dataGridView.BorderStyle = BorderStyle.None;
-            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenDanhMuc });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView.Dock = DockStyle.Fill;
-            dataGridView.EnableHeadersVisualStyles = false;
-            dataGridView.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridView.GridColor = Color.White;
-            dataGridView.Location = new Point(0, 0);
-            dataGridView.Name = "dataGridView";
-            dataGridView.ReadOnly = true;
-            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView.Size = new Size(443, 450);
-            dataGridView.TabIndex = 3;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "ID";
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // TenDanhMuc
-            // 
-            TenDanhMuc.DataPropertyName = "TenDanhMuc";
-            TenDanhMuc.HeaderText = "Tên danh mục";
-            TenDanhMuc.Name = "TenDanhMuc";
-            TenDanhMuc.ReadOnly = true;
-            // 
-            // btnXuat
-            // 
-            btnXuat.Image = (Image)resources.GetObject("btnXuat.Image");
-            btnXuat.ImageTransparentColor = Color.Magenta;
-            btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(60, 22);
-            btnXuat.Text = "Xuất...";
-            btnXuat.Click += btnXuat_Click;
-            // 
-            // btnNhap
-            // 
-            btnNhap.Image = (Image)resources.GetObject("btnNhap.Image");
-            btnNhap.ImageTransparentColor = Color.Magenta;
-            btnNhap.Name = "btnNhap";
-            btnNhap.Size = new Size(65, 22);
-            btnNhap.Text = "Nhập...";
-            btnNhap.Click += btnNhap_Click;
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 25);
-            // 
-            // btnTimKiem
-            // 
-            btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
-            btnTimKiem.ImageTransparentColor = Color.Magenta;
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(47, 22);
-            btnTimKiem.Text = "Tìm";
-            // 
-            // txtTimKiem
-            // 
-            txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.Size = new Size(100, 25);
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnThoat);
-            panel1.Controls.Add(btnHuyBo);
-            panel1.Controls.Add(btnLuu);
-            panel1.Controls.Add(btnXoa);
-            panel1.Controls.Add(btnSua);
-            panel1.Controls.Add(btnThem);
-            panel1.Controls.Add(txtTenDanhMuc);
-            panel1.Controls.Add(lblTenDanhMuc);
-            panel1.Controls.Add(txtID);
-            panel1.Controls.Add(lblID);
-            panel1.Controls.Add(toolStrip1);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(443, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(357, 450);
-            panel1.TabIndex = 2;
             // 
             // btnThoat
             // 
@@ -185,7 +67,7 @@
             btnThoat.Image = null;
             btnThoat.ImageAlign = ContentAlignment.MiddleLeft;
             btnThoat.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnThoat.Location = new Point(184, 337);
+            btnThoat.Location = new Point(184, 389);
             btnThoat.Name = "btnThoat";
             btnThoat.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnThoat.PressedColor = Color.FromArgb(165, 37, 37);
@@ -204,7 +86,7 @@
             btnHuyBo.Image = null;
             btnHuyBo.ImageAlign = ContentAlignment.MiddleLeft;
             btnHuyBo.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnHuyBo.Location = new Point(28, 337);
+            btnHuyBo.Location = new Point(28, 389);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnHuyBo.PressedColor = Color.FromArgb(165, 37, 37);
@@ -224,7 +106,7 @@
             btnLuu.Image = null;
             btnLuu.ImageAlign = ContentAlignment.MiddleLeft;
             btnLuu.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnLuu.Location = new Point(184, 268);
+            btnLuu.Location = new Point(184, 320);
             btnLuu.Name = "btnLuu";
             btnLuu.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnLuu.PressedColor = Color.FromArgb(165, 37, 37);
@@ -244,7 +126,7 @@
             btnXoa.Image = null;
             btnXoa.ImageAlign = ContentAlignment.MiddleLeft;
             btnXoa.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnXoa.Location = new Point(28, 268);
+            btnXoa.Location = new Point(28, 320);
             btnXoa.Name = "btnXoa";
             btnXoa.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnXoa.PressedColor = Color.FromArgb(165, 37, 37);
@@ -264,7 +146,7 @@
             btnSua.Image = null;
             btnSua.ImageAlign = ContentAlignment.MiddleLeft;
             btnSua.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnSua.Location = new Point(184, 201);
+            btnSua.Location = new Point(184, 253);
             btnSua.Name = "btnSua";
             btnSua.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnSua.PressedColor = Color.FromArgb(165, 37, 37);
@@ -284,7 +166,7 @@
             btnThem.Image = null;
             btnThem.ImageAlign = ContentAlignment.MiddleLeft;
             btnThem.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnThem.Location = new Point(28, 201);
+            btnThem.Location = new Point(28, 253);
             btnThem.Name = "btnThem";
             btnThem.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnThem.PressedColor = Color.FromArgb(165, 37, 37);
@@ -294,31 +176,31 @@
             btnThem.TextAlignment = StringAlignment.Center;
             btnThem.Click += btnThem_Click;
             // 
-            // txtTenDanhMuc
+            // txtTenThucUong
             // 
-            txtTenDanhMuc.BackColor = Color.Transparent;
-            txtTenDanhMuc.EnabledCalc = true;
-            txtTenDanhMuc.Font = new Font("Segoe UI", 12F);
-            txtTenDanhMuc.ForeColor = Color.FromArgb(124, 133, 142);
-            txtTenDanhMuc.Location = new Point(28, 140);
-            txtTenDanhMuc.MaxLength = 32767;
-            txtTenDanhMuc.MultiLine = false;
-            txtTenDanhMuc.Name = "txtTenDanhMuc";
-            txtTenDanhMuc.ReadOnly = false;
-            txtTenDanhMuc.Size = new Size(286, 42);
-            txtTenDanhMuc.TabIndex = 2;
-            txtTenDanhMuc.TextAlign = HorizontalAlignment.Left;
-            txtTenDanhMuc.UseSystemPasswordChar = false;
+            txtTenThucUong.BackColor = Color.Transparent;
+            txtTenThucUong.EnabledCalc = true;
+            txtTenThucUong.Font = new Font("Segoe UI", 12F);
+            txtTenThucUong.ForeColor = Color.FromArgb(124, 133, 142);
+            txtTenThucUong.Location = new Point(28, 194);
+            txtTenThucUong.MaxLength = 32767;
+            txtTenThucUong.MultiLine = false;
+            txtTenThucUong.Name = "txtTenThucUong";
+            txtTenThucUong.ReadOnly = false;
+            txtTenThucUong.Size = new Size(286, 42);
+            txtTenThucUong.TabIndex = 2;
+            txtTenThucUong.TextAlign = HorizontalAlignment.Left;
+            txtTenThucUong.UseSystemPasswordChar = false;
             // 
             // lblTenDanhMuc
             // 
             lblTenDanhMuc.AutoSize = true;
             lblTenDanhMuc.Font = new Font("Segoe UI", 12F);
-            lblTenDanhMuc.Location = new Point(28, 116);
+            lblTenDanhMuc.Location = new Point(28, 170);
             lblTenDanhMuc.Name = "lblTenDanhMuc";
-            lblTenDanhMuc.Size = new Size(109, 21);
+            lblTenDanhMuc.Size = new Size(110, 21);
             lblTenDanhMuc.TabIndex = 1;
-            lblTenDanhMuc.Text = "Tên danh mục:";
+            lblTenDanhMuc.Text = "Tên thức uống:";
             // 
             // txtID
             // 
@@ -356,44 +238,166 @@
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
-            // frmDanhMuc
+            // txtTimKiem
+            // 
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.Size = new Size(100, 25);
+            // 
+            // btnTimKiem
+            // 
+            btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
+            btnTimKiem.ImageTransparentColor = Color.Magenta;
+            btnTimKiem.Name = "btnTimKiem";
+            btnTimKiem.Size = new Size(47, 22);
+            btnTimKiem.Text = "Tìm";
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
+            // 
+            // btnNhap
+            // 
+            btnNhap.Image = (Image)resources.GetObject("btnNhap.Image");
+            btnNhap.ImageTransparentColor = Color.Magenta;
+            btnNhap.Name = "btnNhap";
+            btnNhap.Size = new Size(65, 22);
+            btnNhap.Text = "Nhập...";
+            btnNhap.Click += btnNhap_Click;
+            // 
+            // btnXuat
+            // 
+            btnXuat.Image = (Image)resources.GetObject("btnXuat.Image");
+            btnXuat.ImageTransparentColor = Color.Magenta;
+            btnXuat.Name = "btnXuat";
+            btnXuat.Size = new Size(60, 22);
+            btnXuat.Text = "Xuất...";
+            btnXuat.Click += btnXuat_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(cboDanhMuc);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(btnThoat);
+            panel1.Controls.Add(btnHuyBo);
+            panel1.Controls.Add(btnLuu);
+            panel1.Controls.Add(btnXoa);
+            panel1.Controls.Add(btnSua);
+            panel1.Controls.Add(btnThem);
+            panel1.Controls.Add(txtTenThucUong);
+            panel1.Controls.Add(lblTenDanhMuc);
+            panel1.Controls.Add(txtID);
+            panel1.Controls.Add(lblID);
+            panel1.Controls.Add(toolStrip1);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(443, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(357, 450);
+            panel1.TabIndex = 4;
+            // 
+            // cboDanhMuc
+            // 
+            cboDanhMuc.DrawMode = DrawMode.OwnerDrawFixed;
+            cboDanhMuc.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboDanhMuc.EnabledCalc = true;
+            cboDanhMuc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboDanhMuc.FormattingEnabled = true;
+            cboDanhMuc.ItemHeight = 20;
+            cboDanhMuc.Location = new Point(143, 120);
+            cboDanhMuc.Name = "cboDanhMuc";
+            cboDanhMuc.Size = new Size(171, 26);
+            cboDanhMuc.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(28, 123);
+            label1.Name = "label1";
+            label1.Size = new Size(109, 21);
+            label1.TabIndex = 4;
+            label1.Text = "Tên danh mục:";
+            // 
+            // dataGridView
+            // 
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenDanhMuc, TenThucUong });
+            dataGridView.Dock = DockStyle.Fill;
+            dataGridView.Location = new Point(0, 0);
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.Size = new Size(443, 450);
+            dataGridView.TabIndex = 5;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ID";
+            ID.FillWeight = 76.1421356F;
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // TenDanhMuc
+            // 
+            TenDanhMuc.DataPropertyName = "TenDanhMuc";
+            TenDanhMuc.FillWeight = 111.928932F;
+            TenDanhMuc.HeaderText = "Tên danh mục";
+            TenDanhMuc.Name = "TenDanhMuc";
+            TenDanhMuc.ReadOnly = true;
+            // 
+            // TenThucUong
+            // 
+            TenThucUong.DataPropertyName = "TenThucUong";
+            TenThucUong.FillWeight = 111.928932F;
+            TenThucUong.HeaderText = "Tên thức uống";
+            TenThucUong.Name = "TenThucUong";
+            TenThucUong.ReadOnly = true;
+            // 
+            // frmThucUong
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView);
             Controls.Add(panel1);
-            Name = "frmDanhMuc";
-            Text = "frmDanhMuc";
-            Load += frmDanhMuc_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Name = "frmThucUong";
+            Text = "frmThucUong";
+            Load += frmThucUong_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private ReaLTaiizor.Controls.PoisonDataGridView dataGridView;
-        private ToolStripButton btnXuat;
-        private ToolStripButton btnNhap;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton btnTimKiem;
-        private ToolStripTextBox txtTimKiem;
-        private Panel panel1;
+
         private ReaLTaiizor.Controls.Button btnThoat;
         private ReaLTaiizor.Controls.Button btnHuyBo;
         private ReaLTaiizor.Controls.Button btnLuu;
         private ReaLTaiizor.Controls.Button btnXoa;
         private ReaLTaiizor.Controls.Button btnSua;
         private ReaLTaiizor.Controls.Button btnThem;
-        private ReaLTaiizor.Controls.AloneTextBox txtTenDanhMuc;
+        private ReaLTaiizor.Controls.AloneTextBox txtTenThucUong;
         private Label lblTenDanhMuc;
         private ReaLTaiizor.Controls.AloneTextBox txtID;
         private Label lblID;
         private ToolStrip toolStrip1;
+        private ToolStripTextBox txtTimKiem;
+        private ToolStripButton btnTimKiem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton btnNhap;
+        private ToolStripButton btnXuat;
+        private Panel panel1;
+        private ReaLTaiizor.Controls.AloneComboBox cboDanhMuc;
+        private Label label1;
+        private DataGridView dataGridView;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn TenDanhMuc;
+        private DataGridViewTextBoxColumn TenThucUong;
     }
 }

@@ -236,6 +236,7 @@
             btnXuat.Name = "btnXuat";
             btnXuat.Size = new Size(60, 22);
             btnXuat.Text = "Xuất...";
+            btnXuat.Click += btnXuat_Click;
             // 
             // btnNhap
             // 
@@ -244,6 +245,7 @@
             btnNhap.Name = "btnNhap";
             btnNhap.Size = new Size(65, 22);
             btnNhap.Text = "Nhập...";
+            btnNhap.Click += btnNhap_Click;
             // 
             // lblID
             // 

@@ -1,4 +1,5 @@
 using QuanLyQuanCaPhe.Forms;
+using QuanLyQuanCaPhe.Reports;
 
 namespace QuanLyQuanCaPhe
 {
@@ -12,7 +13,7 @@ namespace QuanLyQuanCaPhe
         {
          
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmChucNang());
+            Application.Run(new frmThongKeDoanhThu());
         }
     }
 }

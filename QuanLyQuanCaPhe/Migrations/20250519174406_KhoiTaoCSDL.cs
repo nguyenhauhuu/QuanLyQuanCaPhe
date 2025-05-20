@@ -18,8 +18,7 @@ namespace QuanLyQuanCaPhe.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TenBan = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IDHoaDon = table.Column<int>(type: "int", nullable: false)
+                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -121,7 +120,6 @@ namespace QuanLyQuanCaPhe.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TaiKhoanID = table.Column<int>(type: "int", nullable: false),
-                    KhachHangID = table.Column<int>(type: "int", nullable: true),
                     BanID = table.Column<int>(type: "int", nullable: false),
                     NgayLap = table.Column<DateTime>(type: "datetime2", nullable: false),
                     GiamGia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -130,6 +128,12 @@ namespace QuanLyQuanCaPhe.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_HoaDon", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_HoaDon_Ban_BanID",
+                        column: x => x.BanID,
+                        principalTable: "Ban",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_HoaDon_TaiKhoan_TaiKhoanID",
                         column: x => x.TaiKhoanID,
@@ -145,11 +149,10 @@ namespace QuanLyQuanCaPhe.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     HoaDonID = table.Column<int>(type: "int", nullable: false),
-                    SanPhamID = table.Column<int>(type: "int", nullable: false),
+                    ThucUongID = table.Column<int>(type: "int", nullable: false),
                     SoLuong = table.Column<int>(type: "int", nullable: false),
                     Gia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    GhiChu = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ThucUongID = table.Column<int>(type: "int", nullable: false)
+                    GhiChu = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -167,6 +170,11 @@ namespace QuanLyQuanCaPhe.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HoaDon_BanID",
+                table: "HoaDon",
+                column: "BanID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HoaDon_TaiKhoanID",
@@ -198,9 +206,6 @@ namespace QuanLyQuanCaPhe.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Ban");
-
-            migrationBuilder.DropTable(
                 name: "HoaDonChiTiet");
 
             migrationBuilder.DropTable(
@@ -214,6 +219,9 @@ namespace QuanLyQuanCaPhe.Migrations
 
             migrationBuilder.DropTable(
                 name: "NguyenLieu");
+
+            migrationBuilder.DropTable(
+                name: "Ban");
 
             migrationBuilder.DropTable(
                 name: "TaiKhoan");
