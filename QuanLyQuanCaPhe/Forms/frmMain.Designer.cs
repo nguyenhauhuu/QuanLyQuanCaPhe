@@ -103,6 +103,7 @@
             mnuDoanhThu.Name = "mnuDoanhThu";
             mnuDoanhThu.Size = new Size(180, 22);
             mnuDoanhThu.Text = "Doanh Thu";
+            mnuDoanhThu.Click += mnuDoanhThu_Click;
             // 
             // mnuChiTieu
             // 

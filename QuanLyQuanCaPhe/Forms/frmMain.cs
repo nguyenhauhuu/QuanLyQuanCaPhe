@@ -3,6 +3,7 @@ using QuanLyQuanCaPhe.Data;
 
 using System.Diagnostics;
 using BC = BCrypt.Net.BCrypt;
+using QuanLyQuanCaPhe.Reports;
 
 
 namespace QuanLyQuanCaPhe
@@ -16,7 +17,8 @@ namespace QuanLyQuanCaPhe
         frmBan? ban = null;
         frmDanhMuc? danhMuc = null;
         frmThucUong? thucUong = null;
-        frmTaiKhoan taiKhoan = null;
+        frmTaiKhoan? taiKhoan = null;
+        frmThongKeDoanhThu? thongKeDoanhThu = null;
         string tenHienThi = "";
         int idTaiKhoan;
 
@@ -62,7 +64,7 @@ namespace QuanLyQuanCaPhe
                     {
                         if (BC.Verify(matKhau, taikhoan.MatKhau))
                         {
-                            idTaiKhoan=taikhoan.ID;
+                            idTaiKhoan = taikhoan.ID;
                             tenHienThi = taikhoan.TenDayDu;
 
                             if (taikhoan.QuyenTruyCap == "admin")
@@ -201,6 +203,18 @@ namespace QuanLyQuanCaPhe
             }
             else
                 taiKhoan.Activate();
+        }
+
+        private void mnuDoanhThu_Click(object sender, EventArgs e)
+        {
+            if (thongKeDoanhThu == null || thongKeDoanhThu.IsDisposed)
+            {
+                thongKeDoanhThu = new frmThongKeDoanhThu();
+                thongKeDoanhThu.MdiParent = this;
+                thongKeDoanhThu.Show();
+            }
+            else
+                thongKeDoanhThu.Activate();
         }
     }
 }
