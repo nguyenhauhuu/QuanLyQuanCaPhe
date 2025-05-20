@@ -14,7 +14,7 @@ namespace QuanLyQuanCaPhe.Data
         public virtual ThucUong ThucUong { get; set; } = null!;
 
         [NotMapped]
-        public class DanhSachHoaDon_ChiTiet
+        public class DanhSachHoaDonChiTiet
         {
             public int ID { get; set; }
             public int HoaDonID { get; set; }

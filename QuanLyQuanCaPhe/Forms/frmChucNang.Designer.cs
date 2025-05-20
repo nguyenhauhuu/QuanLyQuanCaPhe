@@ -148,6 +148,7 @@
             btnTinhTien.TabIndex = 12;
             btnTinhTien.Text = "TÍNH TIỀN";
             btnTinhTien.TextAlignment = StringAlignment.Center;
+            btnTinhTien.Click += btnTinhTien_Click;
             // 
             // txtTongTien
             // 

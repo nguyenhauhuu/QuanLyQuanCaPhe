@@ -1,6 +1,8 @@
-﻿namespace QuanLyQuanCaPhe.Reports
+﻿using System.Windows.Forms;
+
+namespace QuanLyQuanCaPhe.Reports
 {
-    partial class frmThongKeDoanhThu
+    partial class frmInHoaDon
     {
         /// <summary>
         /// Required designer variable.
@@ -40,21 +42,20 @@
             reportViewer.Size = new Size(800, 450);
             reportViewer.TabIndex = 0;
             // 
-            // frmThongKeDoanhThu
+            // frmInHoaDon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(reportViewer);
-            Name = "frmThongKeDoanhThu";
-            Text = "frmThongKeDoanhThu";
-            Load += frmThongKeDoanhThu_Load;
+            Name = "frmInHoaDon";
+            Text = "frmInHoaDon";
+            Load += frmInHoaDon_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
-
     }
 }

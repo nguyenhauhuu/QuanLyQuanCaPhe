@@ -1,4 +1,6 @@
-﻿using QuanLyQuanCaPhe.Data;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using QuanLyQuanCaPhe.Data;
+using QuanLyQuanCaPhe.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +19,7 @@ namespace QuanLyQuanCaPhe.Forms
         QLQCPContext context = new QLQCPContext(); // Khởi tạo biến ngữ cảnh CSDL 
         int idBan;
         int idHD;
-        BindingList<DanhSachHoaDon_ChiTiet> hoaDonChiTiet = new BindingList<DanhSachHoaDon_ChiTiet>();
+        BindingList<DanhSachHoaDonChiTiet> hoaDonChiTiet = new BindingList<DanhSachHoaDonChiTiet>();
         public frmChucNang()
         {
             InitializeComponent();
@@ -115,7 +117,7 @@ namespace QuanLyQuanCaPhe.Forms
             if (idHD != 0)
             {
                 idHD = hd!.ID;
-                var ct = context.HoaDonChiTiet.Where(r => r.HoaDonID == idHD).Select(r => new DanhSachHoaDon_ChiTiet
+                var ct = context.HoaDonChiTiet.Where(r => r.HoaDonID == idHD).Select(r => new DanhSachHoaDonChiTiet
                 {
                     ID = r.ID,
                     HoaDonID = r.HoaDonID,
@@ -126,11 +128,11 @@ namespace QuanLyQuanCaPhe.Forms
                     Gia = r.Gia,
                     ThanhTien = r.SoLuong * r.Gia
                 }).ToList();
-                hoaDonChiTiet = new BindingList<DanhSachHoaDon_ChiTiet>(ct);
+                hoaDonChiTiet = new BindingList<DanhSachHoaDonChiTiet>(ct);
             }
             else
             {
-                hoaDonChiTiet = new BindingList<DanhSachHoaDon_ChiTiet>();
+                hoaDonChiTiet = new BindingList<DanhSachHoaDonChiTiet>();
             }
             numGiamGia.Value = Convert.ToDecimal(hd?.GiamGia);
             txtTongTien.Text = hd?.TongCong.ToString("C", new System.Globalization.CultureInfo("vi-VN"));
@@ -173,7 +175,7 @@ namespace QuanLyQuanCaPhe.Forms
             else // Nếu chưa có sản phẩm thì thêm vào 
             {
                 // Nếu chưa có sản phẩm nào 
-                DanhSachHoaDon_ChiTiet ct = new DanhSachHoaDon_ChiTiet
+                DanhSachHoaDonChiTiet ct = new DanhSachHoaDonChiTiet
                 {
                     ID = 0,
                     HoaDonID = idHD,
@@ -323,6 +325,19 @@ namespace QuanLyQuanCaPhe.Forms
         private void btnGopBan_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTinhTien_Click(object sender, EventArgs e)
+        {
+            if (idHD != 0)
+            {
+                frmXacNhanThanhToan xacNhanThanhToan = new frmXacNhanThanhToan(idHD);
+                xacNhanThanhToan.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một bàn để tính tiền.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
