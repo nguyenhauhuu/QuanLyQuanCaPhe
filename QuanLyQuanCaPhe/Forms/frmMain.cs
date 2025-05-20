@@ -12,8 +12,13 @@ namespace QuanLyQuanCaPhe
 
         QLQCPContext context = new QLQCPContext();
         frmDangNhap? dangNhap = null;
-        frmChucNang chucNang = null;
+        frmChucNang? chucNang = null;
+        frmBan? ban = null;
+        frmDanhMuc? danhMuc = null;
+        frmThucUong? thucUong = null;
+        frmTaiKhoan taiKhoan = null;
         string tenHienThi = "";
+        int idTaiKhoan;
 
         public frmMain()
         {
@@ -57,6 +62,7 @@ namespace QuanLyQuanCaPhe
                     {
                         if (BC.Verify(matKhau, taikhoan.MatKhau))
                         {
+                            idTaiKhoan=taikhoan.ID;
                             tenHienThi = taikhoan.TenDayDu;
 
                             if (taikhoan.QuyenTruyCap == "admin")
@@ -140,13 +146,61 @@ namespace QuanLyQuanCaPhe
         {
             if (chucNang == null || chucNang.IsDisposed)
             {
-                chucNang = new frmChucNang();
+                chucNang = new frmChucNang(idTaiKhoan);
                 chucNang.MdiParent = this;
                 chucNang.Show();
             }
             else
                 chucNang.Activate();
 
+        }
+
+        private void mnuBan_Click(object sender, EventArgs e)
+        {
+            if (ban == null || ban.IsDisposed)
+            {
+                ban = new frmBan();
+                ban.MdiParent = this;
+                ban.Show();
+            }
+            else
+                ban.Activate();
+        }
+
+        private void mnuDanhMuc_Click(object sender, EventArgs e)
+        {
+            if (danhMuc == null || danhMuc.IsDisposed)
+            {
+                danhMuc = new frmDanhMuc();
+                danhMuc.MdiParent = this;
+                danhMuc.Show();
+            }
+            else
+                danhMuc.Activate();
+        }
+
+        private void mnuThucUong_Click(object sender, EventArgs e)
+        {
+            if (thucUong == null || thucUong.IsDisposed)
+            {
+                thucUong = new frmThucUong();
+                thucUong.MdiParent = this;
+                thucUong.Show();
+            }
+            else
+                thucUong.Activate();
+        }
+
+        private void mnuTaiKhoan_Click(object sender, EventArgs e)
+        {
+            if (taiKhoan == null || taiKhoan.IsDisposed)
+            {
+                taiKhoan = new frmTaiKhoan();
+                taiKhoan.MdiParent = this;
+                taiKhoan.Show();
+            }
+            else
+                taiKhoan.Activate();
         }
     }
 }

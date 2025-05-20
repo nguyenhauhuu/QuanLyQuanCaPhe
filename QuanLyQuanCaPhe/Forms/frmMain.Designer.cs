@@ -101,71 +101,75 @@
             // mnuDoanhThu
             // 
             mnuDoanhThu.Name = "mnuDoanhThu";
-            mnuDoanhThu.Size = new Size(138, 22);
+            mnuDoanhThu.Size = new Size(180, 22);
             mnuDoanhThu.Text = "Doanh Thu";
             // 
             // mnuChiTieu
             // 
             mnuChiTieu.Name = "mnuChiTieu";
-            mnuChiTieu.Size = new Size(138, 22);
+            mnuChiTieu.Size = new Size(180, 22);
             mnuChiTieu.Text = "Chi tiêu";
             // 
             // mnuThongKe
             // 
             mnuThongKe.Name = "mnuThongKe";
-            mnuThongKe.Size = new Size(138, 22);
+            mnuThongKe.Size = new Size(180, 22);
             mnuThongKe.Text = "Thống kê";
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(135, 6);
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // mnuBan
             // 
             mnuBan.Name = "mnuBan";
-            mnuBan.Size = new Size(138, 22);
+            mnuBan.Size = new Size(180, 22);
             mnuBan.Text = "Bàn";
+            mnuBan.Click += mnuBan_Click;
             // 
             // mnuDanhMuc
             // 
             mnuDanhMuc.Name = "mnuDanhMuc";
-            mnuDanhMuc.Size = new Size(138, 22);
+            mnuDanhMuc.Size = new Size(180, 22);
             mnuDanhMuc.Text = "Danh mục";
+            mnuDanhMuc.Click += mnuDanhMuc_Click;
             // 
             // mnuThucUong
             // 
             mnuThucUong.Name = "mnuThucUong";
-            mnuThucUong.Size = new Size(138, 22);
+            mnuThucUong.Size = new Size(180, 22);
             mnuThucUong.Text = "Thức uống";
+            mnuThucUong.Click += mnuThucUong_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(135, 6);
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // mnuNguyenLieu
             // 
             mnuNguyenLieu.Name = "mnuNguyenLieu";
-            mnuNguyenLieu.Size = new Size(138, 22);
+            mnuNguyenLieu.Size = new Size(180, 22);
             mnuNguyenLieu.Text = "Nguyên liệu";
             // 
             // mnuKho
             // 
             mnuKho.Name = "mnuKho";
-            mnuKho.Size = new Size(138, 22);
+            mnuKho.Size = new Size(180, 22);
             mnuKho.Text = "Kho";
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(135, 6);
+            toolStripSeparator3.Size = new Size(177, 6);
             // 
             // mnuTaiKhoan
             // 
             mnuTaiKhoan.Name = "mnuTaiKhoan";
-            mnuTaiKhoan.Size = new Size(138, 22);
+            mnuTaiKhoan.Size = new Size(180, 22);
             mnuTaiKhoan.Text = "Tài khoản";
+            mnuTaiKhoan.Click += mnuTaiKhoan_Click;
             // 
             // mnuChucNang
             // 

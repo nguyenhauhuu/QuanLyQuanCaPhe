@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static QuanLyQuanCaPhe.Data.HoaDonChiTiet;
+using static QuanLyQuanCaPhe.Reports.QLQCPDataset;
 
 namespace QuanLyQuanCaPhe.Forms
 {
@@ -19,15 +20,16 @@ namespace QuanLyQuanCaPhe.Forms
         QLQCPContext context = new QLQCPContext(); // Khởi tạo biến ngữ cảnh CSDL 
         int idBan;
         int idHD;
+        int idTaiKhoan;
         BindingList<DanhSachHoaDonChiTiet> hoaDonChiTiet = new BindingList<DanhSachHoaDonChiTiet>();
         public frmChucNang()
         {
             InitializeComponent();
         }
-        public frmChucNang(int maBan)
+        public frmChucNang(int maTaiKhoan)
         {
             InitializeComponent();
-            idBan = maBan;
+            idTaiKhoan = maTaiKhoan;
         }
 
         public void BatTatChucNang()
@@ -199,7 +201,7 @@ namespace QuanLyQuanCaPhe.Forms
                 if (hd != null)
                 {
                     // Cập nhật lại hóa đơn 
-                    hd.TaiKhoanID = Convert.ToInt32(1);
+                    hd.TaiKhoanID = idTaiKhoan;
                     hd.BanID = idBan;
                     context.HoaDon.Update(hd);
 
@@ -226,7 +228,7 @@ namespace QuanLyQuanCaPhe.Forms
             {
                 // Thêm hóa đơn 
                 HoaDon hd = new HoaDon();
-                hd.TaiKhoanID = Convert.ToInt32(1);
+                hd.TaiKhoanID = idTaiKhoan;
                 hd.NgayLap = DateTime.Now;
                 decimal tongTien = 0;
                 foreach (var ct in hoaDonChiTiet)
@@ -292,6 +294,13 @@ namespace QuanLyQuanCaPhe.Forms
             int idBanDich = Convert.ToInt32(cboBanDich.SelectedValue);
             string tenBanDau = cboBanDau.Text;
             string tenBanDich = cboBanDich.Text;
+            var banDau = context.Ban.Find(idBanDau);
+            var banDich = context.Ban.Find(idBanDich);
+            if (banDich?.TrangThai!="Trống")
+            {
+                MessageBox.Show($"{tenBanDich} đã có người!");
+                return;
+            }
 
             DialogResult result = MessageBox.Show(
                                     $"Bạn có chắc muốn chuyển {tenBanDau} sang {tenBanDich} không?",
@@ -306,8 +315,6 @@ namespace QuanLyQuanCaPhe.Forms
                 hd!.BanID = idBanDich;
                 context.HoaDon.Update(hd);
 
-                var banDau = context.Ban.Find(idBanDau);
-                var banDich = context.Ban.Find(idBanDich);
 
                 banDau!.TrangThai = "Trống";
                 context.Ban.Update(banDau);
@@ -324,7 +331,36 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnGopBan_Click(object sender, EventArgs e)
         {
+            int idBanDau = Convert.ToInt32(cboBanDau.SelectedValue);
+            int idBanDich = Convert.ToInt32(cboBanDich.SelectedValue);
 
+            var hoaDonDau = context.HoaDon.FirstOrDefault(h => h.BanID == idBanDau && h.TrangThaiThanhToan == 0);
+            var hoaDonDich = context.HoaDon.FirstOrDefault(h => h.BanID == idBanDich && h.TrangThaiThanhToan == 0);
+
+            if (hoaDonDau == null || hoaDonDich == null)
+            {
+                MessageBox.Show("Không tìm thấy hóa đơn cho bàn đầu hoặc bàn đích");
+                return;
+            }
+
+            var chiTietHoaDonDau = context.HoaDonChiTiet.Where(r => r.HoaDonID == hoaDonDau.ID).ToList();
+
+            foreach (var ct in chiTietHoaDonDau)
+            {
+                ct.HoaDonID = hoaDonDich.ID;
+            }
+
+            var banDau = context.Ban.FirstOrDefault(b => b.ID == idBanDau);
+            if (banDau != null)
+            {
+                banDau.TrangThai = "Trống";  
+            }
+
+            context.HoaDon.Remove(hoaDonDau);
+
+            context.SaveChanges();
+
+            MessageBox.Show("Gộp bàn thành công!");
         }
 
         private void btnTinhTien_Click(object sender, EventArgs e)
