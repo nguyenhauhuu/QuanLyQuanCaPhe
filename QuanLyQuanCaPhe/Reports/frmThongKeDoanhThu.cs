@@ -36,7 +36,7 @@ namespace QuanLyQuanCaPhe.Reports
                 TenBan = r.Ban.TenBan,
                 r.NgayLap,
                 r.GiamGia,
-                r.TongCong, 
+                r.TongCong,
                 r.TrangThaiThanhToan
             });
 
@@ -74,6 +74,61 @@ namespace QuanLyQuanCaPhe.Reports
             reportViewer.ZoomPercent = 100;
 
             reportViewer.RefreshReport();
+        }
+
+        private void frmThongKeDoanhThu_Load(object sender, EventArgs e)
+        {
+            var danhSachHoaDon = context.HoaDon.Select(r => new
+            {
+                r.ID,
+                r.TaiKhoanID,
+                TenDayDu = r.TaiKhoan.TenDayDu,
+                r.BanID,
+                TenBan = r.Ban.TenBan,
+                r.NgayLap,
+                r.GiamGia,
+                r.TongCong,
+                r.TrangThaiThanhToan
+            }).ToList();
+
+
+            danhSachHoaDonDataTable.Clear();
+            foreach (var r in danhSachHoaDon)
+            {
+                danhSachHoaDonDataTable.AddDanhSachHoaDonRow(
+                    r.ID,
+                    r.TaiKhoanID,
+                    r.TenDayDu,
+                    r.BanID,
+                    r.TenBan,
+                    r.NgayLap,
+                    r.GiamGia,
+                    r.TongCong,
+                    r.TrangThaiThanhToan
+                    );
+            }
+
+            ReportDataSource reportDataSource = new ReportDataSource();
+            reportDataSource.Name = "DanhSachHoaDon";
+            reportDataSource.Value = danhSachHoaDonDataTable;
+
+            reportViewer.LocalReport.DataSources.Clear();
+            reportViewer.LocalReport.DataSources.Add(reportDataSource);
+            reportViewer.LocalReport.ReportPath = Path.Combine(reportsFolder, "rptThongKeDoanhThu.rdlc");
+
+            ReportParameter reportParameter = new ReportParameter("MoTaKetQuaHienThi", "(Tất cả thời gian)");
+            reportViewer.LocalReport.SetParameters(reportParameter);
+
+            reportViewer.SetDisplayMode(DisplayMode.PrintLayout);
+            reportViewer.ZoomMode = ZoomMode.Percent;
+            reportViewer.ZoomPercent = 100;
+
+            reportViewer.RefreshReport();
+        }
+
+        private void btnHienTatCa_Click(object sender, EventArgs e)
+        {
+            frmThongKeDoanhThu_Load(sender, e);
         }
     }
 }

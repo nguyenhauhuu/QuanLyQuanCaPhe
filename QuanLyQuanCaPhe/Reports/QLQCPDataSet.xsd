@@ -40,6 +40,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ThongKeThucUong" msprop:Generator_RowEvHandlerName="ThongKeThucUongRowChangeEventHandler" msprop:Generator_RowDeletedName="ThongKeThucUongRowDeleted" msprop:Generator_RowDeletingName="ThongKeThucUongRowDeleting" msprop:Generator_RowEvArgName="ThongKeThucUongRowChangeEvent" msprop:Generator_TablePropName="ThongKeThucUong" msprop:Generator_RowChangedName="ThongKeThucUongRowChanged" msprop:Generator_RowChangingName="ThongKeThucUongRowChanging" msprop:Generator_TableClassName="ThongKeThucUongDataTable" msprop:Generator_RowClassName="ThongKeThucUongRow" msprop:Generator_TableVarName="tableThongKeThucUong" msprop:Generator_UserTableName="ThongKeThucUong">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TenThucUong" msprop:Generator_ColumnPropNameInRow="TenThucUong" msprop:Generator_ColumnPropNameInTable="TenThucUongColumn" msprop:Generator_ColumnVarNameInTable="columnTenThucUong" msprop:Generator_UserColumnName="TenThucUong" type="xs:string" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1">

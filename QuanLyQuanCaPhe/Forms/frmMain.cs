@@ -19,6 +19,7 @@ namespace QuanLyQuanCaPhe
         frmThucUong? thucUong = null;
         frmTaiKhoan? taiKhoan = null;
         frmThongKeDoanhThu? thongKeDoanhThu = null;
+        frmThongKeThucUong? thongKeThucUong = null;
         string tenHienThi = "";
         int idTaiKhoan;
 
@@ -215,6 +216,18 @@ namespace QuanLyQuanCaPhe
             }
             else
                 thongKeDoanhThu.Activate();
+        }
+
+        private void mnuThongKeThucUong_Click(object sender, EventArgs e)
+        {
+            if (thongKeThucUong == null || thongKeThucUong.IsDisposed)
+            {
+                thongKeThucUong = new frmThongKeThucUong();
+                thongKeThucUong.MdiParent = this;
+                thongKeThucUong.Show();
+            }
+            else
+                thongKeThucUong.Activate();
         }
     }
 }

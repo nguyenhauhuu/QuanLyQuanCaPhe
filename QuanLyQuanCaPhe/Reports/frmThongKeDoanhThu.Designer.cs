@@ -64,6 +64,7 @@
             btnHienTatCa.TabIndex = 2;
             btnHienTatCa.Text = "Hiện tất cả";
             btnHienTatCa.UseVisualStyleBackColor = false;
+            btnHienTatCa.Click += btnHienTatCa_Click;
             // 
             // btnLocKetQua
             // 
@@ -132,6 +133,7 @@
             Controls.Add(panel1);
             Name = "frmThongKeDoanhThu";
             Text = "frmThongKeDoanhThu";
+            Load += frmThongKeDoanhThu_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

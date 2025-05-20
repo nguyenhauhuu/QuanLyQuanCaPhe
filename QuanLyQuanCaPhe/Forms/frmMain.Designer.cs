@@ -50,6 +50,7 @@
             mnuThongTinTaiKhoan = new ToolStripMenuItem();
             mnuDangNhap = new ToolStripMenuItem();
             mnuDangXuat = new ToolStripMenuItem();
+            mnuThongKeThucUong = new ToolStripMenuItem();
             statusStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -113,6 +114,7 @@
             // 
             // mnuThongKe
             // 
+            mnuThongKe.DropDownItems.AddRange(new ToolStripItem[] { mnuThongKeThucUong });
             mnuThongKe.Name = "mnuThongKe";
             mnuThongKe.Size = new Size(180, 22);
             mnuThongKe.Text = "Thống kê";
@@ -199,6 +201,13 @@
             mnuDangXuat.Text = "Đăng xuất";
             mnuDangXuat.Click += mnuDangXuat_Click;
             // 
+            // mnuThongKeThucUong
+            // 
+            mnuThongKeThucUong.Name = "mnuThongKeThucUong";
+            mnuThongKeThucUong.Size = new Size(181, 22);
+            mnuThongKeThucUong.Text = "Thống kê thức uống";
+            mnuThongKeThucUong.Click += mnuThongKeThucUong_Click;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -242,5 +251,6 @@
         private ToolStripMenuItem mnuThongTinTaiKhoan;
         private ToolStripMenuItem mnuDangNhap;
         private ToolStripMenuItem mnuDangXuat;
+        private ToolStripMenuItem mnuThongKeThucUong;
     }
 }
