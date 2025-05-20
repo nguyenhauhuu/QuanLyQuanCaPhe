@@ -13,7 +13,7 @@ namespace QuanLyQuanCaPhe
         {
          
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmChucNang());
+            Application.Run(new frmMain());
         }
     }
 }

@@ -97,6 +97,7 @@
             txtMatKhau.TabIndex = 6;
             txtMatKhau.TextAlign = HorizontalAlignment.Left;
             txtMatKhau.UseSystemPasswordChar = false;
+            txtMatKhau.KeyDown += txtMatKhau_KeyDown;
             // 
             // btnDangNhap
             // 
@@ -116,6 +117,7 @@
             btnDangNhap.TabIndex = 8;
             btnDangNhap.Text = "Đăng nhập";
             btnDangNhap.TextAlignment = StringAlignment.Center;
+            btnDangNhap.Click += btnDangNhap_Click;
             // 
             // btnHuyBo
             // 
@@ -135,6 +137,7 @@
             btnHuyBo.TabIndex = 8;
             btnHuyBo.Text = "Hủy bỏ";
             btnHuyBo.TextAlignment = StringAlignment.Center;
+            btnHuyBo.Click += btnHuyBo_Click;
             // 
             // frmDangNhap
             // 
@@ -159,8 +162,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private ReaLTaiizor.Controls.AloneTextBox txtTenDangNhap;
-        private ReaLTaiizor.Controls.AloneTextBox txtMatKhau;
+        public ReaLTaiizor.Controls.AloneTextBox txtTenDangNhap;
+        public ReaLTaiizor.Controls.AloneTextBox txtMatKhau;
         private ReaLTaiizor.Controls.Button btnDangNhap;
         private ReaLTaiizor.Controls.Button btnHuyBo;
     }
