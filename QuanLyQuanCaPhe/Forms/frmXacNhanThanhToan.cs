@@ -83,6 +83,7 @@ namespace QuanLyQuanCaPhe.Forms
                 context.Ban.Update(ban);
                 context.SaveChanges();
             }
+
             this.Close();
         }
     }

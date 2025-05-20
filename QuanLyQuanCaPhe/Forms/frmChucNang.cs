@@ -65,7 +65,7 @@ namespace QuanLyQuanCaPhe.Forms
             cboBanDich.ValueMember = "ID";
             cboBanDich.DisplayMember = "TenBan";
         }
-        private void LoadDanhSachBan()
+        public void LoadDanhSachBan()
         {
             flpDanhSachBan.Controls.Clear();
 
