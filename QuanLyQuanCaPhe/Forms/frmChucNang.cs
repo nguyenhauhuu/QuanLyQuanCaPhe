@@ -112,7 +112,7 @@ namespace QuanLyQuanCaPhe.Forms
             string tenBan = ban?.TenBan ?? "";
             groupBox.Text = tenBan;
 
-            var hd = context.HoaDon.FirstOrDefault(h => h.BanID == idBan);
+            var hd = context.HoaDon.FirstOrDefault(h => h.BanID == idBan && h.TrangThaiThanhToan == 0);
             idHD = hd?.ID ?? 0;
             if (idHD != 0)
             {

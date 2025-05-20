@@ -83,6 +83,9 @@ namespace QuanLyQuanCaPhe.Migrations
                     b.Property<decimal>("TongCong")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("TrangThaiThanhToan")
+                        .HasColumnType("int");
+
                     b.HasKey("ID");
 
                     b.HasIndex("BanID");

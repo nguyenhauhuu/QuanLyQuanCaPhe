@@ -30,7 +30,7 @@ namespace QuanLyQuanCaPhe.Forms
         private void frmXacNhanThanhToan_Load(object sender, EventArgs e)
         {
             var hoaDon = context.HoaDon.Find(id);
-            txtID.Text = hoaDon.ID.ToString();
+            txtID.Text = hoaDon!.ID.ToString();
             tongCong = hoaDon.TongCong;
             txtThanhTien.Text = tongCong.ToString("#,##0") + " đ";
         }
@@ -63,10 +63,25 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            if(cboHinhThucThanhToan.Text !="Tiền mặt")
+            var hoaDon = context.HoaDon.Find(id);
+            var ban = context.Ban.Find(hoaDon!.BanID);
+            if (cboHinhThucThanhToan.Text !="Tiền mặt")
             {
                 frmInHoaDon inHoaDon = new frmInHoaDon(id);
                 inHoaDon.ShowDialog();
+                hoaDon!.TrangThaiThanhToan = 2;
+                ban!.TrangThai = "Trống";
+                context.HoaDon.Update(hoaDon);
+                context.Ban.Update(ban);
+                context.SaveChanges();
+            }
+            else if (cboHinhThucThanhToan.Text == "Tiền mặt")
+            {
+                hoaDon!.TrangThaiThanhToan = 1;
+                ban!.TrangThai = "Trống";
+                context.HoaDon.Update(hoaDon);
+                context.Ban.Update(ban);
+                context.SaveChanges();
             }
             this.Close();
         }

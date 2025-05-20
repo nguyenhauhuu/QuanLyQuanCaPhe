@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace QuanLyQuanCaPhe.Migrations
 {
     /// <inheritdoc />
-    public partial class KhoiTaoCSDL : Migration
+    public partial class AddMigrationKhoiTaoCSDL : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -123,7 +123,8 @@ namespace QuanLyQuanCaPhe.Migrations
                     BanID = table.Column<int>(type: "int", nullable: false),
                     NgayLap = table.Column<DateTime>(type: "datetime2", nullable: false),
                     GiamGia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TongCong = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    TongCong = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TrangThaiThanhToan = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

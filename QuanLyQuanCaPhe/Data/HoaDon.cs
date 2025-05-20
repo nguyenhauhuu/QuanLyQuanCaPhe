@@ -8,6 +8,7 @@
         public DateTime NgayLap { get; set; }
         public decimal GiamGia { get; set; } = 0;
         public decimal TongCong { get; set; }
+        public int TrangThaiThanhToan { get; set; } = 0; // 0=ChuaThanhToan; 1=ThanhToanBangTienMat; 2=ThanhToanBangChuyenKhoanNganHang
         public virtual Ban Ban { get; set; } = null!;
         public virtual TaiKhoan TaiKhoan { get; set; } = null!;
         public virtual ICollection<HoaDonChiTiet> HoaDonChiTiet { get; } = new List<HoaDonChiTiet>();
