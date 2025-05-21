@@ -155,7 +155,6 @@ namespace QuanLyQuanCaPhe
             }
             else
                 chucNang.Activate();
-
         }
 
         private void mnuBan_Click(object sender, EventArgs e)

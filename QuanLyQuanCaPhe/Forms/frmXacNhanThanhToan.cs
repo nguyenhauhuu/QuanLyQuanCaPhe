@@ -65,7 +65,7 @@ namespace QuanLyQuanCaPhe.Forms
         {
             var hoaDon = context.HoaDon.Find(id);
             var ban = context.Ban.Find(hoaDon!.BanID);
-            if (cboHinhThucThanhToan.Text !="Tiền mặt")
+            if (cboHinhThucThanhToan.Text == "Chuyển khoản")
             {
                 frmInHoaDon inHoaDon = new frmInHoaDon(id);
                 inHoaDon.ShowDialog();
@@ -74,17 +74,29 @@ namespace QuanLyQuanCaPhe.Forms
                 context.HoaDon.Update(hoaDon);
                 context.Ban.Update(ban);
                 context.SaveChanges();
+                this.Close();
+
             }
             else if (cboHinhThucThanhToan.Text == "Tiền mặt")
             {
+                if (Convert.ToInt32(txtTienKhachDua.Text) < Convert.ToInt32(txtThanhTien.Text))
+                {
+                    MessageBox.Show("Tiền khách đưa bé hơn tiền cần thanh toán");
+                    return;
+                }
                 hoaDon!.TrangThaiThanhToan = 1;
                 ban!.TrangThai = "Trống";
                 context.HoaDon.Update(hoaDon);
                 context.Ban.Update(ban);
                 context.SaveChanges();
+                this.Close();
             }
-
-            this.Close();
+            else
+            {
+                MessageBox.Show("Vui lòng chọn phương thức thanh toán");
+            }
         }
+
+       
     }
 }

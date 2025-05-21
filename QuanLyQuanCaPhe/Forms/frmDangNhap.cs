@@ -34,7 +34,5 @@ namespace QuanLyQuanCaPhe.Forms
                 btnDangNhap_Click(sender, e);
             }
         }
-
-        
     }
 }
