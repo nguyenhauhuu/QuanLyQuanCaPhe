@@ -131,7 +131,7 @@
             txtID.Enabled = false;
             txtID.Location = new Point(185, 40);
             txtID.Name = "txtID";
-            txtID.Size = new Size(164, 23);
+            txtID.Size = new Size(176, 23);
             txtID.TabIndex = 5;
             // 
             // txtThanhTien
@@ -139,7 +139,7 @@
             txtThanhTien.Enabled = false;
             txtThanhTien.Location = new Point(185, 98);
             txtThanhTien.Name = "txtThanhTien";
-            txtThanhTien.Size = new Size(164, 23);
+            txtThanhTien.Size = new Size(176, 23);
             txtThanhTien.TabIndex = 6;
             // 
             // txtTienKhachDua
@@ -147,7 +147,7 @@
             txtTienKhachDua.Enabled = false;
             txtTienKhachDua.Location = new Point(185, 215);
             txtTienKhachDua.Name = "txtTienKhachDua";
-            txtTienKhachDua.Size = new Size(164, 23);
+            txtTienKhachDua.Size = new Size(176, 23);
             txtTienKhachDua.TabIndex = 6;
             txtTienKhachDua.TextChanged += txtTienKhachDua_TextChanged;
             // 
@@ -156,7 +156,7 @@
             txtTienThua.Enabled = false;
             txtTienThua.Location = new Point(185, 268);
             txtTienThua.Name = "txtTienThua";
-            txtTienThua.Size = new Size(164, 23);
+            txtTienThua.Size = new Size(176, 23);
             txtTienThua.TabIndex = 6;
             // 
             // frmXacNhanThanhToan
