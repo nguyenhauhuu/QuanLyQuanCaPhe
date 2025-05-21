@@ -92,7 +92,7 @@ namespace QuanLyQuanCaPhe.Forms
 
                 btn.Tag = ban.ID;
 
-                btn.Click += BtnBan_Click;
+                btn.Click += BtnBan_Click!;
 
                 flpDanhSachBan.Controls.Add(btn);
             }
@@ -100,16 +100,17 @@ namespace QuanLyQuanCaPhe.Forms
         }
         private void BtnBan_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            Button? btn = sender as Button;
             idBan = (int)btn!.Tag!;
             frmChucNang_Load(sender, e);
         }
 
         private void frmChucNang_Load(object sender, EventArgs e)
         {
-            LoadDanhSachBan();
+            dgvDanhSachThucUong.AutoGenerateColumns = false;
             LayDanhMucVaoComboBox();
             LayBanVaoComboBox();
+            LoadDanhSachBan();
             var ban = context.Ban.Find(idBan);
             string tenBan = ban?.TenBan ?? "";
             groupBox.Text = tenBan;
@@ -267,7 +268,7 @@ namespace QuanLyQuanCaPhe.Forms
 
             }
             MessageBox.Show("Đã lưu thành công!", "Hoàn tất", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            LoadDanhSachBan();
+            frmChucNang_Load(sender,e);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -290,13 +291,18 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnChuyenBan_Click(object sender, EventArgs e)
         {
-            int idBanDau = Convert.ToInt32(cboBanDau.SelectedValue);
+            int? idBanDau = Convert.ToInt32(cboBanDau.SelectedValue);
             int idBanDich = Convert.ToInt32(cboBanDich.SelectedValue);
             string tenBanDau = cboBanDau.Text;
             string tenBanDich = cboBanDich.Text;
             var banDau = context.Ban.Find(idBanDau);
             var banDich = context.Ban.Find(idBanDich);
-            if (banDich?.TrangThai!="Trống")
+            if (idBanDau!=null)
+            {
+                MessageBox.Show($"Vui lòng chọn bàn cần chuyển");
+                return;
+            }
+            else if (banDich?.TrangThai!="Trống")
             {
                 MessageBox.Show($"{tenBanDich} đã có người!");
                 return;
@@ -369,6 +375,7 @@ namespace QuanLyQuanCaPhe.Forms
             {
                 frmXacNhanThanhToan xacNhanThanhToan = new frmXacNhanThanhToan(idHD);
                 xacNhanThanhToan.ShowDialog();
+                frmChucNang_Load(sender, e);
             }
             else
             {

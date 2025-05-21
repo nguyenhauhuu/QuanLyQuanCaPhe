@@ -132,7 +132,9 @@
             Controls.Add(reportViewer);
             Controls.Add(panel1);
             Name = "frmThongKeDoanhThu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmThongKeDoanhThu";
+            WindowState = FormWindowState.Maximized;
             Load += frmThongKeDoanhThu_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

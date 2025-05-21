@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBan));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnThoat = new ReaLTaiizor.Controls.Button();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
@@ -82,11 +82,11 @@
             btnThoat.BackColor = Color.Transparent;
             btnThoat.BorderColor = Color.FromArgb(32, 34, 37);
             btnThoat.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnThoat.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnThoat.EnteredColor = Color.Black;
             btnThoat.Font = new Font("Microsoft Sans Serif", 12F);
             btnThoat.Image = null;
             btnThoat.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThoat.InactiveColor = Color.FromArgb(32, 34, 37);
+            btnThoat.InactiveColor = Color.Gray;
             btnThoat.Location = new Point(184, 337);
             btnThoat.Name = "btnThoat";
             btnThoat.PressedBorderColor = Color.FromArgb(165, 37, 37);
@@ -101,11 +101,11 @@
             btnHuyBo.BackColor = Color.Transparent;
             btnHuyBo.BorderColor = Color.FromArgb(32, 34, 37);
             btnHuyBo.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnHuyBo.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnHuyBo.EnteredColor = Color.Black;
             btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F);
             btnHuyBo.Image = null;
             btnHuyBo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHuyBo.InactiveColor = Color.FromArgb(32, 34, 37);
+            btnHuyBo.InactiveColor = Color.Gray;
             btnHuyBo.Location = new Point(28, 337);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.PressedBorderColor = Color.FromArgb(165, 37, 37);
@@ -121,11 +121,11 @@
             btnLuu.BackColor = Color.Transparent;
             btnLuu.BorderColor = Color.FromArgb(32, 34, 37);
             btnLuu.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnLuu.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnLuu.EnteredColor = Color.Black;
             btnLuu.Font = new Font("Microsoft Sans Serif", 12F);
             btnLuu.Image = null;
             btnLuu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLuu.InactiveColor = Color.FromArgb(32, 34, 37);
+            btnLuu.InactiveColor = Color.Gray;
             btnLuu.Location = new Point(184, 268);
             btnLuu.Name = "btnLuu";
             btnLuu.PressedBorderColor = Color.FromArgb(165, 37, 37);
@@ -141,11 +141,11 @@
             btnXoa.BackColor = Color.Transparent;
             btnXoa.BorderColor = Color.FromArgb(32, 34, 37);
             btnXoa.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnXoa.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnXoa.EnteredColor = Color.Black;
             btnXoa.Font = new Font("Microsoft Sans Serif", 12F);
             btnXoa.Image = null;
             btnXoa.ImageAlign = ContentAlignment.MiddleLeft;
-            btnXoa.InactiveColor = Color.FromArgb(32, 34, 37);
+            btnXoa.InactiveColor = Color.Gray;
             btnXoa.Location = new Point(28, 268);
             btnXoa.Name = "btnXoa";
             btnXoa.PressedBorderColor = Color.FromArgb(165, 37, 37);
@@ -161,11 +161,11 @@
             btnSua.BackColor = Color.Transparent;
             btnSua.BorderColor = Color.FromArgb(32, 34, 37);
             btnSua.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnSua.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnSua.EnteredColor = Color.Black;
             btnSua.Font = new Font("Microsoft Sans Serif", 12F);
             btnSua.Image = null;
             btnSua.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSua.InactiveColor = Color.FromArgb(32, 34, 37);
+            btnSua.InactiveColor = Color.Gray;
             btnSua.Location = new Point(184, 201);
             btnSua.Name = "btnSua";
             btnSua.PressedBorderColor = Color.FromArgb(165, 37, 37);
@@ -181,11 +181,11 @@
             btnThem.BackColor = Color.Transparent;
             btnThem.BorderColor = Color.FromArgb(32, 34, 37);
             btnThem.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnThem.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnThem.EnteredColor = Color.Black;
             btnThem.Font = new Font("Microsoft Sans Serif", 12F);
             btnThem.Image = null;
             btnThem.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThem.InactiveColor = Color.FromArgb(32, 34, 37);
+            btnThem.InactiveColor = Color.Gray;
             btnThem.Location = new Point(28, 201);
             btnThem.Name = "btnThem";
             btnThem.PressedBorderColor = Color.FromArgb(165, 37, 37);
@@ -283,6 +283,7 @@
             btnNhap.Name = "btnNhap";
             btnNhap.Size = new Size(65, 22);
             btnNhap.Text = "Nhập...";
+            btnNhap.Click += btnNhap_Click;
             // 
             // btnXuat
             // 
@@ -291,6 +292,7 @@
             btnXuat.Name = "btnXuat";
             btnXuat.Size = new Size(60, 22);
             btnXuat.Text = "Xuất...";
+            btnXuat.Click += btnXuat_Click;
             // 
             // dataGridView
             // 
@@ -302,24 +304,24 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenBan, TrangThai });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -328,14 +330,14 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(463, 450);
@@ -367,10 +369,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            ControlBox = false;
             Controls.Add(dataGridView);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmBan";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmBan";
+            WindowState = FormWindowState.Maximized;
             Load += frmBan_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

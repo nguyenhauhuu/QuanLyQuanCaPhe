@@ -64,10 +64,9 @@ namespace QuanLyQuanCaPhe.Reports
                 string bankId = "VCB";
                 string accountNo = "1032306591";
                 string template = "compact"; // hoặc default
-                decimal amount = 100000;
                 string addInfo = "ThanhToan";
 
-                string url = $"https://img.vietqr.io/image/{bankId}-{accountNo}-{template}.png?amount={amount}&addInfo={Uri.EscapeDataString(addInfo)}";
+                string url = $"https://img.vietqr.io/image/{bankId}-{accountNo}-{template}.png?amount={hoaDon.TongCong}";
 
                 using HttpClient client = new HttpClient();
                 byte[] qrImage = await client.GetByteArrayAsync(url);

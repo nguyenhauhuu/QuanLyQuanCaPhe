@@ -41,6 +41,9 @@
             cboBanDich = new ReaLTaiizor.Controls.AloneComboBox();
             cboBanDau = new ReaLTaiizor.Controls.AloneComboBox();
             dgvDanhSachThucUong = new DataGridView();
+            TenThucUong = new DataGridViewTextBoxColumn();
+            SoLuong = new DataGridViewTextBoxColumn();
+            ThanhTien = new DataGridViewTextBoxColumn();
             label4 = new Label();
             btnLuu = new ReaLTaiizor.Controls.Button();
             btnXoa = new ReaLTaiizor.Controls.Button();
@@ -260,11 +263,39 @@
             // 
             // dgvDanhSachThucUong
             // 
+            dgvDanhSachThucUong.AllowUserToAddRows = false;
+            dgvDanhSachThucUong.AllowUserToDeleteRows = false;
+            dgvDanhSachThucUong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDanhSachThucUong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDanhSachThucUong.Columns.AddRange(new DataGridViewColumn[] { TenThucUong, SoLuong, ThanhTien });
+            dgvDanhSachThucUong.GridColor = SystemColors.InactiveBorder;
             dgvDanhSachThucUong.Location = new Point(14, 162);
+            dgvDanhSachThucUong.MultiSelect = false;
             dgvDanhSachThucUong.Name = "dgvDanhSachThucUong";
+            dgvDanhSachThucUong.ReadOnly = true;
             dgvDanhSachThucUong.Size = new Size(444, 212);
             dgvDanhSachThucUong.TabIndex = 6;
+            // 
+            // TenThucUong
+            // 
+            TenThucUong.DataPropertyName = "TenThucUong";
+            TenThucUong.HeaderText = "Tên thức uống";
+            TenThucUong.Name = "TenThucUong";
+            TenThucUong.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            SoLuong.DataPropertyName = "SoLuong";
+            SoLuong.HeaderText = "Số lượng";
+            SoLuong.Name = "SoLuong";
+            SoLuong.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            ThanhTien.DataPropertyName = "ThanhTien";
+            ThanhTien.HeaderText = "Đơn giá";
+            ThanhTien.Name = "ThanhTien";
+            ThanhTien.ReadOnly = true;
             // 
             // label4
             // 
@@ -411,8 +442,11 @@
             ClientSize = new Size(800, 450);
             Controls.Add(flpDanhSachBan);
             Controls.Add(groupBox);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmChucNang";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmChucNang";
+            WindowState = FormWindowState.Maximized;
             Load += frmChucNang_Load;
             groupBox.ResumeLayout(false);
             groupBox.PerformLayout();
@@ -447,5 +481,8 @@
         private ReaLTaiizor.Controls.HopeNumeric numSoLuong;
         private Label label7;
         private ReaLTaiizor.Controls.Button btnLuu;
+        private DataGridViewTextBoxColumn TenThucUong;
+        private DataGridViewTextBoxColumn SoLuong;
+        private DataGridViewTextBoxColumn ThanhTien;
     }
 }

@@ -210,6 +210,7 @@
             Controls.Add(txtID);
             Controls.Add(label1);
             Name = "frmXacNhanThanhToan";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmXacNhanThanhToan";
             Load += frmXacNhanThanhToan_Load;
             ResumeLayout(false);

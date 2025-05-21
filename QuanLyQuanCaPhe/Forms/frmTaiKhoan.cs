@@ -92,13 +92,18 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            TaiKhoan taiKhoan = new TaiKhoan();
             if (string.IsNullOrWhiteSpace(txtTenDangNhap.Text))
-                MessageBox.Show("Vui lòng nhập tên loại sản phẩm?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập tên đăng nhập?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (string.IsNullOrWhiteSpace(txtTenDayDu.Text))
+                MessageBox.Show("Vui lòng nhập tên đầy đủ?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (context.TaiKhoan.FirstOrDefault(r => r.TenDangNhap == txtTenDangNhap.Text) != null)
+                MessageBox.Show("Tên tài khoản đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 if (id == 0)
                 {
-                    TaiKhoan taiKhoan = new TaiKhoan();
+                    taiKhoan = new TaiKhoan();
                     taiKhoan.TenDangNhap = txtTenDangNhap.Text;
                     taiKhoan.TenDayDu = txtTenDayDu.Text;
                     taiKhoan.QuyenTruyCap = cboQuyenTruyCap.Text;
@@ -109,7 +114,7 @@ namespace QuanLyQuanCaPhe.Forms
                 }
                 else
                 {
-                    TaiKhoan taiKhoan = context.TaiKhoan.Find(id)!;
+                    taiKhoan = context.TaiKhoan.Find(id)!;
                     if (taiKhoan != null)
                     {
                         taiKhoan.TenDangNhap = txtTenDangNhap.Text;

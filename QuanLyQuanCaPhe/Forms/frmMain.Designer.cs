@@ -37,6 +37,7 @@
             mnuDoanhThu = new ToolStripMenuItem();
             mnuChiTieu = new ToolStripMenuItem();
             mnuThongKe = new ToolStripMenuItem();
+            mnuThongKeThucUong = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             mnuBan = new ToolStripMenuItem();
             mnuDanhMuc = new ToolStripMenuItem();
@@ -50,7 +51,6 @@
             mnuThongTinTaiKhoan = new ToolStripMenuItem();
             mnuDangNhap = new ToolStripMenuItem();
             mnuDangXuat = new ToolStripMenuItem();
-            mnuThongKeThucUong = new ToolStripMenuItem();
             statusStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -102,75 +102,82 @@
             // mnuDoanhThu
             // 
             mnuDoanhThu.Name = "mnuDoanhThu";
-            mnuDoanhThu.Size = new Size(180, 22);
+            mnuDoanhThu.Size = new Size(138, 22);
             mnuDoanhThu.Text = "Doanh Thu";
             mnuDoanhThu.Click += mnuDoanhThu_Click;
             // 
             // mnuChiTieu
             // 
             mnuChiTieu.Name = "mnuChiTieu";
-            mnuChiTieu.Size = new Size(180, 22);
+            mnuChiTieu.Size = new Size(138, 22);
             mnuChiTieu.Text = "Chi tiêu";
             // 
             // mnuThongKe
             // 
             mnuThongKe.DropDownItems.AddRange(new ToolStripItem[] { mnuThongKeThucUong });
             mnuThongKe.Name = "mnuThongKe";
-            mnuThongKe.Size = new Size(180, 22);
+            mnuThongKe.Size = new Size(138, 22);
             mnuThongKe.Text = "Thống kê";
+            // 
+            // mnuThongKeThucUong
+            // 
+            mnuThongKeThucUong.Name = "mnuThongKeThucUong";
+            mnuThongKeThucUong.Size = new Size(181, 22);
+            mnuThongKeThucUong.Text = "Thống kê thức uống";
+            mnuThongKeThucUong.Click += mnuThongKeThucUong_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(135, 6);
             // 
             // mnuBan
             // 
             mnuBan.Name = "mnuBan";
-            mnuBan.Size = new Size(180, 22);
+            mnuBan.Size = new Size(138, 22);
             mnuBan.Text = "Bàn";
             mnuBan.Click += mnuBan_Click;
             // 
             // mnuDanhMuc
             // 
             mnuDanhMuc.Name = "mnuDanhMuc";
-            mnuDanhMuc.Size = new Size(180, 22);
+            mnuDanhMuc.Size = new Size(138, 22);
             mnuDanhMuc.Text = "Danh mục";
             mnuDanhMuc.Click += mnuDanhMuc_Click;
             // 
             // mnuThucUong
             // 
             mnuThucUong.Name = "mnuThucUong";
-            mnuThucUong.Size = new Size(180, 22);
+            mnuThucUong.Size = new Size(138, 22);
             mnuThucUong.Text = "Thức uống";
             mnuThucUong.Click += mnuThucUong_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(135, 6);
             // 
             // mnuNguyenLieu
             // 
             mnuNguyenLieu.Name = "mnuNguyenLieu";
-            mnuNguyenLieu.Size = new Size(180, 22);
+            mnuNguyenLieu.Size = new Size(138, 22);
             mnuNguyenLieu.Text = "Nguyên liệu";
             // 
             // mnuKho
             // 
             mnuKho.Name = "mnuKho";
-            mnuKho.Size = new Size(180, 22);
+            mnuKho.Size = new Size(138, 22);
             mnuKho.Text = "Kho";
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(177, 6);
+            toolStripSeparator3.Size = new Size(135, 6);
             // 
             // mnuTaiKhoan
             // 
             mnuTaiKhoan.Name = "mnuTaiKhoan";
-            mnuTaiKhoan.Size = new Size(180, 22);
+            mnuTaiKhoan.Size = new Size(138, 22);
             mnuTaiKhoan.Text = "Tài khoản";
             mnuTaiKhoan.Click += mnuTaiKhoan_Click;
             // 
@@ -201,23 +208,20 @@
             mnuDangXuat.Text = "Đăng xuất";
             mnuDangXuat.Click += mnuDangXuat_Click;
             // 
-            // mnuThongKeThucUong
-            // 
-            mnuThongKeThucUong.Name = "mnuThongKeThucUong";
-            mnuThongKeThucUong.Size = new Size(181, 22);
-            mnuThongKeThucUong.Text = "Thống kê thức uống";
-            mnuThongKeThucUong.Click += mnuThongKeThucUong_Click;
-            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             Name = "frmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            TransparencyKey = Color.White;
+            WindowState = FormWindowState.Maximized;
             Load += frmMain_Load;
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();

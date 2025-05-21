@@ -49,7 +49,9 @@ namespace QuanLyQuanCaPhe.Reports
             ClientSize = new Size(800, 450);
             Controls.Add(reportViewer);
             Name = "frmInHoaDon";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmInHoaDon";
+            WindowState = FormWindowState.Maximized;
             Load += frmInHoaDon_Load;
             ResumeLayout(false);
         }
