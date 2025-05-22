@@ -27,6 +27,7 @@ namespace QuanLyQuanCaPhe.Forms
             cboDanhMuc.DataSource = danhMuc;
             cboDanhMuc.ValueMember = "ID";
             cboDanhMuc.DisplayMember = "TenDanhMuc";
+
         }
 
         private void BatTatChucNang(bool giaTri)
@@ -97,6 +98,7 @@ namespace QuanLyQuanCaPhe.Forms
                     ThucUong thucUong = new ThucUong();
                     thucUong.TenThucUong = txtTenThucUong.Text;
                     thucUong.DanhMucID = Convert.ToInt32(cboDanhMuc.SelectedValue);
+                    thucUong.DonGia = Convert.ToInt32(numGia.Value);
                     context.ThucUong.Add(thucUong);
 
                     context.SaveChanges();
@@ -108,6 +110,7 @@ namespace QuanLyQuanCaPhe.Forms
                     {
                         thucUong.DanhMucID = Convert.ToInt32(cboDanhMuc.SelectedValue);
                         thucUong.TenThucUong = txtTenThucUong.Text;
+                        thucUong.DonGia = Convert.ToInt32(numGia.Value);
                         context.ThucUong.Update(thucUong);
 
                         context.SaveChanges();

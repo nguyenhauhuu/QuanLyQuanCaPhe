@@ -52,9 +52,12 @@
             ID = new DataGridViewTextBoxColumn();
             TenDanhMuc = new DataGridViewTextBoxColumn();
             TenThucUong = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            numGia = new NumericUpDown();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numGia).BeginInit();
             SuspendLayout();
             // 
             // btnThoat
@@ -67,7 +70,7 @@
             btnThoat.Image = null;
             btnThoat.ImageAlign = ContentAlignment.MiddleLeft;
             btnThoat.InactiveColor = Color.Gray;
-            btnThoat.Location = new Point(184, 389);
+            btnThoat.Location = new Point(184, 388);
             btnThoat.Name = "btnThoat";
             btnThoat.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnThoat.PressedColor = Color.FromArgb(165, 37, 37);
@@ -86,7 +89,7 @@
             btnHuyBo.Image = null;
             btnHuyBo.ImageAlign = ContentAlignment.MiddleLeft;
             btnHuyBo.InactiveColor = Color.Gray;
-            btnHuyBo.Location = new Point(28, 389);
+            btnHuyBo.Location = new Point(28, 388);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnHuyBo.PressedColor = Color.FromArgb(165, 37, 37);
@@ -106,7 +109,7 @@
             btnLuu.Image = null;
             btnLuu.ImageAlign = ContentAlignment.MiddleLeft;
             btnLuu.InactiveColor = Color.Gray;
-            btnLuu.Location = new Point(184, 320);
+            btnLuu.Location = new Point(184, 330);
             btnLuu.Name = "btnLuu";
             btnLuu.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnLuu.PressedColor = Color.FromArgb(165, 37, 37);
@@ -126,7 +129,7 @@
             btnXoa.Image = null;
             btnXoa.ImageAlign = ContentAlignment.MiddleLeft;
             btnXoa.InactiveColor = Color.Gray;
-            btnXoa.Location = new Point(28, 320);
+            btnXoa.Location = new Point(28, 330);
             btnXoa.Name = "btnXoa";
             btnXoa.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnXoa.PressedColor = Color.FromArgb(165, 37, 37);
@@ -146,7 +149,7 @@
             btnSua.Image = null;
             btnSua.ImageAlign = ContentAlignment.MiddleLeft;
             btnSua.InactiveColor = Color.Gray;
-            btnSua.Location = new Point(184, 253);
+            btnSua.Location = new Point(184, 272);
             btnSua.Name = "btnSua";
             btnSua.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnSua.PressedColor = Color.FromArgb(165, 37, 37);
@@ -166,7 +169,7 @@
             btnThem.Image = null;
             btnThem.ImageAlign = ContentAlignment.MiddleLeft;
             btnThem.InactiveColor = Color.Gray;
-            btnThem.Location = new Point(28, 253);
+            btnThem.Location = new Point(28, 272);
             btnThem.Name = "btnThem";
             btnThem.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnThem.PressedColor = Color.FromArgb(165, 37, 37);
@@ -182,12 +185,12 @@
             txtTenThucUong.EnabledCalc = true;
             txtTenThucUong.Font = new Font("Segoe UI", 12F);
             txtTenThucUong.ForeColor = Color.FromArgb(124, 133, 142);
-            txtTenThucUong.Location = new Point(28, 194);
+            txtTenThucUong.Location = new Point(28, 182);
             txtTenThucUong.MaxLength = 32767;
             txtTenThucUong.MultiLine = false;
             txtTenThucUong.Name = "txtTenThucUong";
             txtTenThucUong.ReadOnly = false;
-            txtTenThucUong.Size = new Size(286, 42);
+            txtTenThucUong.Size = new Size(286, 30);
             txtTenThucUong.TabIndex = 2;
             txtTenThucUong.TextAlign = HorizontalAlignment.Left;
             txtTenThucUong.UseSystemPasswordChar = false;
@@ -196,7 +199,7 @@
             // 
             lblTenDanhMuc.AutoSize = true;
             lblTenDanhMuc.Font = new Font("Segoe UI", 12F);
-            lblTenDanhMuc.Location = new Point(28, 170);
+            lblTenDanhMuc.Location = new Point(28, 158);
             lblTenDanhMuc.Name = "lblTenDanhMuc";
             lblTenDanhMuc.Size = new Size(110, 21);
             lblTenDanhMuc.TabIndex = 1;
@@ -209,12 +212,12 @@
             txtID.EnabledCalc = false;
             txtID.Font = new Font("Segoe UI", 12F);
             txtID.ForeColor = Color.FromArgb(124, 133, 142);
-            txtID.Location = new Point(28, 69);
+            txtID.Location = new Point(28, 60);
             txtID.MaxLength = 32767;
             txtID.MultiLine = false;
             txtID.Name = "txtID";
             txtID.ReadOnly = false;
-            txtID.Size = new Size(286, 42);
+            txtID.Size = new Size(286, 30);
             txtID.TabIndex = 2;
             txtID.TextAlign = HorizontalAlignment.Left;
             txtID.UseSystemPasswordChar = false;
@@ -223,7 +226,7 @@
             // 
             lblID.AutoSize = true;
             lblID.Font = new Font("Segoe UI", 12F);
-            lblID.Location = new Point(28, 45);
+            lblID.Location = new Point(28, 36);
             lblID.Name = "lblID";
             lblID.Size = new Size(28, 21);
             lblID.TabIndex = 1;
@@ -276,6 +279,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(numGia);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(cboDanhMuc);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnThoat);
@@ -303,16 +308,16 @@
             cboDanhMuc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboDanhMuc.FormattingEnabled = true;
             cboDanhMuc.ItemHeight = 20;
-            cboDanhMuc.Location = new Point(143, 120);
+            cboDanhMuc.Location = new Point(28, 129);
             cboDanhMuc.Name = "cboDanhMuc";
-            cboDanhMuc.Size = new Size(171, 26);
+            cboDanhMuc.Size = new Size(286, 26);
             cboDanhMuc.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(28, 123);
+            label1.Location = new Point(28, 108);
             label1.Name = "label1";
             label1.Size = new Size(109, 21);
             label1.TabIndex = 4;
@@ -356,6 +361,23 @@
             TenThucUong.Name = "TenThucUong";
             TenThucUong.ReadOnly = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(27, 215);
+            label2.Name = "label2";
+            label2.Size = new Size(36, 21);
+            label2.TabIndex = 6;
+            label2.Text = "Giá:";
+            // 
+            // numGia
+            // 
+            numGia.Location = new Point(28, 239);
+            numGia.Name = "numGia";
+            numGia.Size = new Size(286, 23);
+            numGia.TabIndex = 7;
+            // 
             // frmThucUong
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -363,7 +385,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmThucUong";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmThucUong";
@@ -373,6 +395,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numGia).EndInit();
             ResumeLayout(false);
         }
 
@@ -401,5 +424,7 @@
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn TenDanhMuc;
         private DataGridViewTextBoxColumn TenThucUong;
+        private NumericUpDown numGia;
+        private Label label2;
     }
 }

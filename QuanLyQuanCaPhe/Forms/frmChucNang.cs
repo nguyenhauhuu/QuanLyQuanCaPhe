@@ -98,6 +98,7 @@ namespace QuanLyQuanCaPhe.Forms
             }
 
         }
+       
         private void BtnBan_Click(object sender, EventArgs e)
         {
             Button? btn = sender as Button;
@@ -223,6 +224,7 @@ namespace QuanLyQuanCaPhe.Forms
                     }
 
                     context.SaveChanges();
+
                 }
             }
             else // Thêm mới 

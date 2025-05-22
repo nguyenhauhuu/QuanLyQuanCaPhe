@@ -492,7 +492,7 @@
             ClientSize = new Size(923, 450);
             Controls.Add(dataGridView);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmTaiKhoan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmTaiKhoan";

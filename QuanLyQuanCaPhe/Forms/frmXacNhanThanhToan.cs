@@ -49,7 +49,7 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void txtTienKhachDua_TextChanged(object sender, EventArgs e)
         {
-            decimal tienThua = tongCong - Convert.ToDecimal(txtTienKhachDua.Text);
+            decimal tienThua =  Convert.ToDecimal(txtTienKhachDua.Text) - tongCong;
             txtTienThua.Text = tienThua.ToString("#,##0") + " đ";
         }
 

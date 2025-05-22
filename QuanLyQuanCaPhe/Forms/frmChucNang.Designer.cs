@@ -442,7 +442,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(flpDanhSachBan);
             Controls.Add(groupBox);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmChucNang";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmChucNang";

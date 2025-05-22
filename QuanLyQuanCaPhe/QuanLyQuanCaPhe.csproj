@@ -20,6 +20,8 @@
     <PackageReference Include="QRCoder" Version="1.6.0" />
     <PackageReference Include="ReaLTaiizor" Version="3.8.1.2" />
     <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.26" />
+	  <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
+
   </ItemGroup>
 
   <ItemGroup>
