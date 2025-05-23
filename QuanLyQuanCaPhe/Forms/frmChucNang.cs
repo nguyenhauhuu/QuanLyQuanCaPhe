@@ -352,14 +352,35 @@ namespace QuanLyQuanCaPhe.Forms
                 MessageBox.Show("Không tìm thấy hóa đơn cho bàn đầu hoặc bàn đích");
                 return;
             }
+            if (idBanDau == idBanDich)
+            {
+                MessageBox.Show("Bàn đầu và bàn đích không được trùng nhau.");
+                return;
+            }
+            var result = MessageBox.Show("Bạn có chắc chắn muốn gộp bàn không?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No) return;
+
+
 
             var chiTietHoaDonDau = context.HoaDonChiTiet.Where(r => r.HoaDonID == hoaDonDau.ID).ToList();
 
             foreach (var ct in chiTietHoaDonDau)
             {
-                ct.HoaDonID = hoaDonDich.ID;
-                context.HoaDonChiTiet.Update(ct);
+                var chiTietTrung = context.HoaDonChiTiet
+                    .FirstOrDefault(c => c.HoaDonID == hoaDonDich.ID && c.ThucUongID == ct.ThucUongID);
+
+                if (chiTietTrung != null)
+                {
+                    chiTietTrung.SoLuong += ct.SoLuong;
+                    context.HoaDonChiTiet.Remove(ct); // xóa chi tiết từ hóa đơn đầu
+                }
+                else
+                {
+                    ct.HoaDonID = hoaDonDich.ID;
+                    context.HoaDonChiTiet.Update(ct);
+                }
             }
+
             var banDau = context.Ban.FirstOrDefault(b => b.ID == idBanDau);
             if (banDau != null)
             {

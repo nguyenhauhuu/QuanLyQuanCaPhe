@@ -28,11 +28,10 @@ namespace QuanLyQuanCaPhe.Reports
         private void frmThongKeThucUong_Load(object sender, EventArgs e)
         {
             var danhSachThucUong = context.HoaDonChiTiet
-                .GroupBy(r => r.ThucUong.TenThucUong)
                 .Select(g => new
                 {
-                    TenThucUong = g.Key,
-                    SoLuong = g.Sum(x => x.SoLuong)
+                    TenThucUong = g.ThucUong.TenThucUong,
+                    SoLuong = g.SoLuong
                 })
                 .ToList();
 
