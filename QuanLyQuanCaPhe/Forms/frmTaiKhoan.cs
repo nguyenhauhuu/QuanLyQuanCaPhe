@@ -18,6 +18,8 @@ namespace QuanLyQuanCaPhe.Forms
     {
         QLQCPContext context = new QLQCPContext(); // Khởi tạo biến ngữ cảnh CSDL 
         int id;
+        string imageName = "no-image.jpg"; // Hình ảnh mặc định
+        string imageFolder = Application.StartupPath.Replace("bin\\Debug\\net8.0-windows", "Images");
         public frmTaiKhoan()
         {
             InitializeComponent();

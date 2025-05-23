@@ -23,6 +23,7 @@ namespace QuanLyQuanCaPhe.Forms
         frmChucNang? chucNang = null;
         frmBan? ban = null;
         frmDanhMuc? danhMuc = null;
+
         frmThucUong? thucUong = null;
         frmTaiKhoan? taiKhoan = null;
         frmThongKeDoanhThu? thongKeDoanhThu = null;
@@ -101,7 +102,7 @@ namespace QuanLyQuanCaPhe.Forms
             btnTaiKhoan.Visible = false;
             btnDangXuat.Visible = false;
             btnBanNuoc.Visible = false;
-            btnThongKeThucUong.Visible=false;
+            btnThongKeThucUong.Visible = false;
 
             lblTenDayDu.Text = "Chưa đăng nhập.";
         }
@@ -196,6 +197,26 @@ namespace QuanLyQuanCaPhe.Forms
             this.pnlFormLoader.Controls.Clear();
             ChuaPhanQuyen();
             DangNhap();
+        }
+
+        private void btnThongKeDoanhThu_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Thong ke doanh thu";
+            this.pnlFormLoader.Controls.Clear();
+            thongKeDoanhThu = new frmThongKeDoanhThu() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            thongKeDoanhThu.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(thongKeDoanhThu);
+            thongKeDoanhThu.Show();
+        }
+
+        private void btnThongKeThucUong_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Thong ke thuc uong";
+            this.pnlFormLoader.Controls.Clear();
+            thongKeThucUong = new frmThongKeThucUong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            thongKeThucUong.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(thongKeThucUong);
+            thongKeThucUong.Show();
         }
     }
 }

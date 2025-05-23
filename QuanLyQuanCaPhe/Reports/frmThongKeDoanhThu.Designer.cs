@@ -49,18 +49,19 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 70);
+            panel1.Size = new Size(1143, 48);
             panel1.TabIndex = 1;
             // 
             // btnHienTatCa
             // 
             btnHienTatCa.BackColor = Color.White;
             btnHienTatCa.ForeColor = Color.Black;
-            btnHienTatCa.Location = new Point(645, 22);
+            btnHienTatCa.Location = new Point(917, 3);
             btnHienTatCa.Margin = new Padding(0);
             btnHienTatCa.Name = "btnHienTatCa";
-            btnHienTatCa.Size = new Size(89, 23);
+            btnHienTatCa.Size = new Size(127, 38);
             btnHienTatCa.TabIndex = 2;
             btnHienTatCa.Text = "Hiện tất cả";
             btnHienTatCa.UseVisualStyleBackColor = false;
@@ -70,10 +71,10 @@
             // 
             btnLocKetQua.BackColor = Color.White;
             btnLocKetQua.ForeColor = Color.Black;
-            btnLocKetQua.Location = new Point(542, 22);
+            btnLocKetQua.Location = new Point(770, 3);
             btnLocKetQua.Margin = new Padding(0);
             btnLocKetQua.Name = "btnLocKetQua";
-            btnLocKetQua.Size = new Size(89, 23);
+            btnLocKetQua.Size = new Size(127, 38);
             btnLocKetQua.TabIndex = 2;
             btnLocKetQua.Text = "Lọc kết quả";
             btnLocKetQua.UseVisualStyleBackColor = false;
@@ -83,17 +84,19 @@
             // 
             dtpDenNgay.CustomFormat = "dd/MM/yyyy";
             dtpDenNgay.Format = DateTimePickerFormat.Custom;
-            dtpDenNgay.Location = new Point(405, 22);
+            dtpDenNgay.Location = new Point(575, 3);
+            dtpDenNgay.Margin = new Padding(4, 5, 4, 5);
             dtpDenNgay.Name = "dtpDenNgay";
-            dtpDenNgay.Size = new Size(116, 23);
+            dtpDenNgay.Size = new Size(164, 31);
             dtpDenNgay.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(339, 26);
+            label2.Location = new Point(480, 9);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(92, 25);
             label2.TabIndex = 0;
             label2.Text = "Đến ngày:";
             // 
@@ -101,36 +104,40 @@
             // 
             dtpTuNgay.CustomFormat = "dd/MM/yyyy";
             dtpTuNgay.Format = DateTimePickerFormat.Custom;
-            dtpTuNgay.Location = new Point(189, 22);
+            dtpTuNgay.Location = new Point(266, 3);
+            dtpTuNgay.Margin = new Padding(4, 5, 4, 5);
             dtpTuNgay.Name = "dtpTuNgay";
-            dtpTuNgay.Size = new Size(116, 23);
+            dtpTuNgay.Size = new Size(164, 31);
             dtpTuNgay.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(131, 26);
+            label1.Location = new Point(183, 9);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(52, 15);
+            label1.Size = new Size(80, 25);
             label1.TabIndex = 0;
             label1.Text = "Từ ngày:";
             // 
             // reportViewer
             // 
             reportViewer.Dock = DockStyle.Fill;
-            reportViewer.Location = new Point(0, 70);
+            reportViewer.Location = new Point(0, 48);
+            reportViewer.Margin = new Padding(4, 5, 4, 5);
             reportViewer.Name = "ReportViewer";
             reportViewer.ServerReport.BearerToken = null;
-            reportViewer.Size = new Size(800, 380);
+            reportViewer.Size = new Size(1143, 702);
             reportViewer.TabIndex = 0;
             // 
             // frmThongKeDoanhThu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 750);
             Controls.Add(reportViewer);
             Controls.Add(panel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "frmThongKeDoanhThu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmThongKeDoanhThu";

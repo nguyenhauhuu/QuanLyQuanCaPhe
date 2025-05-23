@@ -17,7 +17,7 @@ namespace QuanLyQuanCaPhe.Forms
 {
     public partial class frmChucNang : Form
     {
-        QLQCPContext context = new QLQCPContext(); // Khởi tạo biến ngữ cảnh CSDL 
+        QLQCPContext context; // Khởi tạo biến ngữ cảnh CSDL 
         int idBan;
         int idHD;
         int idTaiKhoan;
@@ -108,6 +108,7 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void frmChucNang_Load(object sender, EventArgs e)
         {
+            context = new QLQCPContext();
             dgvDanhSachThucUong.AutoGenerateColumns = false;
             LayDanhMucVaoComboBox();
             LayBanVaoComboBox();
@@ -299,7 +300,7 @@ namespace QuanLyQuanCaPhe.Forms
             string tenBanDich = cboBanDich.Text;
             var banDau = context.Ban.Find(idBanDau);
             var banDich = context.Ban.Find(idBanDich);
-            if (idBanDau!=null)
+            if (idBanDau==null)
             {
                 MessageBox.Show($"Vui lòng chọn bàn cần chuyển");
                 return;
@@ -319,9 +320,10 @@ namespace QuanLyQuanCaPhe.Forms
 
             if (result == DialogResult.Yes)
             {
-                var hd = context.HoaDon.FirstOrDefault(h => h.BanID == idBanDau);
+                var hd = context.HoaDon.FirstOrDefault(h => h.BanID == idBanDau && h.TrangThaiThanhToan==0);
                 hd!.BanID = idBanDich;
                 context.HoaDon.Update(hd);
+                context.SaveChanges();
 
 
                 banDau!.TrangThai = "Trống";
@@ -356,8 +358,8 @@ namespace QuanLyQuanCaPhe.Forms
             foreach (var ct in chiTietHoaDonDau)
             {
                 ct.HoaDonID = hoaDonDich.ID;
+                context.HoaDonChiTiet.Update(ct);
             }
-
             var banDau = context.Ban.FirstOrDefault(b => b.ID == idBanDau);
             if (banDau != null)
             {
