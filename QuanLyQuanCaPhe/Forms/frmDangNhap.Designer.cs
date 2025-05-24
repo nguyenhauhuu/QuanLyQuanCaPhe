@@ -31,20 +31,20 @@
             panel1 = new Panel();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
             btnDangNhap = new ReaLTaiizor.Controls.Button();
-            txtMatKhau = new ReaLTaiizor.Controls.AloneTextBox();
-            txtTenDangNhap = new ReaLTaiizor.Controls.AloneTextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            txtTenDangNhap = new TextBox();
+            txtMatKhau = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnHuyBo);
-            panel1.Controls.Add(btnDangNhap);
             panel1.Controls.Add(txtMatKhau);
             panel1.Controls.Add(txtTenDangNhap);
+            panel1.Controls.Add(btnHuyBo);
+            panel1.Controls.Add(btnDangNhap);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -94,39 +94,6 @@
             btnDangNhap.TextAlignment = StringAlignment.Center;
             btnDangNhap.Click += btnDangNhap_Click;
             // 
-            // txtMatKhau
-            // 
-            txtMatKhau.BackColor = Color.Transparent;
-            txtMatKhau.EnabledCalc = true;
-            txtMatKhau.Font = new Font("Segoe UI", 9F);
-            txtMatKhau.ForeColor = Color.FromArgb(124, 133, 142);
-            txtMatKhau.Location = new Point(221, 180);
-            txtMatKhau.MaxLength = 32767;
-            txtMatKhau.MultiLine = false;
-            txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.ReadOnly = false;
-            txtMatKhau.Size = new Size(249, 29);
-            txtMatKhau.TabIndex = 13;
-            txtMatKhau.TextAlign = HorizontalAlignment.Left;
-            txtMatKhau.UseSystemPasswordChar = false;
-            txtMatKhau.KeyDown += txtMatKhau_KeyDown;
-            // 
-            // txtTenDangNhap
-            // 
-            txtTenDangNhap.BackColor = Color.Transparent;
-            txtTenDangNhap.EnabledCalc = true;
-            txtTenDangNhap.Font = new Font("Segoe UI", 9F);
-            txtTenDangNhap.ForeColor = Color.FromArgb(124, 133, 142);
-            txtTenDangNhap.Location = new Point(221, 124);
-            txtTenDangNhap.MaxLength = 32767;
-            txtTenDangNhap.MultiLine = false;
-            txtTenDangNhap.Name = "txtTenDangNhap";
-            txtTenDangNhap.ReadOnly = false;
-            txtTenDangNhap.Size = new Size(249, 29);
-            txtTenDangNhap.TabIndex = 12;
-            txtTenDangNhap.TextAlign = HorizontalAlignment.Left;
-            txtTenDangNhap.UseSystemPasswordChar = false;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -141,7 +108,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(214, 106);
             label2.Name = "label2";
-            label2.Size = new Size(88, 15);
+            label2.Size = new Size(89, 15);
             label2.TabIndex = 11;
             label2.Text = "Tên đăng nhập:";
             // 
@@ -155,6 +122,22 @@
             label1.Size = new Size(116, 25);
             label1.TabIndex = 9;
             label1.Text = "ĐĂNG NHẬP";
+            // 
+            // txtTenDangNhap
+            // 
+            txtTenDangNhap.Location = new Point(214, 124);
+            txtTenDangNhap.Name = "txtTenDangNhap";
+            txtTenDangNhap.Size = new Size(230, 23);
+            txtTenDangNhap.TabIndex = 16;
+            // 
+            // txtMatKhau
+            // 
+            txtMatKhau.Location = new Point(214, 180);
+            txtMatKhau.Name = "txtMatKhau";
+            txtMatKhau.PasswordChar = '⚫';
+            txtMatKhau.Size = new Size(230, 23);
+            txtMatKhau.TabIndex = 17;
+            txtMatKhau.KeyDown += txtMatKhau_KeyDown;
             // 
             // frmDangNhap
             // 
@@ -176,10 +159,10 @@
         private Panel panel1;
         private ReaLTaiizor.Controls.Button btnHuyBo;
         private ReaLTaiizor.Controls.Button btnDangNhap;
-        public ReaLTaiizor.Controls.AloneTextBox txtMatKhau;
-        public ReaLTaiizor.Controls.AloneTextBox txtTenDangNhap;
         private Label label3;
         private Label label2;
         private Label label1;
+        public TextBox txtMatKhau;
+        public TextBox txtTenDangNhap;
     }
 }

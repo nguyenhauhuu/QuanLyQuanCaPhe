@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -263,6 +264,10 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void lblLienKet_Click(object sender, EventArgs e)
         {
+            ProcessStartInfo info = new ProcessStartInfo();
+            info.FileName = "explorer.exe";
+            info.Arguments = "https://chanhdang.com";
+            Process.Start(info);
 
         }
     }

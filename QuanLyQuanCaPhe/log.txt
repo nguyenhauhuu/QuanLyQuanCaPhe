@@ -1,1 +1,11 @@
 2025-05-24 16:56:34 - Tài khoản ID 5 đã đăng nhập
+2025-05-24 17:14:16 - Tài khoản ID 5 đã đăng nhập
+2025-05-24 17:14:17 - Tài khoản ID 5 đã click vào danh sách bàn
+2025-05-24 17:14:18 - Tài khoản ID 5 đã click vào danh mục
+2025-05-24 17:14:19 - Tài khoản ID 5 đã click vào thức uống
+2025-05-24 17:14:21 - Tài khoản ID 5 đã click vào quản lý tài khoản
+2025-05-24 17:14:22 - Tài khoản ID 5 đã click vào bán nước
+2025-05-24 17:14:27 - Tài khoản ID 5 đã click vào thống kê doanh thu
+2025-05-24 17:14:32 - Tài khoản ID 5 đã click vào thống kê thức uống
+2025-05-24 17:15:43 - Tài khoản ID 5 đã đăng nhập
+2025-05-24 17:15:45 - Tài khoản ID 5 đã truy cập thông tin cá nhân
