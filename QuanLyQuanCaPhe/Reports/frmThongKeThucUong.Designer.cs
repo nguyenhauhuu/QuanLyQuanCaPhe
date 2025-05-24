@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            dtpDenNgay = new DateTimePicker();
-            label2 = new Label();
+            btnThongKe = new ReaLTaiizor.Controls.AloneButton();
+            cboTieuChi = new ReaLTaiizor.Controls.AloneComboBox();
             dtpTuNgay = new DateTimePicker();
             label1 = new Label();
-            cboLoc = new ReaLTaiizor.Controls.AloneComboBox();
-            btnThongKe = new ReaLTaiizor.Controls.AloneButton();
+            dtpDenNgay = new DateTimePicker();
+            label2 = new Label();
+            reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Controls.Add(btnThongKe);
-            panel1.Controls.Add(cboLoc);
+            panel1.Controls.Add(cboTieuChi);
             panel1.Controls.Add(dtpTuNgay);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(dtpDenNgay);
@@ -53,14 +53,49 @@
             panel1.Size = new Size(800, 53);
             panel1.TabIndex = 0;
             // 
-            // reportViewer
+            // btnThongKe
             // 
-            reportViewer.Dock = DockStyle.Fill;
-            reportViewer.Location = new Point(0, 53);
-            reportViewer.Name = "ReportViewer";
-            reportViewer.ServerReport.BearerToken = null;
-            reportViewer.Size = new Size(800, 397);
-            reportViewer.TabIndex = 0;
+            btnThongKe.BackColor = Color.Transparent;
+            btnThongKe.EnabledCalc = true;
+            btnThongKe.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnThongKe.ForeColor = Color.Black;
+            btnThongKe.Location = new Point(608, 12);
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.Size = new Size(113, 24);
+            btnThongKe.TabIndex = 9;
+            btnThongKe.Text = "Thống kê";
+            btnThongKe.Click += btnThongKe_Click;
+            // 
+            // cboTieuChi
+            // 
+            cboTieuChi.DrawMode = DrawMode.OwnerDrawFixed;
+            cboTieuChi.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTieuChi.EnabledCalc = true;
+            cboTieuChi.FormattingEnabled = true;
+            cboTieuChi.ItemHeight = 20;
+            cboTieuChi.Items.AddRange(new object[] { "Hiện tất cả", "Top 5", "Bottom 5" });
+            cboTieuChi.Location = new Point(489, 11);
+            cboTieuChi.Name = "cboTieuChi";
+            cboTieuChi.Size = new Size(103, 26);
+            cboTieuChi.TabIndex = 8;
+            // 
+            // dtpTuNgay
+            // 
+            dtpTuNgay.CustomFormat = "dd/MM/yyyy";
+            dtpTuNgay.Format = DateTimePickerFormat.Custom;
+            dtpTuNgay.Location = new Point(149, 12);
+            dtpTuNgay.Name = "dtpTuNgay";
+            dtpTuNgay.Size = new Size(116, 23);
+            dtpTuNgay.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(91, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Từ ngày:";
             // 
             // dtpDenNgay
             // 
@@ -80,48 +115,14 @@
             label2.TabIndex = 3;
             label2.Text = "Đến ngày:";
             // 
-            // dtpTuNgay
+            // reportViewer
             // 
-            dtpTuNgay.CustomFormat = "dd/MM/yyyy";
-            dtpTuNgay.Format = DateTimePickerFormat.Custom;
-            dtpTuNgay.Location = new Point(149, 12);
-            dtpTuNgay.Name = "dtpTuNgay";
-            dtpTuNgay.Size = new Size(116, 23);
-            dtpTuNgay.TabIndex = 6;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(91, 16);
-            label1.Name = "label1";
-            label1.Size = new Size(52, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Từ ngày:";
-            // 
-            // cboLoc
-            // 
-            cboLoc.DrawMode = DrawMode.OwnerDrawFixed;
-            cboLoc.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboLoc.EnabledCalc = true;
-            cboLoc.FormattingEnabled = true;
-            cboLoc.ItemHeight = 20;
-            cboLoc.Location = new Point(489, 11);
-            cboLoc.Name = "cboLoc";
-            cboLoc.Size = new Size(103, 26);
-            cboLoc.TabIndex = 8;
-            // 
-            // btnThongKe
-            // 
-            btnThongKe.BackColor = Color.Transparent;
-            btnThongKe.EnabledCalc = true;
-            btnThongKe.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnThongKe.ForeColor = Color.Black;
-            btnThongKe.Location = new Point(608, 12);
-            btnThongKe.Name = "btnThongKe";
-            btnThongKe.Size = new Size(113, 24);
-            btnThongKe.TabIndex = 9;
-            btnThongKe.Text = "Thống kê";
-            btnThongKe.Click += btnThongKe_Click;
+            reportViewer.Dock = DockStyle.Fill;
+            reportViewer.Location = new Point(0, 53);
+            reportViewer.Name = "ReportViewer";
+            reportViewer.ServerReport.BearerToken = null;
+            reportViewer.Size = new Size(800, 397);
+            reportViewer.TabIndex = 0;
             // 
             // frmThongKeThucUong
             // 
@@ -148,7 +149,7 @@
         private Label label1;
         private DateTimePicker dtpDenNgay;
         private Label label2;
-        private ReaLTaiizor.Controls.AloneComboBox cboLoc;
+        private ReaLTaiizor.Controls.AloneComboBox cboTieuChi;
         private ReaLTaiizor.Controls.AloneButton btnThongKe;
     }
 }

@@ -30,6 +30,10 @@ namespace QuanLyQuanCaPhe.Forms
         frmThongKeThucUong? thongKeThucUong = null;
         string tenHienThi = "";
         int idTaiKhoan;
+
+        
+
+
         public Form1()
         {
             InitializeComponent();
@@ -118,7 +122,7 @@ namespace QuanLyQuanCaPhe.Forms
             btnDangXuat.Visible = true;
             btnDangNhap.Visible = false;
             btnBanNuoc.Visible = true; ;
-            lblTenDayDu.Text = "Xin chào: " + tenHienThi;
+            lblTenDayDu.Text =  tenHienThi;
         }
 
         public void QuyenUser()
@@ -126,7 +130,7 @@ namespace QuanLyQuanCaPhe.Forms
             btnBanNuoc.Visible = true;
             btnDangXuat.Visible = true;
             btnDangNhap.Visible = false;
-            lblTenDayDu.Text = "Xin chào: " + tenHienThi;
+            lblTenDayDu.Text =  tenHienThi;
         }
 
 
@@ -184,6 +188,15 @@ namespace QuanLyQuanCaPhe.Forms
         {
             ChuaPhanQuyen();
             DangNhap();
+
+            string fileName = context.TaiKhoan.Find(idTaiKhoan)?.HinhAnh ?? "no-image.jpg";
+            string imageFolder = Application.StartupPath.Replace("bin\\Debug\\net8.0-windows", "Images");
+            string imagePath = Path.Combine(imageFolder, fileName);
+
+           
+            picHinhAnh.Image = Image.FromFile(imagePath);
+          
+
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)

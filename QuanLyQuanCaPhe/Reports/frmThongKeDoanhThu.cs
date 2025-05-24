@@ -36,7 +36,14 @@ namespace QuanLyQuanCaPhe.Reports
                 TenBan = r.Ban.TenBan,
                 r.NgayLap,
                 r.GiamGia,
-                r.TongCong,
+                TongTien = context.HoaDonChiTiet
+              .Where(ct => ct.HoaDonID == r.ID)
+              .Sum(ct => ct.SoLuong * ct.DonGia),
+
+                TongThanhToan = context.HoaDonChiTiet
+              .Where(ct => ct.HoaDonID == r.ID)
+              .Sum(ct => ct.SoLuong * ct.DonGia) * (1 - r.GiamGia / 100m),
+
                 r.TrangThaiThanhToan
             });
 
@@ -53,7 +60,7 @@ namespace QuanLyQuanCaPhe.Reports
                     r.TenBan,
                     r.NgayLap,
                     r.GiamGia,
-                    r.TongCong,
+                    r.TongThanhToan,
                     r.TrangThaiThanhToan
                     );
             }
@@ -87,7 +94,14 @@ namespace QuanLyQuanCaPhe.Reports
                 TenBan = r.Ban.TenBan,
                 r.NgayLap,
                 r.GiamGia,
-                r.TongCong,
+                TongTien = context.HoaDonChiTiet
+              .Where(ct => ct.HoaDonID == r.ID)
+              .Sum(ct => ct.SoLuong * ct.DonGia),
+
+                TongThanhToan = context.HoaDonChiTiet
+              .Where(ct => ct.HoaDonID == r.ID)
+              .Sum(ct => ct.SoLuong * ct.DonGia) * (1 - r.GiamGia / 100m),
+
                 r.TrangThaiThanhToan
             }).ToList();
 
@@ -103,7 +117,7 @@ namespace QuanLyQuanCaPhe.Reports
                     r.TenBan,
                     r.NgayLap,
                     r.GiamGia,
-                    r.TongCong,
+                    r.TongThanhToan,
                     r.TrangThaiThanhToan
                     );
             }

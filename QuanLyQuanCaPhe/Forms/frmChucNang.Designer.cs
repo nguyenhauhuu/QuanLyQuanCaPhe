@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox = new GroupBox();
             txtMoTa = new ReaLTaiizor.Controls.AloneTextBox();
             numSoLuong = new ReaLTaiizor.Controls.HopeNumeric();
@@ -293,6 +294,9 @@
             // ThanhTien
             // 
             ThanhTien.DataPropertyName = "ThanhTien";
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            ThanhTien.DefaultCellStyle = dataGridViewCellStyle1;
             ThanhTien.HeaderText = "Đơn giá";
             ThanhTien.Name = "ThanhTien";
             ThanhTien.ReadOnly = true;
@@ -380,7 +384,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(14, 85);
             label3.Name = "label3";
-            label3.Size = new Size(67, 15);
+            label3.Size = new Size(68, 15);
             label3.TabIndex = 2;
             label3.Text = "Thức uống:";
             // 
@@ -447,6 +451,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmChucNang";
             WindowState = FormWindowState.Maximized;
+            Activated += frmChucNang_Activated;
             Load += frmChucNang_Load;
             groupBox.ResumeLayout(false);
             groupBox.PerformLayout();

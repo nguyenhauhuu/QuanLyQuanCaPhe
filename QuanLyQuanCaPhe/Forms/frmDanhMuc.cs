@@ -236,5 +236,13 @@ namespace QuanLyQuanCaPhe.Forms
                 }
             }
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            var danhMuc = context.DanhMuc
+            .Where(r => r.TenDanhMuc.Contains(txtTuKhoa.Text))
+            .ToList();
+            dataGridView.DataSource = danhMuc;
+        }
     }
 }

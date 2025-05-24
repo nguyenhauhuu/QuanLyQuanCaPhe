@@ -56,7 +56,7 @@ namespace QuanLyQuanCaPhe.Forms
         public void LayBanVaoComboBox()
         {
             var ban = context.Ban;
-            var banDau = ban.Where(x => x.TrangThai != "Trống").ToList();
+            var banDau = ban.Where(x => x.TrangThai != 1).ToList();
             var banDich = ban.ToList();
             cboBanDau.DataSource = banDau;
             cboBanDau.ValueMember = "ID";
@@ -77,13 +77,13 @@ namespace QuanLyQuanCaPhe.Forms
                 btn.Width = 100;
                 btn.Height = 120;
 
-                btn.Text = $"{ban.TenBan}\n{ban.TrangThai}";
+                btn.Text = ban.TenBan+"\n"+ (ban.TrangThai == 0 ? "Trống" : "Đang phục vụ");
                 btn.TextAlign = ContentAlignment.BottomLeft;
                 btn.Font = new Font("Segoe UI", 10);
 
 
 
-                Image rawImg = ban.TrangThai == "Trống" ? Properties.Resources.ban_trong : Properties.Resources.ban_dang_phuc_vu;
+                Image rawImg = ban.TrangThai == 1 ? Properties.Resources.ban_trong : Properties.Resources.ban_dang_phuc_vu;
                 btn.Image = new Bitmap(rawImg, new Size(70, 70)); // resize ảnh
                 btn.ImageAlign = ContentAlignment.TopCenter;
 
@@ -98,7 +98,7 @@ namespace QuanLyQuanCaPhe.Forms
             }
 
         }
-       
+
         private void BtnBan_Click(object sender, EventArgs e)
         {
             Button? btn = sender as Button;
@@ -117,7 +117,25 @@ namespace QuanLyQuanCaPhe.Forms
             string tenBan = ban?.TenBan ?? "";
             groupBox.Text = tenBan;
 
-            var hd = context.HoaDon.FirstOrDefault(h => h.BanID == idBan && h.TrangThaiThanhToan == 0);
+            var hd = context.HoaDon.Select(r => new
+            {
+                r.ID,
+                r.TaiKhoanID,
+                r.BanID,
+                r.NgayLap,
+                r.GiamGia,
+                r.TrangThaiThanhToan,
+                // Tính tổng tiền = tổng giá tất cả món trong hóa đơn
+                TongTien = context.HoaDonChiTiet
+                      .Where(ct => ct.HoaDonID == r.ID)
+                      .Sum(ct => ct.SoLuong * ct.DonGia),
+
+                // Tính tổng thanh toán = tổng tiền trừ đi phần giảm giá (%)
+                TongThanhToan = context.HoaDonChiTiet
+                      .Where(ct => ct.HoaDonID == r.ID)
+                      .Sum(ct => ct.SoLuong * ct.DonGia) * (1 - r.GiamGia / 100m)
+
+            }).FirstOrDefault(h => h.BanID == idBan && h.TrangThaiThanhToan == 0);
             idHD = hd?.ID ?? 0;
             if (idHD != 0)
             {
@@ -130,8 +148,8 @@ namespace QuanLyQuanCaPhe.Forms
                     TenThucUong = r.ThucUong.TenThucUong,
                     SoLuong = r.SoLuong,
                     GhiChu = r.GhiChu,
-                    Gia = r.Gia,
-                    ThanhTien = r.SoLuong * r.Gia
+                    DonGia = r.DonGia,
+                    ThanhTien = r.SoLuong * r.DonGia
                 }).ToList();
                 hoaDonChiTiet = new BindingList<DanhSachHoaDonChiTiet>(ct);
             }
@@ -140,7 +158,7 @@ namespace QuanLyQuanCaPhe.Forms
                 hoaDonChiTiet = new BindingList<DanhSachHoaDonChiTiet>();
             }
             numGiamGia.Value = Convert.ToDecimal(hd?.GiamGia);
-            txtTongTien.Text = hd?.TongCong.ToString("C", new System.Globalization.CultureInfo("vi-VN"));
+            txtTongTien.Text = hd?.TongThanhToan.ToString("C", new System.Globalization.CultureInfo("vi-VN"));
             dgvDanhSachThucUong.DataSource = hoaDonChiTiet;
             BatTatChucNang();
         }
@@ -173,7 +191,7 @@ namespace QuanLyQuanCaPhe.Forms
             {
                 chiTiet.SoLuong = soLuong;
                 chiTiet.ThanhTien = thanhTien;
-                chiTiet.Gia = donGia;
+                chiTiet.DonGia = donGia;
                 chiTiet.GhiChu = ghiChu;
                 dgvDanhSachThucUong.Refresh();
             }
@@ -187,7 +205,7 @@ namespace QuanLyQuanCaPhe.Forms
                     ThucUongID = idThucUong,
                     TenThucUong = cboThucUong.Text,
                     SoLuong = soLuong,
-                    Gia = donGia,
+                    DonGia = donGia,
                     ThanhTien = thanhTien,
                     GhiChu = ghiChu
                 };
@@ -218,7 +236,7 @@ namespace QuanLyQuanCaPhe.Forms
                         HoaDonChiTiet ct = new HoaDonChiTiet();
                         ct.HoaDonID = idHD;
                         ct.ThucUongID = item.ThucUongID;
-                        ct.Gia = item.Gia;
+                        ct.DonGia = item.DonGia;
                         ct.SoLuong = item.SoLuong;
                         ct.GhiChu = item.GhiChu;
                         context.HoaDonChiTiet.Add(ct);
@@ -244,8 +262,6 @@ namespace QuanLyQuanCaPhe.Forms
                     }
                 }
                 hd.GiamGia = numGiamGia.Value;
-                decimal tienGiam = tongTien * (numGiamGia.Value / 100);
-                hd.TongCong = tongTien - tienGiam;
                 hd.BanID = idBan;
                 context.HoaDon.Add(hd);
                 context.SaveChanges();
@@ -256,7 +272,7 @@ namespace QuanLyQuanCaPhe.Forms
                     HoaDonChiTiet ct = new HoaDonChiTiet();
                     ct.HoaDonID = hd.ID;
                     ct.ThucUongID = item.ThucUongID;
-                    ct.Gia = item.Gia;
+                    ct.DonGia = item.DonGia;
                     ct.SoLuong = item.SoLuong;
                     ct.GhiChu = item.GhiChu;
                     context.HoaDonChiTiet.Add(ct);
@@ -264,14 +280,14 @@ namespace QuanLyQuanCaPhe.Forms
                 context.SaveChanges();
 
                 Ban ban = context.Ban.Find(idBan)!;
-                ban.TrangThai = "Đang phục vụ";
+                ban.TrangThai = 1;
                 context.Ban.Update(ban);
                 context.SaveChanges();
 
 
             }
             MessageBox.Show("Đã lưu thành công!", "Hoàn tất", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            frmChucNang_Load(sender,e);
+            frmChucNang_Load(sender, e);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -300,12 +316,12 @@ namespace QuanLyQuanCaPhe.Forms
             string tenBanDich = cboBanDich.Text;
             var banDau = context.Ban.Find(idBanDau);
             var banDich = context.Ban.Find(idBanDich);
-            if (idBanDau==null)
+            if (idBanDau == null)
             {
                 MessageBox.Show($"Vui lòng chọn bàn cần chuyển");
                 return;
             }
-            else if (banDich?.TrangThai!="Trống")
+            else if (banDich?.TrangThai != 0)
             {
                 MessageBox.Show($"{tenBanDich} đã có người!");
                 return;
@@ -320,15 +336,15 @@ namespace QuanLyQuanCaPhe.Forms
 
             if (result == DialogResult.Yes)
             {
-                var hd = context.HoaDon.FirstOrDefault(h => h.BanID == idBanDau && h.TrangThaiThanhToan==0);
+                var hd = context.HoaDon.FirstOrDefault(h => h.BanID == idBanDau && h.TrangThaiThanhToan == 0);
                 hd!.BanID = idBanDich;
                 context.HoaDon.Update(hd);
                 context.SaveChanges();
 
 
-                banDau!.TrangThai = "Trống";
+                banDau!.TrangThai = 0;
                 context.Ban.Update(banDau);
-                banDich!.TrangThai = "Đang phục vụ";
+                banDich!.TrangThai = 1;
                 context.Ban.Update(banDich);
 
                 context.SaveChanges();
@@ -384,7 +400,7 @@ namespace QuanLyQuanCaPhe.Forms
             var banDau = context.Ban.FirstOrDefault(b => b.ID == idBanDau);
             if (banDau != null)
             {
-                banDau.TrangThai = "Trống";  
+                banDau.TrangThai = 0;
             }
 
             context.HoaDon.Remove(hoaDonDau);
@@ -392,6 +408,7 @@ namespace QuanLyQuanCaPhe.Forms
             context.SaveChanges();
 
             MessageBox.Show("Gộp bàn thành công!");
+            frmChucNang_Load(sender, e);
         }
 
         private void btnTinhTien_Click(object sender, EventArgs e)
@@ -406,6 +423,11 @@ namespace QuanLyQuanCaPhe.Forms
             {
                 MessageBox.Show("Vui lòng chọn một bàn để tính tiền.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void frmChucNang_Activated(object sender, EventArgs e)
+        {
+            frmChucNang_Load(sender, e);
         }
     }
 }

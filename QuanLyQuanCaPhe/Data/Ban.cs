@@ -5,7 +5,7 @@ namespace QuanLyQuanCaPhe.Data
     {
         public int ID { get; set; }
         public string TenBan { get; set; } = null!;
-        public string TrangThai { get; set; } = "Trống"; // Trống, Đang phục vụ
+        public int TrangThai { get; set; } = 0; // Trống=0, Đang phục vụ=1
         public virtual ICollection<HoaDon> HoaDon { get;} = new List<HoaDon>();
     }
 }

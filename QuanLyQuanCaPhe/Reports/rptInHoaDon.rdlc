@@ -163,10 +163,10 @@
                   <Width>6.54917cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.58042cm</Width>
+                  <Width>3.48cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.48cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.48cm</Width>
@@ -246,40 +246,6 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox29">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Số lượng</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox29</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox31">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -299,6 +265,40 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox31</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Số lượng</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -415,6 +415,38 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Gia">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=FormatNumber(Fields!Gia.Value * Fields!SoLuong.Value, 0)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Gia</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="SoLuong">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -447,38 +479,6 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Gia">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=FormatNumber(Fields!Gia.Value)</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Gia</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="ThanhTien">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -486,7 +486,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatNumber(Fields!Gia.Value * Fields!SoLuong.Value, 0)</Value>
+                                  <Value>=FormatNumber(Fields!ThanhTien.Value * Fields!SoLuong.Value, 0)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -539,7 +539,7 @@
             <Top>3.54224cm</Top>
             <Left>0cm</Left>
             <Height>1.2cm</Height>
-            <Width>17.40001cm</Width>
+            <Width>17.31959cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -588,7 +588,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Thành tiền:</Value>
+                    <Value>Tổng tiền:</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -648,7 +648,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Tổng cộng:</Value>
+                    <Value>Tổng thanh toán:</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -659,7 +659,7 @@
             <Top>7.46717cm</Top>
             <Left>10.44001cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.33339cm</Width>
+            <Width>2.91547cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -678,7 +678,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Format(CDbl(Parameters!ThanhTien.Value), "#,##0") &amp; " đ"</Value>
+                    <Value>=Format(CDbl(Parameters!TongTien.Value), "#,##0") &amp; " đ"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -738,7 +738,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Format(CDbl(Parameters!TongCong.Value), "#,##0") &amp; " đ"</Value>
+                    <Value>=Format(CDbl(Parameters!TongThanhToan.Value), "#,##0") &amp; " đ"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -804,7 +804,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="ThanhTien">
+    <ReportParameter Name="TongTien">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -812,7 +812,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="TongCong">
+    <ReportParameter Name="TongThanhToan">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -839,7 +839,7 @@
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ThanhTien</ParameterName>
+          <ParameterName>TongTien</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
@@ -849,7 +849,7 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>TongCong</ParameterName>
+          <ParameterName>TongThanhToan</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>

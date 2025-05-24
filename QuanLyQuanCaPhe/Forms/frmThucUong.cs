@@ -24,9 +24,19 @@ namespace QuanLyQuanCaPhe.Forms
         private void LayDanhMucVaoComboBox()
         {
             var danhMuc = context.DanhMuc.ToList();
+
+            if (danhMuc.Count == 0)
+            {
+                // Thêm một phần tử mặc định báo "Chưa có danh mục"
+                danhMuc.Add(new DanhMuc { ID = 0, TenDanhMuc = "Chưa có danh mục" });
+            }
+
             cboDanhMuc.DataSource = danhMuc;
             cboDanhMuc.ValueMember = "ID";
             cboDanhMuc.DisplayMember = "TenDanhMuc";
+
+            // Nếu muốn chọn phần tử đầu tiên mặc định
+            cboDanhMuc.SelectedIndex = 0;
 
         }
 
@@ -53,8 +63,10 @@ namespace QuanLyQuanCaPhe.Forms
                 r.ID,
                 r.TenThucUong,
                 r.DanhMucID,
-                r.DanhMuc.TenDanhMuc,
+                r.DanhMuc!.TenDanhMuc,
+                r.DonGia
             }).ToList();
+
             dataGridView.DataSource = ThucUong;
 
             txtTenThucUong.DataBindings.Clear();
@@ -240,7 +252,7 @@ namespace QuanLyQuanCaPhe.Forms
                     if (thucUong != null)
                     {
                         foreach (var p in thucUong)
-                            table.Rows.Add(p.ID,p.DanhMucID,p.TenThucUong);
+                            table.Rows.Add(p.ID, p.DanhMucID, p.TenThucUong);
                     }
 
                     // Gán bảng tạm vào Sheet 1 của tập tin Excel 
@@ -258,6 +270,14 @@ namespace QuanLyQuanCaPhe.Forms
                     MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            var thucUong = context.ThucUong
+            .Where(r => r.TenThucUong.Contains(txtTuKhoa.Text))
+            .ToList();
+            dataGridView.DataSource = thucUong;
         }
     }
 }

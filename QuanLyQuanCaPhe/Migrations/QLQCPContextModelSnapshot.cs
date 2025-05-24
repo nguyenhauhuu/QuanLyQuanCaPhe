@@ -34,9 +34,8 @@ namespace QuanLyQuanCaPhe.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TrangThai")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TrangThai")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -80,9 +79,6 @@ namespace QuanLyQuanCaPhe.Migrations
                     b.Property<int>("TaiKhoanID")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("TongCong")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<int>("TrangThaiThanhToan")
                         .HasColumnType("int");
 
@@ -103,11 +99,11 @@ namespace QuanLyQuanCaPhe.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<decimal>("DonGia")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("GhiChu")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Gia")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("HoaDonID")
                         .HasColumnType("int");
@@ -186,6 +182,9 @@ namespace QuanLyQuanCaPhe.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("HinhAnh")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MatKhau")
                         .IsRequired()

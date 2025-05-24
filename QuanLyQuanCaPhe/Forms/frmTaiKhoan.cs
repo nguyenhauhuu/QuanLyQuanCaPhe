@@ -1,5 +1,6 @@
 ﻿using ClosedXML.Excel;
 using QuanLyQuanCaPhe.Data;
+using SlugGenerator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace QuanLyQuanCaPhe.Forms
             txtTenDayDu.Enabled = giaTri;
             dtpNgaySinh.Enabled = giaTri;
             cboQuyenTruyCap.Enabled = giaTri;
-
+            picHinhAnh.Enabled = giaTri;
             txtTenDangNhap.Enabled = giaTri;
 
 
@@ -64,6 +65,15 @@ namespace QuanLyQuanCaPhe.Forms
 
             cboQuyenTruyCap.DataBindings.Clear();
             cboQuyenTruyCap.DataBindings.Add("Text", taiKhoan, "QuyenTruyCap", false, DataSourceUpdateMode.Never);
+
+            picHinhAnh.DataBindings.Clear();
+            Binding hinhAnh = new Binding("ImageLocation", taiKhoan, "HinhAnh", false, DataSourceUpdateMode.Never);
+            hinhAnh.Format += (s, e) =>
+            {
+                e.Value = Path.Combine(imageFolder, e.Value?.ToString() ?? "");
+            };
+            picHinhAnh.DataBindings.Add(hinhAnh);
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -75,6 +85,7 @@ namespace QuanLyQuanCaPhe.Forms
             txtID.Text = "";
             dtpNgaySinh.Value = DateTime.Now;
             cboQuyenTruyCap.Text = "";
+            picHinhAnh.Image = null;
             txtTenDangNhap.Focus();
         }
 
@@ -110,6 +121,7 @@ namespace QuanLyQuanCaPhe.Forms
                     taiKhoan.TenDayDu = txtTenDayDu.Text;
                     taiKhoan.QuyenTruyCap = cboQuyenTruyCap.Text;
                     taiKhoan.NgaySinh = dtpNgaySinh.Value.Date;
+                    taiKhoan.HinhAnh = imageName;
                     taiKhoan.MatKhau = BC.HashPassword("123");
                     context.TaiKhoan.Add(taiKhoan);
                     context.SaveChanges();
@@ -123,6 +135,7 @@ namespace QuanLyQuanCaPhe.Forms
                         taiKhoan.TenDayDu = txtTenDayDu.Text;
                         taiKhoan.QuyenTruyCap = cboQuyenTruyCap.Text;
                         taiKhoan.NgaySinh = dtpNgaySinh.Value;
+                        taiKhoan.HinhAnh = imageName;
                         context.TaiKhoan.Update(taiKhoan);
 
                         context.SaveChanges();
@@ -143,6 +156,17 @@ namespace QuanLyQuanCaPhe.Forms
                     TaiKhoan taiKhoan = context.TaiKhoan.Find(id)!;
                     if (taiKhoan != null)
                     {
+                        // Xóa hình ảnh (nếu có)
+                        if (!string.IsNullOrEmpty(taiKhoan.HinhAnh))
+                        {
+                            string imagePath = Path.Combine(imageFolder, taiKhoan.HinhAnh);
+                            if (File.Exists(imagePath))
+                            {
+                                System.GC.Collect();
+                                System.GC.WaitForPendingFinalizers();
+                                File.Delete(imagePath);
+                            }
+                        }
                         context.TaiKhoan.Remove(taiKhoan);
                         context.SaveChanges();
                     }
@@ -256,7 +280,7 @@ namespace QuanLyQuanCaPhe.Forms
                     if (taiKhoan != null)
                     {
                         foreach (var p in taiKhoan)
-                            table.Rows.Add(p.ID, p.TenDangNhap,p.TenDayDu,p.NgaySinh,p.QuyenTruyCap);
+                            table.Rows.Add(p.ID, p.TenDangNhap, p.TenDayDu, p.NgaySinh, p.QuyenTruyCap);
                     }
 
                     // Gán bảng tạm vào Sheet 1 của tập tin Excel 
@@ -274,6 +298,56 @@ namespace QuanLyQuanCaPhe.Forms
                     MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView.Columns[e.ColumnIndex].Name == "HinhAnh")
+            {
+                string imagePath = Path.Combine(imageFolder, e.Value?.ToString() ?? "");
+                if (File.Exists(imagePath))
+                {
+                    Image image = Image.FromFile(imagePath);
+                    image = new Bitmap(image, 24, 24);
+                    e.Value = image;
+                }
+            }
+
+        }
+
+        private void dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+            return;
+
+        }
+
+        private void picHinhAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Chọn hình ảnh sản phẩm";
+            openFileDialog.Filter = "Tập tin hình ảnh|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(openFileDialog.FileName);
+                string ext = Path.GetExtension(openFileDialog.FileName);
+                // Lưu tên file hình vào biến toàn cục
+                imageName = fileName.GenerateSlug() + ext;
+                // Sao chép file hình vào thư mục Images
+                string fileSavePath = Path.Combine(imageFolder, imageName);
+                File.Copy(openFileDialog.FileName, fileSavePath, true);
+                // Hiện hình ảnh đã chọn lên PictureBox
+                picHinhAnh.Image = Image.FromFile(fileSavePath);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            var taiKhoan = context.TaiKhoan
+            .Where(r => r.TenDayDu.Contains(txtTuKhoa.Text))
+            .ToList();
+            dataGridView.DataSource = taiKhoan;
         }
     }
 }

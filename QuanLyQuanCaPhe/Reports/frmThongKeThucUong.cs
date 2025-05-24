@@ -66,16 +66,29 @@ namespace QuanLyQuanCaPhe.Reports
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            var danhSachThucUong = context.HoaDonChiTiet
-                 .GroupBy(r => r.ThucUong.TenThucUong)
-                 .Select(g => new
-                 {
-                     TenThucUong = g.Key,
-                     SoLuong = g.Sum(x => x.SoLuong)
-                 })
-                 .ToList();
+            var dsThucUong = context.HoaDonChiTiet
+                .Where(r => r.HoaDon.NgayLap >= dtpTuNgay.Value && r.HoaDon.NgayLap <= dtpDenNgay.Value)
 
+                // 2. Group theo tên thức uống
+                .GroupBy(r => r.ThucUong.TenThucUong)
 
+                // 3. Tính tổng số lượng
+                .Select(g => new
+                {
+                    TenThucUong = g.Key,
+                    SoLuong = g.Sum(x => x.SoLuong)
+                });
+
+            if (cboTieuChi.SelectedIndex == 1) //Top5
+            {
+                dsThucUong = dsThucUong.OrderByDescending(x => x.SoLuong).Take(5);
+             }
+            else if (cboTieuChi.SelectedIndex == 2) // Bottom 5
+            {
+                dsThucUong = dsThucUong.OrderBy(x => x.SoLuong).Take(5);
+            }
+
+            var danhSachThucUong = dsThucUong.ToList();
 
             thongKeThucUongDataTable.Clear();
             foreach (var r in danhSachThucUong)
@@ -86,6 +99,21 @@ namespace QuanLyQuanCaPhe.Reports
                     );
             }
 
+            string moTa;
+
+            if (cboTieuChi.SelectedIndex == 0)
+            {
+                moTa = "(Tất cả các thức uống)";
+            }
+            else if (cboTieuChi.SelectedIndex == 1)
+            {
+                moTa = "(Top 5 thức uống bán chạy nhất)";
+            }
+            else // cboTieuChi.SelectedIndex == 2
+            {
+                moTa = "(Bottom 5 thức uống bán chậm nhất)";
+            }
+
             ReportDataSource reportDataSource = new ReportDataSource();
             reportDataSource.Name = "dsThongKeThucUong";
             reportDataSource.Value = thongKeThucUongDataTable;
@@ -94,7 +122,7 @@ namespace QuanLyQuanCaPhe.Reports
             reportViewer.LocalReport.DataSources.Add(reportDataSource);
             reportViewer.LocalReport.ReportPath = Path.Combine(reportsFolder, "rptThongKeThucUong.rdlc");
 
-            ReportParameter reportParameter = new ReportParameter("MoTaKetQuaHienThi", "(Tất cả các nước)");
+            ReportParameter reportParameter = new ReportParameter("MoTaKetQuaHienThi", moTa);
             reportViewer.LocalReport.SetParameters(reportParameter);
 
             reportViewer.SetDisplayMode(DisplayMode.PrintLayout);

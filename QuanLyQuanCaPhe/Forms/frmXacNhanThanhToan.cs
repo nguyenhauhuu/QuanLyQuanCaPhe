@@ -29,9 +29,28 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void frmXacNhanThanhToan_Load(object sender, EventArgs e)
         {
-            var hoaDon = context.HoaDon.Find(id);
+            var hoaDon = context.HoaDon
+                .Select(r => new
+                {
+                    r.ID,
+                    r.TaiKhoanID,
+                    r.BanID,
+                    r.NgayLap,
+                    r.GiamGia,
+                    r.TrangThaiThanhToan,
+
+                    TongTien = context.HoaDonChiTiet
+                          .Where(ct => ct.HoaDonID == r.ID)
+                          .Sum(ct => ct.SoLuong * ct.DonGia),
+
+                    TongThanhToan = context.HoaDonChiTiet
+                          .Where(ct => ct.HoaDonID == r.ID)
+                          .Sum(ct => ct.SoLuong * ct.DonGia) * (1 - r.GiamGia / 100m)
+                })
+                .FirstOrDefault(r => r.ID == id);
+
             txtID.Text = hoaDon!.ID.ToString();
-            tongCong = hoaDon.TongCong;
+            tongCong = hoaDon.TongThanhToan;
             txtThanhTien.Text = tongCong.ToString("#,##0") + " đ";
         }
 
@@ -70,7 +89,7 @@ namespace QuanLyQuanCaPhe.Forms
                 frmInHoaDon inHoaDon = new frmInHoaDon(id);
                 inHoaDon.ShowDialog();
                 hoaDon!.TrangThaiThanhToan = 2;
-                ban!.TrangThai = "Trống";
+                ban!.TrangThai = 0;
                 context.HoaDon.Update(hoaDon);
                 context.Ban.Update(ban);
                 context.SaveChanges();
@@ -85,7 +104,7 @@ namespace QuanLyQuanCaPhe.Forms
                     return;
                 }
                 hoaDon!.TrangThaiThanhToan = 1;
-                ban!.TrangThai = "Trống";
+                ban!.TrangThai = 1;
                 context.HoaDon.Update(hoaDon);
                 context.Ban.Update(ban);
                 context.SaveChanges();

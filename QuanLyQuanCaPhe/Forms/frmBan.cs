@@ -235,5 +235,15 @@ namespace QuanLyQuanCaPhe.Forms
                 }
             }
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
+            var ban = context.Ban
+            .Where(r => r.TenBan.Contains(txtTuKhoa.Text))
+            .ToList();
+            dataGridView.DataSource = ban;
+
+        }
     }
 }

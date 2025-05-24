@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBan));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnThoat = new ReaLTaiizor.Controls.Button();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
@@ -44,7 +44,7 @@
             txtID = new ReaLTaiizor.Controls.AloneTextBox();
             lblID = new Label();
             toolStrip1 = new ToolStrip();
-            txtTimKiem = new ToolStripTextBox();
+            txtTuKhoa = new ToolStripTextBox();
             btnTimKiem = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             btnNhap = new ToolStripButton();
@@ -251,25 +251,26 @@
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { txtTimKiem, btnTimKiem, toolStripSeparator1, btnNhap, btnXuat });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { txtTuKhoa, btnTimKiem, toolStripSeparator1, btnNhap, btnXuat });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(337, 25);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
-            // txtTimKiem
+            // txtTuKhoa
             // 
-            txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.Size = new Size(100, 25);
+            txtTuKhoa.Name = "txtTuKhoa";
+            txtTuKhoa.Size = new Size(100, 25);
             // 
             // btnTimKiem
             // 
             btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
             btnTimKiem.ImageTransparentColor = Color.Magenta;
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(47, 22);
+            btnTimKiem.Size = new Size(48, 22);
             btnTimKiem.Text = "Tìm";
+            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // toolStripSeparator1
             // 
@@ -304,24 +305,24 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenBan, TrangThai });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -330,14 +331,14 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(463, 450);
@@ -393,7 +394,7 @@
         private DataGridViewTextBoxColumn TenBan;
         private DataGridViewTextBoxColumn TrangThai;
         private ToolStrip toolStrip1;
-        private ToolStripTextBox txtTimKiem;
+        private ToolStripTextBox txtTuKhoa;
         private ToolStripButton btnTimKiem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton btnNhap;

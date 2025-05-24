@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace QuanLyQuanCaPhe.Migrations
 {
     /// <inheritdoc />
-    public partial class AddMigrationKhoiTaoCSDL : Migration
+    public partial class KhoiTaocSDL : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace QuanLyQuanCaPhe.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TenBan = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    TrangThai = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,7 +61,8 @@ namespace QuanLyQuanCaPhe.Migrations
                     MatKhau = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TenDayDu = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     QuyenTruyCap = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NgaySinh = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    NgaySinh = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HinhAnh = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -123,7 +124,6 @@ namespace QuanLyQuanCaPhe.Migrations
                     BanID = table.Column<int>(type: "int", nullable: false),
                     NgayLap = table.Column<DateTime>(type: "datetime2", nullable: false),
                     GiamGia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TongCong = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TrangThaiThanhToan = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -152,7 +152,7 @@ namespace QuanLyQuanCaPhe.Migrations
                     HoaDonID = table.Column<int>(type: "int", nullable: false),
                     ThucUongID = table.Column<int>(type: "int", nullable: false),
                     SoLuong = table.Column<int>(type: "int", nullable: false),
-                    Gia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DonGia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     GhiChu = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

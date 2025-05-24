@@ -35,11 +35,6 @@
             dataGridView = new ReaLTaiizor.Controls.PoisonDataGridView();
             ID = new DataGridViewTextBoxColumn();
             TenDanhMuc = new DataGridViewTextBoxColumn();
-            btnXuat = new ToolStripButton();
-            btnNhap = new ToolStripButton();
-            toolStripSeparator1 = new ToolStripSeparator();
-            btnTimKiem = new ToolStripButton();
-            txtTimKiem = new ToolStripTextBox();
             panel1 = new Panel();
             btnThoat = new ReaLTaiizor.Controls.Button();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
@@ -52,6 +47,11 @@
             txtID = new ReaLTaiizor.Controls.AloneTextBox();
             lblID = new Label();
             toolStrip1 = new ToolStrip();
+            txtTuKhoa = new ToolStripTextBox();
+            btnTimKiem = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            btnNhap = new ToolStripButton();
+            btnXuat = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -120,44 +120,9 @@
             TenDanhMuc.Name = "TenDanhMuc";
             TenDanhMuc.ReadOnly = true;
             // 
-            // btnXuat
-            // 
-            btnXuat.Image = (Image)resources.GetObject("btnXuat.Image");
-            btnXuat.ImageTransparentColor = Color.Magenta;
-            btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(60, 22);
-            btnXuat.Text = "Xuất...";
-            btnXuat.Click += btnXuat_Click;
-            // 
-            // btnNhap
-            // 
-            btnNhap.Image = (Image)resources.GetObject("btnNhap.Image");
-            btnNhap.ImageTransparentColor = Color.Magenta;
-            btnNhap.Name = "btnNhap";
-            btnNhap.Size = new Size(65, 22);
-            btnNhap.Text = "Nhập...";
-            btnNhap.Click += btnNhap_Click;
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 25);
-            // 
-            // btnTimKiem
-            // 
-            btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
-            btnTimKiem.ImageTransparentColor = Color.Magenta;
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(47, 22);
-            btnTimKiem.Text = "Tìm";
-            // 
-            // txtTimKiem
-            // 
-            txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.Size = new Size(100, 25);
-            // 
             // panel1
             // 
+            panel1.Controls.Add(toolStrip1);
             panel1.Controls.Add(btnThoat);
             panel1.Controls.Add(btnHuyBo);
             panel1.Controls.Add(btnLuu);
@@ -168,7 +133,6 @@
             panel1.Controls.Add(lblTenDanhMuc);
             panel1.Controls.Add(txtID);
             panel1.Controls.Add(lblID);
-            panel1.Controls.Add(toolStrip1);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(443, 0);
             panel1.Name = "panel1";
@@ -349,12 +313,49 @@
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { txtTimKiem, btnTimKiem, toolStripSeparator1, btnNhap, btnXuat });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { txtTuKhoa, btnTimKiem, toolStripSeparator1, btnNhap, btnXuat });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(357, 25);
-            toolStrip1.TabIndex = 0;
+            toolStrip1.TabIndex = 4;
             toolStrip1.Text = "toolStrip1";
+            // 
+            // txtTuKhoa
+            // 
+            txtTuKhoa.Name = "txtTuKhoa";
+            txtTuKhoa.Size = new Size(100, 25);
+            // 
+            // btnTimKiem
+            // 
+            btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
+            btnTimKiem.ImageTransparentColor = Color.Magenta;
+            btnTimKiem.Name = "btnTimKiem";
+            btnTimKiem.Size = new Size(48, 22);
+            btnTimKiem.Text = "Tìm";
+            btnTimKiem.Click += btnTimKiem_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
+            // 
+            // btnNhap
+            // 
+            btnNhap.Image = (Image)resources.GetObject("btnNhap.Image");
+            btnNhap.ImageTransparentColor = Color.Magenta;
+            btnNhap.Name = "btnNhap";
+            btnNhap.Size = new Size(65, 22);
+            btnNhap.Text = "Nhập...";
+            btnNhap.Click += btnNhap_Click;
+            // 
+            // btnXuat
+            // 
+            btnXuat.Image = (Image)resources.GetObject("btnXuat.Image");
+            btnXuat.ImageTransparentColor = Color.Magenta;
+            btnXuat.Name = "btnXuat";
+            btnXuat.Size = new Size(60, 22);
+            btnXuat.Text = "Xuất...";
+            btnXuat.Click += btnXuat_Click;
             // 
             // frmDanhMuc
             // 
@@ -378,11 +379,6 @@
 
         #endregion
         private ReaLTaiizor.Controls.PoisonDataGridView dataGridView;
-        private ToolStripButton btnXuat;
-        private ToolStripButton btnNhap;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton btnTimKiem;
-        private ToolStripTextBox txtTimKiem;
         private Panel panel1;
         private ReaLTaiizor.Controls.Button btnThoat;
         private ReaLTaiizor.Controls.Button btnHuyBo;
@@ -394,8 +390,13 @@
         private Label lblTenDanhMuc;
         private ReaLTaiizor.Controls.AloneTextBox txtID;
         private Label lblID;
-        private ToolStrip toolStrip1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn TenDanhMuc;
+        private ToolStrip toolStrip1;
+        private ToolStripTextBox txtTuKhoa;
+        private ToolStripButton btnTimKiem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton btnNhap;
+        private ToolStripButton btnXuat;
     }
 }

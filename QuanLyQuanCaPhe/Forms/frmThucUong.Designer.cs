@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThucUong));
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnThoat = new ReaLTaiizor.Controls.Button();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
             btnLuu = new ReaLTaiizor.Controls.Button();
@@ -39,13 +40,13 @@
             lblTenDanhMuc = new Label();
             txtID = new ReaLTaiizor.Controls.AloneTextBox();
             lblID = new Label();
+            panel1 = new Panel();
             toolStrip1 = new ToolStrip();
-            txtTimKiem = new ToolStripTextBox();
+            txtTuKhoa = new ToolStripTextBox();
             btnTimKiem = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             btnNhap = new ToolStripButton();
             btnXuat = new ToolStripButton();
-            panel1 = new Panel();
             numGia = new NumericUpDown();
             label2 = new Label();
             cboDanhMuc = new ReaLTaiizor.Controls.AloneComboBox();
@@ -54,8 +55,9 @@
             ID = new DataGridViewTextBoxColumn();
             TenDanhMuc = new DataGridViewTextBoxColumn();
             TenThucUong = new DataGridViewTextBoxColumn();
-            toolStrip1.SuspendLayout();
+            DonGia = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numGia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -70,12 +72,11 @@
             btnThoat.Image = null;
             btnThoat.ImageAlign = ContentAlignment.MiddleLeft;
             btnThoat.InactiveColor = Color.Gray;
-            btnThoat.Location = new Point(263, 647);
-            btnThoat.Margin = new Padding(4, 5, 4, 5);
+            btnThoat.Location = new Point(184, 388);
             btnThoat.Name = "btnThoat";
             btnThoat.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnThoat.PressedColor = Color.FromArgb(165, 37, 37);
-            btnThoat.Size = new Size(171, 67);
+            btnThoat.Size = new Size(120, 40);
             btnThoat.TabIndex = 3;
             btnThoat.Text = "Thoát";
             btnThoat.TextAlignment = StringAlignment.Center;
@@ -90,12 +91,11 @@
             btnHuyBo.Image = null;
             btnHuyBo.ImageAlign = ContentAlignment.MiddleLeft;
             btnHuyBo.InactiveColor = Color.Gray;
-            btnHuyBo.Location = new Point(40, 647);
-            btnHuyBo.Margin = new Padding(4, 5, 4, 5);
+            btnHuyBo.Location = new Point(28, 388);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnHuyBo.PressedColor = Color.FromArgb(165, 37, 37);
-            btnHuyBo.Size = new Size(171, 67);
+            btnHuyBo.Size = new Size(120, 40);
             btnHuyBo.TabIndex = 3;
             btnHuyBo.Text = "Hủy";
             btnHuyBo.TextAlignment = StringAlignment.Center;
@@ -111,12 +111,11 @@
             btnLuu.Image = null;
             btnLuu.ImageAlign = ContentAlignment.MiddleLeft;
             btnLuu.InactiveColor = Color.Gray;
-            btnLuu.Location = new Point(263, 550);
-            btnLuu.Margin = new Padding(4, 5, 4, 5);
+            btnLuu.Location = new Point(184, 330);
             btnLuu.Name = "btnLuu";
             btnLuu.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnLuu.PressedColor = Color.FromArgb(165, 37, 37);
-            btnLuu.Size = new Size(171, 67);
+            btnLuu.Size = new Size(120, 40);
             btnLuu.TabIndex = 3;
             btnLuu.Text = "Lưu";
             btnLuu.TextAlignment = StringAlignment.Center;
@@ -132,12 +131,11 @@
             btnXoa.Image = null;
             btnXoa.ImageAlign = ContentAlignment.MiddleLeft;
             btnXoa.InactiveColor = Color.Gray;
-            btnXoa.Location = new Point(40, 550);
-            btnXoa.Margin = new Padding(4, 5, 4, 5);
+            btnXoa.Location = new Point(28, 330);
             btnXoa.Name = "btnXoa";
             btnXoa.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnXoa.PressedColor = Color.FromArgb(165, 37, 37);
-            btnXoa.Size = new Size(171, 67);
+            btnXoa.Size = new Size(120, 40);
             btnXoa.TabIndex = 3;
             btnXoa.Text = "Xóa";
             btnXoa.TextAlignment = StringAlignment.Center;
@@ -153,12 +151,11 @@
             btnSua.Image = null;
             btnSua.ImageAlign = ContentAlignment.MiddleLeft;
             btnSua.InactiveColor = Color.Gray;
-            btnSua.Location = new Point(263, 453);
-            btnSua.Margin = new Padding(4, 5, 4, 5);
+            btnSua.Location = new Point(184, 272);
             btnSua.Name = "btnSua";
             btnSua.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnSua.PressedColor = Color.FromArgb(165, 37, 37);
-            btnSua.Size = new Size(171, 67);
+            btnSua.Size = new Size(120, 40);
             btnSua.TabIndex = 3;
             btnSua.Text = "Sửa";
             btnSua.TextAlignment = StringAlignment.Center;
@@ -174,12 +171,11 @@
             btnThem.Image = null;
             btnThem.ImageAlign = ContentAlignment.MiddleLeft;
             btnThem.InactiveColor = Color.Gray;
-            btnThem.Location = new Point(40, 453);
-            btnThem.Margin = new Padding(4, 5, 4, 5);
+            btnThem.Location = new Point(28, 272);
             btnThem.Name = "btnThem";
             btnThem.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnThem.PressedColor = Color.FromArgb(165, 37, 37);
-            btnThem.Size = new Size(171, 67);
+            btnThem.Size = new Size(120, 40);
             btnThem.TabIndex = 3;
             btnThem.Text = "Thêm";
             btnThem.TextAlignment = StringAlignment.Center;
@@ -191,13 +187,12 @@
             txtTenThucUong.EnabledCalc = true;
             txtTenThucUong.Font = new Font("Segoe UI", 12F);
             txtTenThucUong.ForeColor = Color.FromArgb(124, 133, 142);
-            txtTenThucUong.Location = new Point(40, 303);
-            txtTenThucUong.Margin = new Padding(4, 5, 4, 5);
+            txtTenThucUong.Location = new Point(28, 182);
             txtTenThucUong.MaxLength = 32767;
             txtTenThucUong.MultiLine = false;
             txtTenThucUong.Name = "txtTenThucUong";
             txtTenThucUong.ReadOnly = false;
-            txtTenThucUong.Size = new Size(409, 50);
+            txtTenThucUong.Size = new Size(286, 30);
             txtTenThucUong.TabIndex = 2;
             txtTenThucUong.TextAlign = HorizontalAlignment.Left;
             txtTenThucUong.UseSystemPasswordChar = false;
@@ -206,10 +201,9 @@
             // 
             lblTenDanhMuc.AutoSize = true;
             lblTenDanhMuc.Font = new Font("Segoe UI", 12F);
-            lblTenDanhMuc.Location = new Point(40, 263);
-            lblTenDanhMuc.Margin = new Padding(4, 0, 4, 0);
+            lblTenDanhMuc.Location = new Point(28, 158);
             lblTenDanhMuc.Name = "lblTenDanhMuc";
-            lblTenDanhMuc.Size = new Size(174, 32);
+            lblTenDanhMuc.Size = new Size(110, 21);
             lblTenDanhMuc.TabIndex = 1;
             lblTenDanhMuc.Text = "Tên thức uống:";
             // 
@@ -220,13 +214,12 @@
             txtID.EnabledCalc = false;
             txtID.Font = new Font("Segoe UI", 12F);
             txtID.ForeColor = Color.FromArgb(124, 133, 142);
-            txtID.Location = new Point(40, 100);
-            txtID.Margin = new Padding(4, 5, 4, 5);
+            txtID.Location = new Point(28, 60);
             txtID.MaxLength = 32767;
             txtID.MultiLine = false;
             txtID.Name = "txtID";
             txtID.ReadOnly = false;
-            txtID.Size = new Size(409, 50);
+            txtID.Size = new Size(286, 30);
             txtID.TabIndex = 2;
             txtID.TextAlign = HorizontalAlignment.Left;
             txtID.UseSystemPasswordChar = false;
@@ -235,62 +228,15 @@
             // 
             lblID.AutoSize = true;
             lblID.Font = new Font("Segoe UI", 12F);
-            lblID.Location = new Point(40, 60);
-            lblID.Margin = new Padding(4, 0, 4, 0);
+            lblID.Location = new Point(28, 36);
             lblID.Name = "lblID";
-            lblID.Size = new Size(42, 32);
+            lblID.Size = new Size(28, 21);
             lblID.TabIndex = 1;
             lblID.Text = "ID:";
             // 
-            // toolStrip1
-            // 
-            toolStrip1.ImageScalingSize = new Size(24, 24);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { txtTimKiem, btnTimKiem, toolStripSeparator1, btnNhap, btnXuat });
-            toolStrip1.Location = new Point(0, 0);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Padding = new Padding(0, 0, 3, 0);
-            toolStrip1.Size = new Size(510, 34);
-            toolStrip1.TabIndex = 0;
-            toolStrip1.Text = "toolStrip1";
-            // 
-            // txtTimKiem
-            // 
-            txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.Size = new Size(141, 34);
-            // 
-            // btnTimKiem
-            // 
-            btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
-            btnTimKiem.ImageTransparentColor = Color.Magenta;
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(69, 29);
-            btnTimKiem.Text = "Tìm";
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 34);
-            // 
-            // btnNhap
-            // 
-            btnNhap.Image = (Image)resources.GetObject("btnNhap.Image");
-            btnNhap.ImageTransparentColor = Color.Magenta;
-            btnNhap.Name = "btnNhap";
-            btnNhap.Size = new Size(95, 29);
-            btnNhap.Text = "Nhập...";
-            btnNhap.Click += btnNhap_Click;
-            // 
-            // btnXuat
-            // 
-            btnXuat.Image = (Image)resources.GetObject("btnXuat.Image");
-            btnXuat.ImageTransparentColor = Color.Magenta;
-            btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(88, 29);
-            btnXuat.Text = "Xuất...";
-            btnXuat.Click += btnXuat_Click;
-            // 
             // panel1
             // 
+            panel1.Controls.Add(toolStrip1);
             panel1.Controls.Add(numGia);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cboDanhMuc);
@@ -305,23 +251,66 @@
             panel1.Controls.Add(lblTenDanhMuc);
             panel1.Controls.Add(txtID);
             panel1.Controls.Add(lblID);
-            panel1.Controls.Add(toolStrip1);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(633, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Location = new Point(557, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(510, 750);
+            panel1.Size = new Size(357, 450);
             panel1.TabIndex = 4;
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.Items.AddRange(new ToolStripItem[] { txtTuKhoa, btnTimKiem, toolStripSeparator1, btnNhap, btnXuat });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(357, 25);
+            toolStrip1.TabIndex = 8;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // txtTuKhoa
+            // 
+            txtTuKhoa.Name = "txtTuKhoa";
+            txtTuKhoa.Size = new Size(100, 25);
+            // 
+            // btnTimKiem
+            // 
+            btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
+            btnTimKiem.ImageTransparentColor = Color.Magenta;
+            btnTimKiem.Name = "btnTimKiem";
+            btnTimKiem.Size = new Size(48, 22);
+            btnTimKiem.Text = "Tìm";
+            btnTimKiem.Click += btnTimKiem_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
+            // 
+            // btnNhap
+            // 
+            btnNhap.Image = (Image)resources.GetObject("btnNhap.Image");
+            btnNhap.ImageTransparentColor = Color.Magenta;
+            btnNhap.Name = "btnNhap";
+            btnNhap.Size = new Size(65, 22);
+            btnNhap.Text = "Nhập...";
+            btnNhap.Click += btnNhap_Click;
+            // 
+            // btnXuat
+            // 
+            btnXuat.Image = (Image)resources.GetObject("btnXuat.Image");
+            btnXuat.ImageTransparentColor = Color.Magenta;
+            btnXuat.Name = "btnXuat";
+            btnXuat.Size = new Size(60, 22);
+            btnXuat.Text = "Xuất...";
+            btnXuat.Click += btnXuat_Click;
             // 
             // numGia
             // 
             numGia.Increment = new decimal(new int[] { 1000, 0, 0, 0 });
-            numGia.Location = new Point(40, 398);
-            numGia.Margin = new Padding(4, 5, 4, 5);
+            numGia.Location = new Point(28, 239);
             numGia.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numGia.Minimum = new decimal(new int[] { 1000, 0, 0, 0 });
             numGia.Name = "numGia";
-            numGia.Size = new Size(409, 31);
+            numGia.Size = new Size(286, 23);
             numGia.TabIndex = 7;
             numGia.Tag = "";
             numGia.ThousandsSeparator = true;
@@ -331,10 +320,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(39, 358);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(27, 215);
             label2.Name = "label2";
-            label2.Size = new Size(53, 32);
+            label2.Size = new Size(36, 21);
             label2.TabIndex = 6;
             label2.Text = "Giá:";
             // 
@@ -346,20 +334,18 @@
             cboDanhMuc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboDanhMuc.FormattingEnabled = true;
             cboDanhMuc.ItemHeight = 20;
-            cboDanhMuc.Location = new Point(40, 215);
-            cboDanhMuc.Margin = new Padding(4, 5, 4, 5);
+            cboDanhMuc.Location = new Point(28, 129);
             cboDanhMuc.Name = "cboDanhMuc";
-            cboDanhMuc.Size = new Size(407, 26);
+            cboDanhMuc.Size = new Size(286, 26);
             cboDanhMuc.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(40, 180);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(28, 108);
             label1.Name = "label1";
-            label1.Size = new Size(171, 32);
+            label1.Size = new Size(109, 21);
             label1.TabIndex = 4;
             label1.Text = "Tên danh mục:";
             // 
@@ -369,60 +355,61 @@
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenDanhMuc, TenThucUong });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenDanhMuc, TenThucUong, DonGia });
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.Location = new Point(0, 0);
-            dataGridView.Margin = new Padding(4, 5, 4, 5);
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
-            dataGridView.RowHeadersWidth = 62;
-            dataGridView.Size = new Size(633, 750);
+            dataGridView.Size = new Size(557, 450);
             dataGridView.TabIndex = 5;
             // 
             // ID
             // 
             ID.DataPropertyName = "ID";
-            ID.FillWeight = 76.1421356F;
             ID.HeaderText = "ID";
-            ID.MinimumWidth = 8;
             ID.Name = "ID";
             ID.ReadOnly = true;
             // 
             // TenDanhMuc
             // 
             TenDanhMuc.DataPropertyName = "TenDanhMuc";
-            TenDanhMuc.FillWeight = 111.928932F;
             TenDanhMuc.HeaderText = "Tên danh mục";
-            TenDanhMuc.MinimumWidth = 8;
             TenDanhMuc.Name = "TenDanhMuc";
             TenDanhMuc.ReadOnly = true;
             // 
             // TenThucUong
             // 
             TenThucUong.DataPropertyName = "TenThucUong";
-            TenThucUong.FillWeight = 111.928932F;
             TenThucUong.HeaderText = "Tên thức uống";
-            TenThucUong.MinimumWidth = 8;
             TenThucUong.Name = "TenThucUong";
             TenThucUong.ReadOnly = true;
             // 
+            // DonGia
+            // 
+            DonGia.DataPropertyName = "DonGia";
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            DonGia.DefaultCellStyle = dataGridViewCellStyle2;
+            DonGia.HeaderText = "Đơn giá";
+            DonGia.Name = "DonGia";
+            DonGia.ReadOnly = true;
+            // 
             // frmThucUong
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1143, 750);
+            ClientSize = new Size(914, 450);
             Controls.Add(dataGridView);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "frmThucUong";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmThucUong";
             Load += frmThucUong_Load;
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numGia).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
@@ -440,20 +427,21 @@
         private Label lblTenDanhMuc;
         private ReaLTaiizor.Controls.AloneTextBox txtID;
         private Label lblID;
+        private Panel panel1;
+        private ReaLTaiizor.Controls.AloneComboBox cboDanhMuc;
+        private Label label1;
+        private NumericUpDown numGia;
+        private Label label2;
         private ToolStrip toolStrip1;
-        private ToolStripTextBox txtTimKiem;
+        private ToolStripTextBox txtTuKhoa;
         private ToolStripButton btnTimKiem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton btnNhap;
         private ToolStripButton btnXuat;
-        private Panel panel1;
-        private ReaLTaiizor.Controls.AloneComboBox cboDanhMuc;
-        private Label label1;
         private DataGridView dataGridView;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn TenDanhMuc;
         private DataGridViewTextBoxColumn TenThucUong;
-        private NumericUpDown numGia;
-        private Label label2;
+        private DataGridViewTextBoxColumn DonGia;
     }
 }
