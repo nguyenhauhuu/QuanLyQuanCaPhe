@@ -243,6 +243,7 @@ namespace QuanLyQuanCaPhe.Forms
                     }
 
                     context.SaveChanges();
+                    Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã cập nhật hóa đơn{idHD}");
 
                 }
             }
@@ -283,6 +284,8 @@ namespace QuanLyQuanCaPhe.Forms
                 ban.TrangThai = 1;
                 context.Ban.Update(ban);
                 context.SaveChanges();
+                Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã thêm hóa đơn{idHD}");
+
 
 
             }
@@ -301,6 +304,7 @@ namespace QuanLyQuanCaPhe.Forms
                     hoaDonChiTiet.Remove(chiTiet);
                 }
                 BatTatChucNang();
+                Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã xóa {chiTiet.TenThucUong}");
             }
             else
             {
@@ -352,6 +356,8 @@ namespace QuanLyQuanCaPhe.Forms
                 MessageBox.Show("Chuyển bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 frmChucNang_Load(sender, e);
+                Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã chuyển {tenBanDau} sang {tenBanDich} ");
+
             }
         }
 
@@ -359,6 +365,10 @@ namespace QuanLyQuanCaPhe.Forms
         {
             int idBanDau = Convert.ToInt32(cboBanDau.SelectedValue);
             int idBanDich = Convert.ToInt32(cboBanDich.SelectedValue);
+
+            string tenBanDau = cboBanDau.Text;
+            string tenBanDich = cboBanDich.Text;
+
 
             var hoaDonDau = context.HoaDon.FirstOrDefault(h => h.BanID == idBanDau && h.TrangThaiThanhToan == 0);
             var hoaDonDich = context.HoaDon.FirstOrDefault(h => h.BanID == idBanDich && h.TrangThaiThanhToan == 0);
@@ -373,7 +383,7 @@ namespace QuanLyQuanCaPhe.Forms
                 MessageBox.Show("Bàn đầu và bàn đích không được trùng nhau.");
                 return;
             }
-            var result = MessageBox.Show("Bạn có chắc chắn muốn gộp bàn không?", "Xác nhận", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show($"Bạn có chắc chắn muốn gộp bàn {tenBanDau} và {tenBanDich} không?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.No) return;
 
 
@@ -408,6 +418,9 @@ namespace QuanLyQuanCaPhe.Forms
             context.SaveChanges();
 
             MessageBox.Show("Gộp bàn thành công!");
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã gộp {tenBanDau} và {tenBanDich} ");
+
+
             frmChucNang_Load(sender, e);
         }
 

@@ -28,10 +28,11 @@ namespace QuanLyQuanCaPhe.Forms
         frmTaiKhoan? taiKhoan = null;
         frmThongKeDoanhThu? thongKeDoanhThu = null;
         frmThongKeThucUong? thongKeThucUong = null;
+        frmThongTinTaiKhoan? thongTinTaiKhoan = null;
         string tenHienThi = "";
         int idTaiKhoan;
 
-        
+
 
 
         public Form1()
@@ -85,6 +86,7 @@ namespace QuanLyQuanCaPhe.Forms
                                 QuyenUser();
                             else
                                 ChuaPhanQuyen();
+                            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã đăng nhập");
                         }
                         else
                         {
@@ -122,7 +124,7 @@ namespace QuanLyQuanCaPhe.Forms
             btnDangXuat.Visible = true;
             btnDangNhap.Visible = false;
             btnBanNuoc.Visible = true; ;
-            lblTenDayDu.Text =  tenHienThi;
+            lblTenDayDu.Text = tenHienThi;
         }
 
         public void QuyenUser()
@@ -130,7 +132,7 @@ namespace QuanLyQuanCaPhe.Forms
             btnBanNuoc.Visible = true;
             btnDangXuat.Visible = true;
             btnDangNhap.Visible = false;
-            lblTenDayDu.Text =  tenHienThi;
+            lblTenDayDu.Text = tenHienThi;
         }
 
 
@@ -142,6 +144,8 @@ namespace QuanLyQuanCaPhe.Forms
             ban.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(ban);
             ban.Show();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã click vào danh sách bàn");
+
         }
 
         private void btnDanhMuc_Click(object sender, EventArgs e)
@@ -152,6 +156,8 @@ namespace QuanLyQuanCaPhe.Forms
             danhMuc.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(danhMuc);
             danhMuc.Show();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã click vào danh mục");
+
         }
 
         private void btnThucUong_Click(object sender, EventArgs e)
@@ -162,6 +168,8 @@ namespace QuanLyQuanCaPhe.Forms
             thucUong.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(thucUong);
             thucUong.Show();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã click vào thức uống");
+
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
@@ -172,6 +180,8 @@ namespace QuanLyQuanCaPhe.Forms
             taiKhoan.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(taiKhoan);
             taiKhoan.Show();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã click vào quản lý tài khoản");
+
         }
 
         private void btnBanNuoc_Click(object sender, EventArgs e)
@@ -182,6 +192,8 @@ namespace QuanLyQuanCaPhe.Forms
             chucNang.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(chucNang);
             chucNang.Show();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã click vào bán nước");
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -193,9 +205,9 @@ namespace QuanLyQuanCaPhe.Forms
             string imageFolder = Application.StartupPath.Replace("bin\\Debug\\net8.0-windows", "Images");
             string imagePath = Path.Combine(imageFolder, fileName);
 
-           
+
             picHinhAnh.Image = Image.FromFile(imagePath);
-          
+
 
         }
 
@@ -210,6 +222,8 @@ namespace QuanLyQuanCaPhe.Forms
             this.pnlFormLoader.Controls.Clear();
             ChuaPhanQuyen();
             DangNhap();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã đăng xuất");
+
         }
 
         private void btnThongKeDoanhThu_Click(object sender, EventArgs e)
@@ -220,6 +234,8 @@ namespace QuanLyQuanCaPhe.Forms
             thongKeDoanhThu.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(thongKeDoanhThu);
             thongKeDoanhThu.Show();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã click vào thống kê doanh thu");
+
         }
 
         private void btnThongKeThucUong_Click(object sender, EventArgs e)
@@ -230,6 +246,19 @@ namespace QuanLyQuanCaPhe.Forms
             thongKeThucUong.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(thongKeThucUong);
             thongKeThucUong.Show();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã click vào thống kê thức uống");
+
+        }
+
+        private void picHinhAnh_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Thông tin tài khoản";
+            this.pnlFormLoader.Controls.Clear();
+            thongTinTaiKhoan = new frmThongTinTaiKhoan(idTaiKhoan) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            thongTinTaiKhoan.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(thongTinTaiKhoan);
+            thongTinTaiKhoan.Show();
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã truy cập thông tin cá nhân");
         }
     }
 }

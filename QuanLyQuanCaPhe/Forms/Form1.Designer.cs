@@ -231,6 +231,7 @@
             picHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
             picHinhAnh.TabIndex = 0;
             picHinhAnh.TabStop = false;
+            picHinhAnh.Click += picHinhAnh_Click;
             // 
             // panel3
             // 
