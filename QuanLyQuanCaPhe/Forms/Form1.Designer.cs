@@ -266,7 +266,7 @@
             // toolStripStatusLabel2
             // 
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(678, 17);
+            toolStripStatusLabel2.Size = new Size(647, 17);
             toolStripStatusLabel2.Spring = true;
             // 
             // lblLienKet
@@ -275,6 +275,7 @@
             lblLienKet.Name = "lblLienKet";
             lblLienKet.Size = new Size(72, 17);
             lblLienKet.Text = "©Hữu Đang";
+            lblLienKet.Click += lblLienKet_Click;
             // 
             // pnlFormLoader
             // 

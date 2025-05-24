@@ -260,5 +260,10 @@ namespace QuanLyQuanCaPhe.Forms
             thongTinTaiKhoan.Show();
             Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã truy cập thông tin cá nhân");
         }
+
+        private void lblLienKet_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

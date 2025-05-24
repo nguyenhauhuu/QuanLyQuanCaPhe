@@ -380,6 +380,7 @@
             btnKhoiPhucMatKhau.TabIndex = 4;
             btnKhoiPhucMatKhau.Text = "Khôi phục mật khẩu";
             btnKhoiPhucMatKhau.TextAlignment = StringAlignment.Center;
+            btnKhoiPhucMatKhau.Click += btnKhoiPhucMatKhau_Click;
             // 
             // txtTenDangNhap
             // 

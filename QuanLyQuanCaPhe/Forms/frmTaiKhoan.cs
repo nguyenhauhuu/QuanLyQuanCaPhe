@@ -349,5 +349,10 @@ namespace QuanLyQuanCaPhe.Forms
             .ToList();
             dataGridView.DataSource = taiKhoan;
         }
+
+        private void btnKhoiPhucMatKhau_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
