@@ -30,8 +30,13 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox = new GroupBox();
-            txtMoTa = new ReaLTaiizor.Controls.AloneTextBox();
-            numSoLuong = new ReaLTaiizor.Controls.HopeNumeric();
+            btnLuu = new Button();
+            btnXoa = new Button();
+            btnThem = new Button();
+            numSoLuong = new NumericUpDown();
+            txtMoTa = new TextBox();
+            cboThucUong = new ComboBox();
+            cboDanhMuc = new ComboBox();
             btnTinhTien = new ReaLTaiizor.Controls.Button();
             txtTongTien = new ReaLTaiizor.Controls.AloneTextBox();
             label6 = new Label();
@@ -46,25 +51,27 @@
             SoLuong = new DataGridViewTextBoxColumn();
             ThanhTien = new DataGridViewTextBoxColumn();
             label4 = new Label();
-            btnLuu = new ReaLTaiizor.Controls.Button();
-            btnXoa = new ReaLTaiizor.Controls.Button();
-            btnThem = new ReaLTaiizor.Controls.Button();
             label7 = new Label();
             label3 = new Label();
             label2 = new Label();
-            cboThucUong = new ReaLTaiizor.Controls.AloneComboBox();
-            cboDanhMuc = new ReaLTaiizor.Controls.AloneComboBox();
             label1 = new Label();
             flpDanhSachBan = new FlowLayoutPanel();
+            helpProvider1 = new HelpProvider();
             groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numSoLuong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numGiamGia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDanhSachThucUong).BeginInit();
             SuspendLayout();
             // 
             // groupBox
             // 
-            groupBox.Controls.Add(txtMoTa);
+            groupBox.Controls.Add(btnLuu);
+            groupBox.Controls.Add(btnXoa);
+            groupBox.Controls.Add(btnThem);
             groupBox.Controls.Add(numSoLuong);
+            groupBox.Controls.Add(txtMoTa);
+            groupBox.Controls.Add(cboThucUong);
+            groupBox.Controls.Add(cboDanhMuc);
             groupBox.Controls.Add(btnTinhTien);
             groupBox.Controls.Add(txtTongTien);
             groupBox.Controls.Add(label6);
@@ -76,63 +83,84 @@
             groupBox.Controls.Add(cboBanDau);
             groupBox.Controls.Add(dgvDanhSachThucUong);
             groupBox.Controls.Add(label4);
-            groupBox.Controls.Add(btnLuu);
-            groupBox.Controls.Add(btnXoa);
-            groupBox.Controls.Add(btnThem);
             groupBox.Controls.Add(label7);
             groupBox.Controls.Add(label3);
             groupBox.Controls.Add(label2);
-            groupBox.Controls.Add(cboThucUong);
-            groupBox.Controls.Add(cboDanhMuc);
             groupBox.Controls.Add(label1);
             groupBox.Dock = DockStyle.Right;
-            groupBox.Location = new Point(330, 0);
+            groupBox.Location = new Point(333, 0);
             groupBox.Name = "groupBox";
             groupBox.Size = new Size(470, 450);
             groupBox.TabIndex = 2;
             groupBox.TabStop = false;
             groupBox.Text = "Bàn";
             // 
-            // txtMoTa
+            // btnLuu
             // 
-            txtMoTa.BackColor = Color.Transparent;
-            txtMoTa.EnabledCalc = true;
-            txtMoTa.Font = new Font("Segoe UI", 9F);
-            txtMoTa.ForeColor = Color.FromArgb(124, 133, 142);
-            txtMoTa.Location = new Point(96, 118);
-            txtMoTa.MaxLength = 32767;
-            txtMoTa.MultiLine = false;
-            txtMoTa.Name = "txtMoTa";
-            txtMoTa.ReadOnly = false;
-            txtMoTa.Size = new Size(362, 29);
-            txtMoTa.TabIndex = 14;
-            txtMoTa.TextAlign = HorizontalAlignment.Left;
-            txtMoTa.UseSystemPasswordChar = false;
+            btnLuu.BackColor = Color.FromArgb(147, 197, 253);
+            btnLuu.Font = new Font("Segoe UI", 12F);
+            btnLuu.Location = new Point(396, 34);
+            btnLuu.Name = "btnLuu";
+            btnLuu.Size = new Size(62, 30);
+            btnLuu.TabIndex = 17;
+            btnLuu.Text = "Lưu";
+            btnLuu.UseVisualStyleBackColor = false;
+            btnLuu.Click += btnLuu_Click;
+            // 
+            // btnXoa
+            // 
+            btnXoa.BackColor = Color.LightPink;
+            btnXoa.Font = new Font("Segoe UI", 12F);
+            btnXoa.Location = new Point(328, 34);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(62, 30);
+            btnXoa.TabIndex = 18;
+            btnXoa.Text = "Xóa";
+            btnXoa.UseVisualStyleBackColor = false;
+            btnXoa.Click += btnXoa_Click;
+            // 
+            // btnThem
+            // 
+            btnThem.BackColor = Color.LightGreen;
+            btnThem.Font = new Font("Segoe UI", 12F);
+            btnThem.Location = new Point(260, 34);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(62, 30);
+            btnThem.TabIndex = 19;
+            btnThem.Text = "Thêm";
+            btnThem.UseVisualStyleBackColor = false;
+            btnThem.Click += btnThem_Click;
             // 
             // numSoLuong
             // 
-            numSoLuong.BackColor = Color.White;
-            numSoLuong.BaseColor = Color.FromArgb(242, 246, 252);
-            numSoLuong.BorderColorA = Color.FromArgb(192, 196, 204);
-            numSoLuong.BorderColorB = Color.FromArgb(192, 196, 204);
-            numSoLuong.BorderHoverColorA = Color.FromArgb(64, 158, 255);
-            numSoLuong.ButtonTextColorA = Color.FromArgb(144, 147, 153);
-            numSoLuong.ButtonTextColorB = Color.FromArgb(144, 147, 153);
-            numSoLuong.EnterKey = true;
-            numSoLuong.Font = new Font("Segoe UI", 12F);
-            numSoLuong.ForeColor = Color.Black;
-            numSoLuong.HoverButtonTextColorA = Color.FromArgb(64, 158, 255);
-            numSoLuong.HoverButtonTextColorB = Color.FromArgb(64, 158, 255);
-            numSoLuong.Location = new Point(344, 76);
-            numSoLuong.MaxNum = 100F;
-            numSoLuong.MinNum = 1F;
+            numSoLuong.Location = new Point(351, 84);
             numSoLuong.Name = "numSoLuong";
-            numSoLuong.Precision = 0;
-            numSoLuong.Size = new Size(120, 32);
-            numSoLuong.Step = 1F;
-            numSoLuong.Style = ReaLTaiizor.Controls.HopeNumeric.NumericStyle.LeftRight;
-            numSoLuong.TabIndex = 13;
-            numSoLuong.ValueNumber = 1F;
+            numSoLuong.Size = new Size(106, 23);
+            numSoLuong.TabIndex = 16;
+            // 
+            // txtMoTa
+            // 
+            txtMoTa.Location = new Point(74, 121);
+            txtMoTa.Name = "txtMoTa";
+            txtMoTa.Size = new Size(383, 23);
+            txtMoTa.TabIndex = 15;
+            // 
+            // cboThucUong
+            // 
+            cboThucUong.FormattingEnabled = true;
+            cboThucUong.Location = new Point(90, 81);
+            cboThucUong.Name = "cboThucUong";
+            cboThucUong.Size = new Size(164, 23);
+            cboThucUong.TabIndex = 14;
+            // 
+            // cboDanhMuc
+            // 
+            cboDanhMuc.FormattingEnabled = true;
+            cboDanhMuc.Location = new Point(90, 38);
+            cboDanhMuc.Name = "cboDanhMuc";
+            cboDanhMuc.Size = new Size(164, 23);
+            cboDanhMuc.TabIndex = 14;
+            cboDanhMuc.SelectedIndexChanged += cboDanhMuc_SelectedIndexChanged;
             // 
             // btnTinhTien
             // 
@@ -310,66 +338,6 @@
             label4.TabIndex = 4;
             label4.Text = "Số lượng:";
             // 
-            // btnLuu
-            // 
-            btnLuu.BackColor = Color.Transparent;
-            btnLuu.BorderColor = Color.FromArgb(32, 34, 37);
-            btnLuu.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnLuu.EnteredColor = Color.FromArgb(32, 34, 37);
-            btnLuu.Font = new Font("Microsoft Sans Serif", 12F);
-            btnLuu.Image = null;
-            btnLuu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLuu.InactiveColor = Color.Blue;
-            btnLuu.Location = new Point(405, 36);
-            btnLuu.Name = "btnLuu";
-            btnLuu.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnLuu.PressedColor = Color.FromArgb(165, 37, 37);
-            btnLuu.Size = new Size(52, 26);
-            btnLuu.TabIndex = 3;
-            btnLuu.Text = "Lưu";
-            btnLuu.TextAlignment = StringAlignment.Center;
-            btnLuu.Click += btnLuu_Click;
-            // 
-            // btnXoa
-            // 
-            btnXoa.BackColor = Color.Transparent;
-            btnXoa.BorderColor = Color.FromArgb(32, 34, 37);
-            btnXoa.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnXoa.EnteredColor = Color.FromArgb(32, 34, 37);
-            btnXoa.Font = new Font("Microsoft Sans Serif", 12F);
-            btnXoa.Image = null;
-            btnXoa.ImageAlign = ContentAlignment.MiddleLeft;
-            btnXoa.InactiveColor = Color.FromArgb(192, 0, 0);
-            btnXoa.Location = new Point(346, 36);
-            btnXoa.Name = "btnXoa";
-            btnXoa.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnXoa.PressedColor = Color.FromArgb(165, 37, 37);
-            btnXoa.Size = new Size(52, 26);
-            btnXoa.TabIndex = 3;
-            btnXoa.Text = "Xóa";
-            btnXoa.TextAlignment = StringAlignment.Center;
-            btnXoa.Click += btnXoa_Click;
-            // 
-            // btnThem
-            // 
-            btnThem.BackColor = Color.Transparent;
-            btnThem.BorderColor = Color.FromArgb(32, 34, 37);
-            btnThem.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnThem.EnteredColor = Color.FromArgb(32, 34, 37);
-            btnThem.Font = new Font("Microsoft Sans Serif", 12F);
-            btnThem.Image = null;
-            btnThem.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThem.InactiveColor = Color.FromArgb(0, 192, 0);
-            btnThem.Location = new Point(287, 36);
-            btnThem.Name = "btnThem";
-            btnThem.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnThem.PressedColor = Color.FromArgb(165, 37, 37);
-            btnThem.Size = new Size(52, 26);
-            btnThem.TabIndex = 3;
-            btnThem.Text = "Thêm";
-            btnThem.TextAlignment = StringAlignment.Center;
-            btnThem.Click += btnThem_Click;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -384,7 +352,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(14, 85);
             label3.Name = "label3";
-            label3.Size = new Size(68, 15);
+            label3.Size = new Size(67, 15);
             label3.TabIndex = 2;
             label3.Text = "Thức uống:";
             // 
@@ -396,31 +364,6 @@
             label2.Size = new Size(65, 15);
             label2.TabIndex = 2;
             label2.Text = "Danh mục:";
-            // 
-            // cboThucUong
-            // 
-            cboThucUong.DrawMode = DrawMode.OwnerDrawFixed;
-            cboThucUong.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboThucUong.EnabledCalc = true;
-            cboThucUong.FormattingEnabled = true;
-            cboThucUong.ItemHeight = 20;
-            cboThucUong.Location = new Point(96, 79);
-            cboThucUong.Name = "cboThucUong";
-            cboThucUong.Size = new Size(176, 26);
-            cboThucUong.TabIndex = 1;
-            // 
-            // cboDanhMuc
-            // 
-            cboDanhMuc.DrawMode = DrawMode.OwnerDrawFixed;
-            cboDanhMuc.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboDanhMuc.EnabledCalc = true;
-            cboDanhMuc.FormattingEnabled = true;
-            cboDanhMuc.ItemHeight = 20;
-            cboDanhMuc.Location = new Point(96, 36);
-            cboDanhMuc.Name = "cboDanhMuc";
-            cboDanhMuc.Size = new Size(176, 26);
-            cboDanhMuc.TabIndex = 1;
-            cboDanhMuc.SelectedIndexChanged += cboDanhMuc_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -436,14 +379,14 @@
             flpDanhSachBan.Dock = DockStyle.Fill;
             flpDanhSachBan.Location = new Point(0, 0);
             flpDanhSachBan.Name = "flpDanhSachBan";
-            flpDanhSachBan.Size = new Size(330, 450);
+            flpDanhSachBan.Size = new Size(333, 450);
             flpDanhSachBan.TabIndex = 3;
             // 
             // frmChucNang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(803, 450);
             Controls.Add(flpDanhSachBan);
             Controls.Add(groupBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -455,6 +398,7 @@
             Load += frmChucNang_Load;
             groupBox.ResumeLayout(false);
             groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numSoLuong).EndInit();
             ((System.ComponentModel.ISupportInitialize)numGiamGia).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvDanhSachThucUong).EndInit();
             ResumeLayout(false);
@@ -466,11 +410,7 @@
         private FlowLayoutPanel flpDanhSachBan;
         private Label label3;
         private Label label2;
-        private ReaLTaiizor.Controls.AloneComboBox cboThucUong;
-        private ReaLTaiizor.Controls.AloneComboBox cboDanhMuc;
         private Label label1;
-        private ReaLTaiizor.Controls.Button btnXoa;
-        private ReaLTaiizor.Controls.Button btnThem;
         private ReaLTaiizor.Controls.Button btnGopBan;
         private ReaLTaiizor.Controls.Button btnChuyenBan;
         private ReaLTaiizor.Controls.AloneComboBox cboBanDich;
@@ -482,12 +422,17 @@
         private Label label5;
         private NumericUpDown numGiamGia;
         private ReaLTaiizor.Controls.Button btnTinhTien;
-        private ReaLTaiizor.Controls.AloneTextBox txtMoTa;
-        private ReaLTaiizor.Controls.HopeNumeric numSoLuong;
         private Label label7;
-        private ReaLTaiizor.Controls.Button btnLuu;
         private DataGridViewTextBoxColumn TenThucUong;
         private DataGridViewTextBoxColumn SoLuong;
         private DataGridViewTextBoxColumn ThanhTien;
+        private NumericUpDown numSoLuong;
+        private TextBox txtMoTa;
+        private ComboBox cboThucUong;
+        private ComboBox cboDanhMuc;
+        private HelpProvider helpProvider1;
+        private Button btnLuu;
+        private Button btnXoa;
+        private Button btnThem;
     }
 }

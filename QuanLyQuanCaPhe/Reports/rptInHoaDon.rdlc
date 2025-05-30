@@ -75,14 +75,16 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>0cm</Top>
+            <Top>3.81cm</Top>
             <Left>0cm</Left>
             <Height>0.6cm</Height>
-            <Width>6.09833cm</Width>
+            <Width>17.31959cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -108,7 +110,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
-            <Top>1.13453cm</Top>
+            <Top>5.48225cm</Top>
             <Left>0cm</Left>
             <Height>0.6cm</Height>
             <Width>7.85959cm</Width>
@@ -138,7 +140,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
-            <Top>2.37808cm</Top>
+            <Top>6.18808cm</Top>
             <Left>0cm</Left>
             <Height>0.6cm</Height>
             <Width>7.85959cm</Width>
@@ -536,7 +538,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DanhSachHoaDonChiTiet</DataSetName>
-            <Top>3.54224cm</Top>
+            <Top>7.35224cm</Top>
             <Left>0cm</Left>
             <Height>1.2cm</Height>
             <Width>17.31959cm</Width>
@@ -566,8 +568,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.13453cm</Top>
-            <Left>11.22293cm</Left>
+            <Top>4.79806cm</Top>
+            <Left>11.14251cm</Left>
             <Height>0.6cm</Height>
             <Width>6.17708cm</Width>
             <ZIndex>4</ZIndex>
@@ -596,7 +598,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>5.91439cm</Top>
+            <Top>9.72439cm</Top>
             <Left>10.44001cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
@@ -626,7 +628,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>6.69078cm</Top>
+            <Top>10.50078cm</Top>
             <Left>10.44001cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
@@ -656,7 +658,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>7.46717cm</Top>
+            <Top>11.27717cm</Top>
             <Left>10.44001cm</Left>
             <Height>0.6cm</Height>
             <Width>2.91547cm</Width>
@@ -686,10 +688,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>ThanhTien1</rd:DefaultName>
-            <Top>5.91439cm</Top>
-            <Left>13.92001cm</Left>
+            <Top>9.72439cm</Top>
+            <Left>13.83959cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.05667cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -716,10 +718,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>GiamGia</rd:DefaultName>
-            <Top>6.69078cm</Top>
-            <Left>13.92001cm</Left>
+            <Top>10.50078cm</Top>
+            <Left>13.83959cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.05667cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -746,10 +748,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>TongCong</rd:DefaultName>
-            <Top>7.46717cm</Top>
-            <Left>13.92001cm</Left>
+            <Top>11.27717cm</Top>
+            <Left>13.83959cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.05667cm</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
@@ -766,7 +768,7 @@
             <Value>=Convert.FromBase64String(Parameters!QRCodeImage.Value)</Value>
             <MIMEType>image/png</MIMEType>
             <Sizing>Fit</Sizing>
-            <Top>5.4737cm</Top>
+            <Top>9.2837cm</Top>
             <Left>1.85959cm</Left>
             <Height>6cm</Height>
             <Width>6cm</Width>
@@ -778,8 +780,98 @@
               </Border>
             </Style>
           </Image>
+          <Textbox Name="TenQuanCaPhe">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!TenQuanCaPhe.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TenQuanCaPhe</rd:DefaultName>
+            <Top>0.89586cm</Top>
+            <Left>0cm</Left>
+            <Height>0.6cm</Height>
+            <Width>17.31959cm</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="DiaChi">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="DC: "+Parameters!DiaChi.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>DiaChi</rd:DefaultName>
+            <Top>1.79599cm</Top>
+            <Left>0cm</Left>
+            <Height>0.6cm</Height>
+            <Width>17.31959cm</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="SDT">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="SDT: " + Parameters!SDT.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>SDT</rd:DefaultName>
+            <Top>2.69558cm</Top>
+            <Left>0cm</Left>
+            <Height>0.6cm</Height>
+            <Width>17.31959cm</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>12.22141cm</Height>
+        <Height>15.2837cm</Height>
         <Style />
       </Body>
       <Width>17.40001cm</Width>
@@ -820,11 +912,23 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="TenQuanCaPhe">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DiaChi">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SDT">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>3</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -855,6 +959,21 @@
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>QRCodeImage</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>TenQuanCaPhe</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>DiaChi</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>SDT</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

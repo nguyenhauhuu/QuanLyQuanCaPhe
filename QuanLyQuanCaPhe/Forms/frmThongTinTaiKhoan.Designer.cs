@@ -44,6 +44,7 @@
             label1 = new Label();
             groupBox1 = new GroupBox();
             picHinhAnh = new PictureBox();
+            helpProvider1 = new HelpProvider();
             grpDoiMatKhau.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picHinhAnh).BeginInit();
@@ -58,7 +59,7 @@
             grpDoiMatKhau.Controls.Add(label4);
             grpDoiMatKhau.Controls.Add(txtMatKhauHienTai);
             grpDoiMatKhau.Controls.Add(label3);
-            grpDoiMatKhau.Location = new Point(390, 524);
+            grpDoiMatKhau.Location = new Point(93, 314);
             grpDoiMatKhau.Name = "grpDoiMatKhau";
             grpDoiMatKhau.Size = new Size(562, 177);
             grpDoiMatKhau.TabIndex = 15;
@@ -132,7 +133,7 @@
             // btnLuu
             // 
             btnLuu.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLuu.Location = new Point(789, 431);
+            btnLuu.Location = new Point(492, 221);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(163, 70);
             btnLuu.TabIndex = 14;
@@ -142,7 +143,7 @@
             // btnSua
             // 
             btnSua.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSua.Location = new Point(611, 431);
+            btnSua.Location = new Point(314, 221);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(153, 70);
             btnSua.TabIndex = 13;
@@ -154,7 +155,7 @@
             dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             dtpNgaySinh.Font = new Font("Segoe UI", 14F);
             dtpNgaySinh.Format = DateTimePickerFormat.Custom;
-            dtpNgaySinh.Location = new Point(724, 369);
+            dtpNgaySinh.Location = new Point(427, 159);
             dtpNgaySinh.Name = "dtpNgaySinh";
             dtpNgaySinh.Size = new Size(228, 32);
             dtpNgaySinh.TabIndex = 12;
@@ -163,7 +164,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(611, 373);
+            label2.Location = new Point(314, 163);
             label2.Name = "label2";
             label2.Size = new Size(100, 25);
             label2.TabIndex = 9;
@@ -172,7 +173,7 @@
             // txtTenDayDu
             // 
             txtTenDayDu.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTenDayDu.Location = new Point(724, 304);
+            txtTenDayDu.Location = new Point(427, 94);
             txtTenDayDu.Name = "txtTenDayDu";
             txtTenDayDu.Size = new Size(228, 33);
             txtTenDayDu.TabIndex = 11;
@@ -181,7 +182,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(611, 308);
+            label1.Location = new Point(314, 98);
             label1.Name = "label1";
             label1.Size = new Size(107, 25);
             label1.TabIndex = 10;
@@ -190,7 +191,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(picHinhAnh);
-            groupBox1.Location = new Point(387, 262);
+            groupBox1.Location = new Point(90, 52);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(200, 242);
             groupBox1.TabIndex = 8;
@@ -209,9 +210,8 @@
             // 
             // frmThongTinTaiKhoan
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1244, 884);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(755, 539);
             Controls.Add(grpDoiMatKhau);
             Controls.Add(btnLuu);
             Controls.Add(btnSua);
@@ -220,6 +220,8 @@
             Controls.Add(txtTenDayDu);
             Controls.Add(label1);
             Controls.Add(groupBox1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmThongTinTaiKhoan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "x";
@@ -250,5 +252,6 @@
         private Label label1;
         private GroupBox groupBox1;
         private PictureBox picHinhAnh;
+        private HelpProvider helpProvider1;
     }
 }

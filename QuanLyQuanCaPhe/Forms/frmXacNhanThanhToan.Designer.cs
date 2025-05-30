@@ -34,11 +34,12 @@
             label4 = new Label();
             label5 = new Label();
             btnXacNhan = new ReaLTaiizor.Controls.MaterialButton();
-            cboHinhThucThanhToan = new ReaLTaiizor.Controls.HopeComboBox();
             txtID = new TextBox();
             txtThanhTien = new TextBox();
             txtTienKhachDua = new TextBox();
             txtTienThua = new TextBox();
+            cboHinhThucThanhToan = new ComboBox();
+            h = new HelpProvider();
             SuspendLayout();
             // 
             // label1
@@ -112,20 +113,6 @@
             btnXacNhan.UseVisualStyleBackColor = true;
             btnXacNhan.Click += btnXacNhan_Click;
             // 
-            // cboHinhThucThanhToan
-            // 
-            cboHinhThucThanhToan.DrawMode = DrawMode.OwnerDrawFixed;
-            cboHinhThucThanhToan.FlatStyle = FlatStyle.Flat;
-            cboHinhThucThanhToan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboHinhThucThanhToan.FormattingEnabled = true;
-            cboHinhThucThanhToan.ItemHeight = 30;
-            cboHinhThucThanhToan.Items.AddRange(new object[] { "Tiền mặt", "Chuyển khoản" });
-            cboHinhThucThanhToan.Location = new Point(185, 149);
-            cboHinhThucThanhToan.Name = "cboHinhThucThanhToan";
-            cboHinhThucThanhToan.Size = new Size(180, 36);
-            cboHinhThucThanhToan.TabIndex = 4;
-            cboHinhThucThanhToan.SelectedIndexChanged += cboHinhThucThanhToan_SelectedIndexChanged;
-            // 
             // txtID
             // 
             txtID.Enabled = false;
@@ -150,6 +137,7 @@
             txtTienKhachDua.Size = new Size(176, 23);
             txtTienKhachDua.TabIndex = 6;
             txtTienKhachDua.TextChanged += txtTienKhachDua_TextChanged;
+            txtTienKhachDua.KeyDown += txtTienKhachDua_KeyDown;
             // 
             // txtTienThua
             // 
@@ -159,16 +147,26 @@
             txtTienThua.Size = new Size(176, 23);
             txtTienThua.TabIndex = 6;
             // 
+            // cboHinhThucThanhToan
+            // 
+            cboHinhThucThanhToan.FormattingEnabled = true;
+            cboHinhThucThanhToan.Items.AddRange(new object[] { "Tiền mặt", "Chuyển khoản" });
+            cboHinhThucThanhToan.Location = new Point(185, 160);
+            cboHinhThucThanhToan.Name = "cboHinhThucThanhToan";
+            cboHinhThucThanhToan.Size = new Size(176, 23);
+            cboHinhThucThanhToan.TabIndex = 7;
+            cboHinhThucThanhToan.SelectedIndexChanged += cboHinhThucThanhToan_SelectedIndexChanged;
+            // 
             // frmXacNhanThanhToan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(400, 390);
+            Controls.Add(cboHinhThucThanhToan);
             Controls.Add(txtTienThua);
             Controls.Add(txtTienKhachDua);
             Controls.Add(txtThanhTien);
             Controls.Add(txtID);
-            Controls.Add(cboHinhThucThanhToan);
             Controls.Add(btnXacNhan);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -191,10 +189,11 @@
         private Label label4;
         private Label label5;
         private ReaLTaiizor.Controls.MaterialButton btnXacNhan;
-        private ReaLTaiizor.Controls.HopeComboBox cboHinhThucThanhToan;
         private TextBox txtID;
         private TextBox txtThanhTien;
         private TextBox txtTienKhachDua;
         private TextBox txtTienThua;
+        private ComboBox cboHinhThucThanhToan;
+        private HelpProvider h;
     }
 }

@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBan));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btnThoat = new ReaLTaiizor.Controls.Button();
-            btnHuyBo = new ReaLTaiizor.Controls.Button();
-            btnLuu = new ReaLTaiizor.Controls.Button();
-            btnXoa = new ReaLTaiizor.Controls.Button();
-            btnSua = new ReaLTaiizor.Controls.Button();
-            btnThem = new ReaLTaiizor.Controls.Button();
-            txtTenBan = new ReaLTaiizor.Controls.AloneTextBox();
+            btnThoat = new Button();
+            btnHuyBo = new Button();
+            btnLuu = new Button();
+            btnXoa = new Button();
+            btnSua = new Button();
+            btnThem = new Button();
+            txtTenBan = new TextBox();
+            txtID = new TextBox();
             lblTenBan = new Label();
-            txtID = new ReaLTaiizor.Controls.AloneTextBox();
             lblID = new Label();
             toolStrip1 = new ToolStrip();
             txtTuKhoa = new ToolStripTextBox();
@@ -53,6 +53,7 @@
             ID = new DataGridViewTextBoxColumn();
             TenBan = new DataGridViewTextBoxColumn();
             TrangThai = new DataGridViewTextBoxColumn();
+            helpProvider1 = new HelpProvider();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
@@ -67,8 +68,8 @@
             panel1.Controls.Add(btnSua);
             panel1.Controls.Add(btnThem);
             panel1.Controls.Add(txtTenBan);
-            panel1.Controls.Add(lblTenBan);
             panel1.Controls.Add(txtID);
+            panel1.Controls.Add(lblTenBan);
             panel1.Controls.Add(lblID);
             panel1.Controls.Add(toolStrip1);
             panel1.Dock = DockStyle.Right;
@@ -79,138 +80,91 @@
             // 
             // btnThoat
             // 
-            btnThoat.BackColor = Color.Transparent;
-            btnThoat.BorderColor = Color.FromArgb(32, 34, 37);
-            btnThoat.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnThoat.EnteredColor = Color.Black;
-            btnThoat.Font = new Font("Microsoft Sans Serif", 12F);
-            btnThoat.Image = null;
-            btnThoat.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThoat.InactiveColor = Color.Gray;
-            btnThoat.Location = new Point(184, 337);
+            btnThoat.BackColor = Color.FromArgb(255, 200, 155);
+            btnThoat.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnThoat.Location = new Point(166, 363);
             btnThoat.Name = "btnThoat";
-            btnThoat.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnThoat.PressedColor = Color.FromArgb(165, 37, 37);
-            btnThoat.Size = new Size(120, 40);
-            btnThoat.TabIndex = 3;
+            btnThoat.Size = new Size(138, 67);
+            btnThoat.TabIndex = 6;
             btnThoat.Text = "Thoát";
-            btnThoat.TextAlignment = StringAlignment.Center;
+            btnThoat.UseVisualStyleBackColor = false;
             // 
             // btnHuyBo
             // 
-            btnHuyBo.BackColor = Color.Transparent;
-            btnHuyBo.BorderColor = Color.FromArgb(32, 34, 37);
-            btnHuyBo.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnHuyBo.EnteredColor = Color.Black;
-            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F);
-            btnHuyBo.Image = null;
-            btnHuyBo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHuyBo.InactiveColor = Color.Gray;
-            btnHuyBo.Location = new Point(28, 337);
+            btnHuyBo.BackColor = Color.LightGray;
+            btnHuyBo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHuyBo.Location = new Point(16, 363);
             btnHuyBo.Name = "btnHuyBo";
-            btnHuyBo.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnHuyBo.PressedColor = Color.FromArgb(165, 37, 37);
-            btnHuyBo.Size = new Size(120, 40);
-            btnHuyBo.TabIndex = 3;
+            btnHuyBo.Size = new Size(138, 67);
+            btnHuyBo.TabIndex = 6;
             btnHuyBo.Text = "Hủy";
-            btnHuyBo.TextAlignment = StringAlignment.Center;
+            btnHuyBo.UseVisualStyleBackColor = false;
             btnHuyBo.Click += btnHuyBo_Click;
             // 
             // btnLuu
             // 
-            btnLuu.BackColor = Color.Transparent;
-            btnLuu.BorderColor = Color.FromArgb(32, 34, 37);
-            btnLuu.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnLuu.EnteredColor = Color.Black;
-            btnLuu.Font = new Font("Microsoft Sans Serif", 12F);
-            btnLuu.Image = null;
-            btnLuu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLuu.InactiveColor = Color.Gray;
-            btnLuu.Location = new Point(184, 268);
+            btnLuu.BackColor = Color.FromArgb(147, 197, 253);
+            btnLuu.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLuu.Location = new Point(166, 275);
             btnLuu.Name = "btnLuu";
-            btnLuu.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnLuu.PressedColor = Color.FromArgb(165, 37, 37);
-            btnLuu.Size = new Size(120, 40);
-            btnLuu.TabIndex = 3;
+            btnLuu.Size = new Size(138, 67);
+            btnLuu.TabIndex = 6;
             btnLuu.Text = "Lưu";
-            btnLuu.TextAlignment = StringAlignment.Center;
+            btnLuu.UseVisualStyleBackColor = false;
             btnLuu.Click += btnLuu_Click;
             // 
             // btnXoa
             // 
-            btnXoa.BackColor = Color.Transparent;
-            btnXoa.BorderColor = Color.FromArgb(32, 34, 37);
-            btnXoa.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnXoa.EnteredColor = Color.Black;
-            btnXoa.Font = new Font("Microsoft Sans Serif", 12F);
-            btnXoa.Image = null;
-            btnXoa.ImageAlign = ContentAlignment.MiddleLeft;
-            btnXoa.InactiveColor = Color.Gray;
-            btnXoa.Location = new Point(28, 268);
+            btnXoa.BackColor = Color.LightPink;
+            btnXoa.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnXoa.Location = new Point(16, 275);
             btnXoa.Name = "btnXoa";
-            btnXoa.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnXoa.PressedColor = Color.FromArgb(165, 37, 37);
-            btnXoa.Size = new Size(120, 40);
-            btnXoa.TabIndex = 3;
+            btnXoa.Size = new Size(138, 67);
+            btnXoa.TabIndex = 6;
             btnXoa.Text = "Xóa";
-            btnXoa.TextAlignment = StringAlignment.Center;
-            btnXoa.Click += btnXoa_Click;
+            btnXoa.UseVisualStyleBackColor = false;
+            btnXoa.ClientSizeChanged += btnXoa_Click;
             // 
             // btnSua
             // 
-            btnSua.BackColor = Color.Transparent;
-            btnSua.BorderColor = Color.FromArgb(32, 34, 37);
-            btnSua.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnSua.EnteredColor = Color.Black;
-            btnSua.Font = new Font("Microsoft Sans Serif", 12F);
-            btnSua.Image = null;
-            btnSua.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSua.InactiveColor = Color.Gray;
-            btnSua.Location = new Point(184, 201);
+            btnSua.BackColor = Color.LightBlue;
+            btnSua.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSua.Location = new Point(166, 187);
             btnSua.Name = "btnSua";
-            btnSua.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnSua.PressedColor = Color.FromArgb(165, 37, 37);
-            btnSua.Size = new Size(120, 40);
-            btnSua.TabIndex = 3;
+            btnSua.Size = new Size(138, 67);
+            btnSua.TabIndex = 6;
             btnSua.Text = "Sửa";
-            btnSua.TextAlignment = StringAlignment.Center;
+            btnSua.UseVisualStyleBackColor = false;
             btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 
-            btnThem.BackColor = Color.Transparent;
-            btnThem.BorderColor = Color.FromArgb(32, 34, 37);
-            btnThem.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnThem.EnteredColor = Color.Black;
-            btnThem.Font = new Font("Microsoft Sans Serif", 12F);
-            btnThem.Image = null;
-            btnThem.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThem.InactiveColor = Color.Gray;
-            btnThem.Location = new Point(28, 201);
+            btnThem.BackColor = Color.LightGreen;
+            btnThem.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnThem.Location = new Point(16, 187);
             btnThem.Name = "btnThem";
-            btnThem.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnThem.PressedColor = Color.FromArgb(165, 37, 37);
-            btnThem.Size = new Size(120, 40);
-            btnThem.TabIndex = 3;
+            btnThem.Size = new Size(138, 67);
+            btnThem.TabIndex = 6;
             btnThem.Text = "Thêm";
-            btnThem.TextAlignment = StringAlignment.Center;
+            btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
             // 
             // txtTenBan
             // 
-            txtTenBan.BackColor = Color.Transparent;
-            txtTenBan.EnabledCalc = true;
-            txtTenBan.Font = new Font("Segoe UI", 12F);
-            txtTenBan.ForeColor = Color.FromArgb(124, 133, 142);
-            txtTenBan.Location = new Point(90, 120);
-            txtTenBan.MaxLength = 32767;
-            txtTenBan.MultiLine = false;
+            txtTenBan.Font = new Font("Segoe UI", 15.75F);
+            txtTenBan.Location = new Point(97, 124);
             txtTenBan.Name = "txtTenBan";
-            txtTenBan.ReadOnly = false;
-            txtTenBan.Size = new Size(224, 42);
-            txtTenBan.TabIndex = 2;
-            txtTenBan.TextAlign = HorizontalAlignment.Left;
-            txtTenBan.UseSystemPasswordChar = false;
+            txtTenBan.Size = new Size(207, 35);
+            txtTenBan.TabIndex = 5;
+            // 
+            // txtID
+            // 
+            txtID.Enabled = false;
+            txtID.Font = new Font("Segoe UI", 15.75F);
+            txtID.Location = new Point(97, 71);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(207, 35);
+            txtID.TabIndex = 4;
             // 
             // lblTenBan
             // 
@@ -221,23 +175,6 @@
             lblTenBan.Size = new Size(66, 21);
             lblTenBan.TabIndex = 1;
             lblTenBan.Text = "Tên bàn:";
-            // 
-            // txtID
-            // 
-            txtID.BackColor = Color.Transparent;
-            txtID.Enabled = false;
-            txtID.EnabledCalc = false;
-            txtID.Font = new Font("Segoe UI", 12F);
-            txtID.ForeColor = Color.FromArgb(124, 133, 142);
-            txtID.Location = new Point(90, 67);
-            txtID.MaxLength = 32767;
-            txtID.MultiLine = false;
-            txtID.Name = "txtID";
-            txtID.ReadOnly = false;
-            txtID.Size = new Size(224, 42);
-            txtID.TabIndex = 2;
-            txtID.TextAlign = HorizontalAlignment.Left;
-            txtID.UseSystemPasswordChar = false;
             // 
             // lblID
             // 
@@ -268,7 +205,7 @@
             btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
             btnTimKiem.ImageTransparentColor = Color.Magenta;
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(48, 22);
+            btnTimKiem.Size = new Size(47, 22);
             btnTimKiem.Text = "Tìm";
             btnTimKiem.Click += btnTimKiem_Click;
             // 
@@ -305,24 +242,24 @@
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenBan, TrangThai });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -331,14 +268,14 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(463, 450);
@@ -399,15 +336,16 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton btnNhap;
         private ToolStripButton btnXuat;
-        private ReaLTaiizor.Controls.Button btnThoat;
-        private ReaLTaiizor.Controls.Button btnHuyBo;
-        private ReaLTaiizor.Controls.Button btnLuu;
-        private ReaLTaiizor.Controls.Button btnXoa;
-        private ReaLTaiizor.Controls.Button btnSua;
-        private ReaLTaiizor.Controls.Button btnThem;
-        private ReaLTaiizor.Controls.AloneTextBox txtTenBan;
         private Label lblTenBan;
-        private ReaLTaiizor.Controls.AloneTextBox txtID;
         private Label lblID;
+        private TextBox txtTenBan;
+        private TextBox txtID;
+        private Button btnThoat;
+        private Button btnHuyBo;
+        private Button btnLuu;
+        private Button btnXoa;
+        private Button btnSua;
+        private Button btnThem;
+        private HelpProvider helpProvider1;
     }
 }

@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Reporting.WinForms;
-using QRCoder;
+﻿using Microsoft.Reporting.WinForms;
 using QuanLyQuanCaPhe.Data;
+using System.Configuration;
 using System.Data;
-using System.Drawing.Imaging;
 using static QuanLyQuanCaPhe.Data.HoaDonChiTiet;
 
 namespace QuanLyQuanCaPhe.Reports
@@ -80,12 +78,10 @@ namespace QuanLyQuanCaPhe.Reports
                 reportViewer.LocalReport.DataSources.Add(reportDataSource);
 
 
-                string bankId = "VCB";
-                string accountNo = "1032306591";
-                string template = "compact"; // hoặc default
-                string addInfo = "ThanhToan";
-
-                string url = $"https://img.vietqr.io/image/{bankId}-{accountNo}-{template}.png?amount={hoaDon.TongThanhToan}";
+                string bankId = ConfigurationManager.AppSettings["IDNganHang"]!;
+                string accountNo = ConfigurationManager.AppSettings["STKNganHang"]!;
+                string addInfo = ConfigurationManager.AppSettings["ThongTinThanhToan"]!;
+                string url = $"https://img.vietqr.io/image/{bankId}-{accountNo}-compact.png?amount={hoaDon.TongThanhToan}&addInfo=<{addInfo}>";
 
                 using HttpClient client = new HttpClient();
                 byte[] qrImage = await client.GetByteArrayAsync(url);
@@ -98,6 +94,9 @@ namespace QuanLyQuanCaPhe.Reports
                     new ReportParameter("NhanVien", hoaDon.TenDayDu),
                     new ReportParameter("TongTien", hoaDon.TongTien.ToString()),
                     new ReportParameter("GiamGia", hoaDon.GiamGia.ToString()),
+                    new ReportParameter("TenQuanCaPhe",  ConfigurationManager.AppSettings["TenQuan"]),
+                    new ReportParameter("DiaChi",  ConfigurationManager.AppSettings["DiaChi"]),
+                    new ReportParameter("SDT",  ConfigurationManager.AppSettings["SDT"]!),
                     new ReportParameter("TongThanhToan", hoaDon.TongThanhToan.ToString())
                 };
                 reportViewer.LocalReport.SetParameters(param);

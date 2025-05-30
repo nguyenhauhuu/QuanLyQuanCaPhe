@@ -25,6 +25,12 @@ namespace QuanLyQuanCaPhe.Forms
         {
             InitializeComponent();
             id = maHoaDon;
+            h.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
+            this.HelpRequested += (s, e) =>
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(h.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         private void frmXacNhanThanhToan_Load(object sender, EventArgs e)
@@ -68,9 +74,24 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void txtTienKhachDua_TextChanged(object sender, EventArgs e)
         {
-            decimal tienThua =  Convert.ToDecimal(txtTienKhachDua.Text) - tongCong;
+            string text = txtTienKhachDua.Text.Replace(",", "").Replace("đ", "").Trim();
+
+            if (decimal.TryParse(text, out decimal value))
+            {
+                txtTienKhachDua.TextChanged -= txtTienKhachDua_TextChanged!; // ngắt sự kiện để tránh lặp vô hạn
+
+                txtTienKhachDua.Text = value.ToString("#,##0");
+                txtTienKhachDua.SelectionStart = txtTienKhachDua.Text.Length; // đưa con trỏ về cuối
+
+                txtTienKhachDua.TextChanged += txtTienKhachDua_TextChanged!;
+            }
+
+            // Cập nhật tiền thừa
+            decimal tienThua = value - tongCong;
             txtTienThua.Text = tienThua.ToString("#,##0") + " đ";
         }
+
+
 
         private void txtTienKhachDua_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -98,11 +119,13 @@ namespace QuanLyQuanCaPhe.Forms
             }
             else if (cboHinhThucThanhToan.Text == "Tiền mặt")
             {
-                if (Convert.ToInt32(txtTienKhachDua.Text) < Convert.ToInt32(txtThanhTien.Text))
+                if (Convert.ToInt32(txtTienKhachDua.Text.Replace(",", "").Trim()) < Convert.ToInt32(txtThanhTien.Text.Replace(",", "").Replace("đ", "").Trim()))
                 {
                     MessageBox.Show("Tiền khách đưa bé hơn tiền cần thanh toán");
                     return;
                 }
+                frmInHoaDon inHoaDon = new frmInHoaDon(id);
+                inHoaDon.ShowDialog();
                 hoaDon!.TrangThaiThanhToan = 1;
                 ban!.TrangThai = 1;
                 context.HoaDon.Update(hoaDon);
@@ -116,6 +139,12 @@ namespace QuanLyQuanCaPhe.Forms
             }
         }
 
-       
+        private void txtTienKhachDua_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnXacNhan_Click(sender, e);
+            }
+        }
     }
 }

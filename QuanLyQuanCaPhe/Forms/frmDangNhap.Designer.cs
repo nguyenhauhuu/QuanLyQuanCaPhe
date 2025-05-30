@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            txtMatKhau = new TextBox();
+            txtTenDangNhap = new TextBox();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
             btnDangNhap = new ReaLTaiizor.Controls.Button();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            txtTenDangNhap = new TextBox();
-            txtMatKhau = new TextBox();
+            helpProvider1 = new HelpProvider();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,6 +55,22 @@
             panel1.Size = new Size(684, 386);
             panel1.TabIndex = 9;
             // 
+            // txtMatKhau
+            // 
+            txtMatKhau.Location = new Point(214, 180);
+            txtMatKhau.Name = "txtMatKhau";
+            txtMatKhau.PasswordChar = '⚫';
+            txtMatKhau.Size = new Size(230, 23);
+            txtMatKhau.TabIndex = 17;
+            txtMatKhau.KeyDown += txtMatKhau_KeyDown;
+            // 
+            // txtTenDangNhap
+            // 
+            txtTenDangNhap.Location = new Point(214, 124);
+            txtTenDangNhap.Name = "txtTenDangNhap";
+            txtTenDangNhap.Size = new Size(230, 23);
+            txtTenDangNhap.TabIndex = 16;
+            // 
             // btnHuyBo
             // 
             btnHuyBo.BackColor = Color.Transparent;
@@ -64,11 +81,11 @@
             btnHuyBo.Image = null;
             btnHuyBo.ImageAlign = ContentAlignment.MiddleLeft;
             btnHuyBo.InactiveColor = Color.Gray;
-            btnHuyBo.Location = new Point(350, 238);
+            btnHuyBo.Location = new Point(341, 227);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnHuyBo.PressedColor = Color.FromArgb(165, 37, 37);
-            btnHuyBo.Size = new Size(120, 40);
+            btnHuyBo.Size = new Size(103, 40);
             btnHuyBo.TabIndex = 14;
             btnHuyBo.Text = "Hủy bỏ";
             btnHuyBo.TextAlignment = StringAlignment.Center;
@@ -83,12 +100,12 @@
             btnDangNhap.Font = new Font("Microsoft Sans Serif", 12F);
             btnDangNhap.Image = null;
             btnDangNhap.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDangNhap.InactiveColor = Color.Gray;
-            btnDangNhap.Location = new Point(214, 238);
+            btnDangNhap.InactiveColor = Color.Black;
+            btnDangNhap.Location = new Point(214, 227);
             btnDangNhap.Name = "btnDangNhap";
             btnDangNhap.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnDangNhap.PressedColor = Color.FromArgb(165, 37, 37);
-            btnDangNhap.Size = new Size(120, 40);
+            btnDangNhap.Size = new Size(103, 40);
             btnDangNhap.TabIndex = 15;
             btnDangNhap.Text = "Đăng nhập";
             btnDangNhap.TextAlignment = StringAlignment.Center;
@@ -108,7 +125,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(214, 106);
             label2.Name = "label2";
-            label2.Size = new Size(89, 15);
+            label2.Size = new Size(88, 15);
             label2.TabIndex = 11;
             label2.Text = "Tên đăng nhập:";
             // 
@@ -116,28 +133,12 @@
             // 
             label1.AutoSize = true;
             label1.FlatStyle = FlatStyle.System;
-            label1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(288, 65);
+            label1.Font = new Font("Arial Narrow", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(232, 28);
             label1.Name = "label1";
-            label1.Size = new Size(116, 25);
+            label1.Size = new Size(198, 42);
             label1.TabIndex = 9;
             label1.Text = "ĐĂNG NHẬP";
-            // 
-            // txtTenDangNhap
-            // 
-            txtTenDangNhap.Location = new Point(214, 124);
-            txtTenDangNhap.Name = "txtTenDangNhap";
-            txtTenDangNhap.Size = new Size(230, 23);
-            txtTenDangNhap.TabIndex = 16;
-            // 
-            // txtMatKhau
-            // 
-            txtMatKhau.Location = new Point(214, 180);
-            txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.PasswordChar = '⚫';
-            txtMatKhau.Size = new Size(230, 23);
-            txtMatKhau.TabIndex = 17;
-            txtMatKhau.KeyDown += txtMatKhau_KeyDown;
             // 
             // frmDangNhap
             // 
@@ -146,6 +147,8 @@
             ClientSize = new Size(684, 386);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmDangNhap";
@@ -157,12 +160,13 @@
         #endregion
 
         private Panel panel1;
-        private ReaLTaiizor.Controls.Button btnHuyBo;
-        private ReaLTaiizor.Controls.Button btnDangNhap;
         private Label label3;
         private Label label2;
         private Label label1;
         public TextBox txtMatKhau;
         public TextBox txtTenDangNhap;
+        private ReaLTaiizor.Controls.Button btnHuyBo;
+        private ReaLTaiizor.Controls.Button btnDangNhap;
+        private HelpProvider helpProvider1;
     }
 }

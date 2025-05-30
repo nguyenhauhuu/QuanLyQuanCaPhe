@@ -25,7 +25,7 @@ namespace QuanLyQuanCaPhe
 
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new frmMain());
         }
         private static void SeedInitialData(QLQCPContext context)
         {

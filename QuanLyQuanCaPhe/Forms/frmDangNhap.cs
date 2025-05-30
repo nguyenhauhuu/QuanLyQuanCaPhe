@@ -15,6 +15,11 @@ namespace QuanLyQuanCaPhe.Forms
         public frmDangNhap()
         {
             InitializeComponent();
+            helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/dangnhap.html");
+            this.HelpRequested += (s, e) => {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)

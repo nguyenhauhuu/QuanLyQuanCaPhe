@@ -1,15 +1,8 @@
 ﻿using ClosedXML.Excel;
 using QuanLyQuanCaPhe.Data;
 using SlugGenerator;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using BC = BCrypt.Net.BCrypt;
 
 
@@ -24,6 +17,11 @@ namespace QuanLyQuanCaPhe.Forms
         public frmTaiKhoan()
         {
             InitializeComponent();
+            helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
+            this.HelpRequested += (s, e) => {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         private void BatTatChucNang(bool giaTri)
@@ -110,19 +108,21 @@ namespace QuanLyQuanCaPhe.Forms
                 MessageBox.Show("Vui lòng nhập tên đăng nhập?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (string.IsNullOrWhiteSpace(txtTenDayDu.Text))
                 MessageBox.Show("Vui lòng nhập tên đầy đủ?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (context.TaiKhoan.FirstOrDefault(r => r.TenDangNhap == txtTenDangNhap.Text) != null)
-                MessageBox.Show("Tên tài khoản đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 if (id == 0)
                 {
+                    if (context.TaiKhoan.FirstOrDefault(r => r.TenDangNhap == txtTenDangNhap.Text) != null) {
+                        MessageBox.Show("Tên tài khoản đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     taiKhoan = new TaiKhoan();
                     taiKhoan.TenDangNhap = txtTenDangNhap.Text;
                     taiKhoan.TenDayDu = txtTenDayDu.Text;
                     taiKhoan.QuyenTruyCap = cboQuyenTruyCap.Text;
                     taiKhoan.NgaySinh = dtpNgaySinh.Value.Date;
                     taiKhoan.HinhAnh = imageName;
-                    taiKhoan.MatKhau = BC.HashPassword("123");
+                    taiKhoan.MatKhau = BC.HashPassword(ConfigurationManager.AppSettings["MatKhauMacDinh"]);
                     context.TaiKhoan.Add(taiKhoan);
                     context.SaveChanges();
                 }
@@ -235,6 +235,7 @@ namespace QuanLyQuanCaPhe.Forms
                                 taiKhoan.TenDayDu = r["TenDayDu"].ToString() ?? "N/A";
                                 taiKhoan.QuyenTruyCap = r["QuyenTruyCap"].ToString() ?? "N/A";
                                 taiKhoan.NgaySinh = Convert.ToDateTime(r["NgaySinh"].ToString());
+                                taiKhoan.HinhAnh = r["HinhAnh"].ToString()?? "N/A";
                                 context.TaiKhoan.Add(taiKhoan);
                             }
                             context.SaveChanges();
@@ -273,14 +274,14 @@ namespace QuanLyQuanCaPhe.Forms
                         new DataColumn("TenDayDu", typeof(string)),
                         new DataColumn("NgaySinh", typeof(DateTime)),
                         new DataColumn("QuyenTruyCap", typeof(string)),
-
+                        new DataColumn("HinhAnh", typeof(string)),
                        });
 
                     var taiKhoan = context.TaiKhoan.ToList();
                     if (taiKhoan != null)
                     {
                         foreach (var p in taiKhoan)
-                            table.Rows.Add(p.ID, p.TenDangNhap, p.TenDayDu, p.NgaySinh, p.QuyenTruyCap);
+                            table.Rows.Add(p.ID, p.TenDangNhap, p.TenDayDu, p.NgaySinh, p.QuyenTruyCap, p.HinhAnh);
                     }
 
                     // Gán bảng tạm vào Sheet 1 của tập tin Excel 

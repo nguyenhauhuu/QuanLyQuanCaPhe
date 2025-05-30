@@ -19,6 +19,11 @@ namespace QuanLyQuanCaPhe.Forms
         public frmDanhMuc()
         {
             InitializeComponent();
+            helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
+            this.HelpRequested += (s, e) => {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         private void BatTatChucNang(bool giaTri)

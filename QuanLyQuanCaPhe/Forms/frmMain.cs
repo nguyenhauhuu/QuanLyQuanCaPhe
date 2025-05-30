@@ -1,15 +1,16 @@
-﻿using QuanLyQuanCaPhe.Forms;
-using QuanLyQuanCaPhe.Data;
-
-using System.Diagnostics;
-using BC = BCrypt.Net.BCrypt;
+﻿using QuanLyQuanCaPhe.Data;
+using QuanLyQuanCaPhe.Forms;
 using QuanLyQuanCaPhe.Reports;
+using System.Diagnostics;
+using System.Windows.Forms;
+using BC = BCrypt.Net.BCrypt;
 
 
 namespace QuanLyQuanCaPhe
 {
     public partial class frmMain : Form
     {
+        public HelpProvider HelpProvider;
 
         QLQCPContext context = new QLQCPContext();
         frmDangNhap? dangNhap = null;
@@ -18,6 +19,7 @@ namespace QuanLyQuanCaPhe
         frmDanhMuc? danhMuc = null;
         frmThucUong? thucUong = null;
         frmTaiKhoan? taiKhoan = null;
+        frmThongTinTaiKhoan? thongTinTaiKhoan = null;
         frmThongKeDoanhThu? thongKeDoanhThu = null;
         frmThongKeThucUong? thongKeThucUong = null;
         string tenHienThi = "";
@@ -227,6 +229,29 @@ namespace QuanLyQuanCaPhe
             }
             else
                 thongKeThucUong.Activate();
+        }
+
+        private void mnuHuongDanSuDung_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://nguyenhauhuu.github.io/demo/",
+                UseShellExecute = true
+            });
+        }
+
+        private void mnuThongTinTaiKhoan_Click(object sender, EventArgs e)
+        {
+            if (thongTinTaiKhoan == null || thongTinTaiKhoan.IsDisposed)
+            {
+                thongTinTaiKhoan = new frmThongTinTaiKhoan(idTaiKhoan);
+                thongTinTaiKhoan.MdiParent = this;
+                thongTinTaiKhoan.Show();
+            }
+            else
+                thongTinTaiKhoan.Activate();
+
+            Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã truy cập thông tin cá nhân");
         }
     }
 }

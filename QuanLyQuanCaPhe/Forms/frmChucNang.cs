@@ -19,17 +19,19 @@ namespace QuanLyQuanCaPhe.Forms
     {
         QLQCPContext context; // Khởi tạo biến ngữ cảnh CSDL 
         int idBan;
-        int idHD;
+        int idHD = 0;
         int idTaiKhoan;
         BindingList<DanhSachHoaDonChiTiet> hoaDonChiTiet = new BindingList<DanhSachHoaDonChiTiet>();
-        public frmChucNang()
-        {
-            InitializeComponent();
-        }
+       
         public frmChucNang(int maTaiKhoan)
         {
             InitializeComponent();
             idTaiKhoan = maTaiKhoan;
+            helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
+            this.HelpRequested += (s, e) => {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         public void BatTatChucNang()
@@ -39,7 +41,7 @@ namespace QuanLyQuanCaPhe.Forms
             {
                 cboDanhMuc.Text = "";
                 cboThucUong.Text = "";
-                numSoLuong.ValueNumber = 1;
+                numSoLuong.Value = 1;
                 txtMoTa.Text = "";
             }
 
@@ -77,13 +79,13 @@ namespace QuanLyQuanCaPhe.Forms
                 btn.Width = 100;
                 btn.Height = 120;
 
-                btn.Text = ban.TenBan+"\n"+ (ban.TrangThai == 0 ? "Trống" : "Đang phục vụ");
+                btn.Text = ban.TenBan+"\n"+ (ban.TrangThai == 0 ? "Trống" : "Có người");
                 btn.TextAlign = ContentAlignment.BottomLeft;
                 btn.Font = new Font("Segoe UI", 10);
 
 
 
-                Image rawImg = ban.TrangThai == 1 ? Properties.Resources.ban_trong : Properties.Resources.ban_dang_phuc_vu;
+                Image rawImg = ban.TrangThai == 0 ? Properties.Resources.ban_trong : Properties.Resources.ban_dang_phuc_vu;
                 btn.Image = new Bitmap(rawImg, new Size(70, 70)); // resize ảnh
                 btn.ImageAlign = ContentAlignment.TopCenter;
 
@@ -182,7 +184,7 @@ namespace QuanLyQuanCaPhe.Forms
             int idThucUong = Convert.ToInt32(cboThucUong.SelectedValue!.ToString());
             var chiTiet = hoaDonChiTiet.FirstOrDefault(x => x.ThucUongID == idThucUong);
 
-            int soLuong = Convert.ToInt32(numSoLuong.ValueNumber);
+            int soLuong = Convert.ToInt32(numSoLuong.Value);
             decimal donGia = context.ThucUong.FirstOrDefault(x => x.ID == idThucUong)!.DonGia;
             decimal thanhTien = soLuong * donGia;
             string ghiChu = txtMoTa.Text;
