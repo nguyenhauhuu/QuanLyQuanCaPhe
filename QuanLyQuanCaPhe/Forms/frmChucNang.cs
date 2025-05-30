@@ -58,7 +58,7 @@ namespace QuanLyQuanCaPhe.Forms
         public void LayBanVaoComboBox()
         {
             var ban = context.Ban;
-            var banDau = ban.Where(x => x.TrangThai != 1).ToList();
+            var banDau = ban.Where(x => x.TrangThai == 1).ToList();
             var banDich = ban.ToList();
             cboBanDau.DataSource = banDau;
             cboBanDau.ValueMember = "ID";

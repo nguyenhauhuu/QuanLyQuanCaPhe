@@ -18,6 +18,8 @@ namespace QuanLyQuanCaPhe
         frmBan? ban = null;
         frmDanhMuc? danhMuc = null;
         frmThucUong? thucUong = null;
+        frmNguyenLieu? nguyenLieu = null;
+        frmKho? kho = null;
         frmTaiKhoan? taiKhoan = null;
         frmThongTinTaiKhoan? thongTinTaiKhoan = null;
         frmThongKeDoanhThu? thongKeDoanhThu = null;
@@ -252,6 +254,30 @@ namespace QuanLyQuanCaPhe
                 thongTinTaiKhoan.Activate();
 
             Logger.GhiLog($"Tài khoản ID {idTaiKhoan} đã truy cập thông tin cá nhân");
+        }
+
+        private void mnuNguyenLieu_Click(object sender, EventArgs e)
+        {
+            if (nguyenLieu == null || nguyenLieu.IsDisposed)
+            {
+                nguyenLieu = new frmNguyenLieu();
+                nguyenLieu.MdiParent = this;
+                nguyenLieu.Show();
+            }
+            else
+                nguyenLieu.Activate();
+        }
+
+        private void mnuKho_Click(object sender, EventArgs e)
+        {
+            if (kho   == null || kho.IsDisposed)
+            {
+                kho = new frmKho();
+                kho.MdiParent = this;
+                kho.Show();
+            }
+            else
+                kho.Activate();
         }
     }
 }

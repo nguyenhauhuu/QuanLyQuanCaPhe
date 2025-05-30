@@ -127,7 +127,7 @@ namespace QuanLyQuanCaPhe.Forms
                 frmInHoaDon inHoaDon = new frmInHoaDon(id);
                 inHoaDon.ShowDialog();
                 hoaDon!.TrangThaiThanhToan = 1;
-                ban!.TrangThai = 1;
+                ban!.TrangThai = 0;
                 context.HoaDon.Update(hoaDon);
                 context.Ban.Update(ban);
                 context.SaveChanges();
