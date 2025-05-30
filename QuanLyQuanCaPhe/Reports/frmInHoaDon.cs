@@ -34,13 +34,15 @@ namespace QuanLyQuanCaPhe.Reports
                     r.GiamGia,
                     r.TrangThaiThanhToan,
 
+                    // Tính tổng tiền = tổng giá tất cả món trong hóa đơn
                     TongTien = context.HoaDonChiTiet
-                          .Where(ct => ct.HoaDonID == r.ID)
-                          .Sum(ct => ct.SoLuong * ct.DonGia),
+                      .Where(ct => ct.HoaDonID == r.ID)
+                      .Sum(ct => ct.SoLuong * ct.DonGia),
 
+                    // Tính tổng thanh toán = tổng tiền trừ đi phần giảm giá (%)
                     TongThanhToan = context.HoaDonChiTiet
-                          .Where(ct => ct.HoaDonID == r.ID)
-                          .Sum(ct => ct.SoLuong * ct.DonGia) * (1 - r.GiamGia / 100m)
+                      .Where(ct => ct.HoaDonID == r.ID)
+                      .Sum(ct => ct.SoLuong * ct.DonGia) * (1 - r.GiamGia / 100m)
                 })
                 .FirstOrDefault(r=> r.ID == id);  
 
@@ -53,8 +55,8 @@ namespace QuanLyQuanCaPhe.Reports
                     ThucUongID = r.ThucUongID,
                     TenThucUong = r.ThucUong.TenThucUong,
                     SoLuong = r.SoLuong,
-                    DonGia = r.ThucUong.DonGia,
-                    ThanhTien = r.SoLuong * r.ThucUong.DonGia
+                    DonGia = r.DonGia,
+                    ThanhTien = r.SoLuong * r.DonGia
                 }).ToList();
 
                 danhSachHoaDonChiTietDataTable.Clear();

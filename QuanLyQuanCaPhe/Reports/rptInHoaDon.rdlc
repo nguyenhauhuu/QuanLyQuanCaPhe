@@ -424,7 +424,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatNumber(Fields!Gia.Value * Fields!SoLuong.Value, 0)</Value>
+                                  <Value>=FormatNumber(Fields!Gia.Value, 0)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -488,7 +488,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatNumber(Fields!ThanhTien.Value * Fields!SoLuong.Value, 0)</Value>
+                                  <Value>=FormatNumber(Fields!ThanhTien.Value, 0)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

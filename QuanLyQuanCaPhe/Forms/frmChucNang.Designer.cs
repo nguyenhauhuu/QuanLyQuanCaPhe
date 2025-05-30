@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox = new GroupBox();
             btnLuu = new Button();
             btnXoa = new Button();
@@ -47,9 +48,6 @@
             cboBanDich = new ReaLTaiizor.Controls.AloneComboBox();
             cboBanDau = new ReaLTaiizor.Controls.AloneComboBox();
             dgvDanhSachThucUong = new DataGridView();
-            TenThucUong = new DataGridViewTextBoxColumn();
-            SoLuong = new DataGridViewTextBoxColumn();
-            ThanhTien = new DataGridViewTextBoxColumn();
             label4 = new Label();
             label7 = new Label();
             label3 = new Label();
@@ -57,6 +55,10 @@
             label1 = new Label();
             flpDanhSachBan = new FlowLayoutPanel();
             helpProvider1 = new HelpProvider();
+            TenThucUong = new DataGridViewTextBoxColumn();
+            DonGia = new DataGridViewTextBoxColumn();
+            SoLuong = new DataGridViewTextBoxColumn();
+            ThanhTien = new DataGridViewTextBoxColumn();
             groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numSoLuong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numGiamGia).BeginInit();
@@ -88,9 +90,9 @@
             groupBox.Controls.Add(label2);
             groupBox.Controls.Add(label1);
             groupBox.Dock = DockStyle.Right;
-            groupBox.Location = new Point(333, 0);
+            groupBox.Location = new Point(346, 0);
             groupBox.Name = "groupBox";
-            groupBox.Size = new Size(470, 450);
+            groupBox.Size = new Size(492, 450);
             groupBox.TabIndex = 2;
             groupBox.TabStop = false;
             groupBox.Text = "Bàn";
@@ -296,38 +298,14 @@
             dgvDanhSachThucUong.AllowUserToDeleteRows = false;
             dgvDanhSachThucUong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDanhSachThucUong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDanhSachThucUong.Columns.AddRange(new DataGridViewColumn[] { TenThucUong, SoLuong, ThanhTien });
+            dgvDanhSachThucUong.Columns.AddRange(new DataGridViewColumn[] { TenThucUong, DonGia, SoLuong, ThanhTien });
             dgvDanhSachThucUong.GridColor = SystemColors.InactiveBorder;
             dgvDanhSachThucUong.Location = new Point(14, 162);
             dgvDanhSachThucUong.MultiSelect = false;
             dgvDanhSachThucUong.Name = "dgvDanhSachThucUong";
             dgvDanhSachThucUong.ReadOnly = true;
-            dgvDanhSachThucUong.Size = new Size(444, 212);
+            dgvDanhSachThucUong.Size = new Size(466, 212);
             dgvDanhSachThucUong.TabIndex = 6;
-            // 
-            // TenThucUong
-            // 
-            TenThucUong.DataPropertyName = "TenThucUong";
-            TenThucUong.HeaderText = "Tên thức uống";
-            TenThucUong.Name = "TenThucUong";
-            TenThucUong.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            SoLuong.DataPropertyName = "SoLuong";
-            SoLuong.HeaderText = "Số lượng";
-            SoLuong.Name = "SoLuong";
-            SoLuong.ReadOnly = true;
-            // 
-            // ThanhTien
-            // 
-            ThanhTien.DataPropertyName = "ThanhTien";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            ThanhTien.DefaultCellStyle = dataGridViewCellStyle1;
-            ThanhTien.HeaderText = "Đơn giá";
-            ThanhTien.Name = "ThanhTien";
-            ThanhTien.ReadOnly = true;
             // 
             // label4
             // 
@@ -379,14 +357,48 @@
             flpDanhSachBan.Dock = DockStyle.Fill;
             flpDanhSachBan.Location = new Point(0, 0);
             flpDanhSachBan.Name = "flpDanhSachBan";
-            flpDanhSachBan.Size = new Size(333, 450);
+            flpDanhSachBan.Size = new Size(346, 450);
             flpDanhSachBan.TabIndex = 3;
+            // 
+            // TenThucUong
+            // 
+            TenThucUong.DataPropertyName = "TenThucUong";
+            TenThucUong.HeaderText = "Tên thức uống";
+            TenThucUong.Name = "TenThucUong";
+            TenThucUong.ReadOnly = true;
+            // 
+            // DonGia
+            // 
+            DonGia.DataPropertyName = "DonGia";
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            DonGia.DefaultCellStyle = dataGridViewCellStyle1;
+            DonGia.HeaderText = "Đơn giá";
+            DonGia.Name = "DonGia";
+            DonGia.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            SoLuong.DataPropertyName = "SoLuong";
+            SoLuong.HeaderText = "Số lượng";
+            SoLuong.Name = "SoLuong";
+            SoLuong.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            ThanhTien.DataPropertyName = "ThanhTien";
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            ThanhTien.DefaultCellStyle = dataGridViewCellStyle2;
+            ThanhTien.HeaderText = "Thành tiền";
+            ThanhTien.Name = "ThanhTien";
+            ThanhTien.ReadOnly = true;
             // 
             // frmChucNang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(803, 450);
+            ClientSize = new Size(838, 450);
             Controls.Add(flpDanhSachBan);
             Controls.Add(groupBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -423,9 +435,6 @@
         private NumericUpDown numGiamGia;
         private ReaLTaiizor.Controls.Button btnTinhTien;
         private Label label7;
-        private DataGridViewTextBoxColumn TenThucUong;
-        private DataGridViewTextBoxColumn SoLuong;
-        private DataGridViewTextBoxColumn ThanhTien;
         private NumericUpDown numSoLuong;
         private TextBox txtMoTa;
         private ComboBox cboThucUong;
@@ -434,5 +443,9 @@
         private Button btnLuu;
         private Button btnXoa;
         private Button btnThem;
+        private DataGridViewTextBoxColumn TenThucUong;
+        private DataGridViewTextBoxColumn DonGia;
+        private DataGridViewTextBoxColumn SoLuong;
+        private DataGridViewTextBoxColumn ThanhTien;
     }
 }

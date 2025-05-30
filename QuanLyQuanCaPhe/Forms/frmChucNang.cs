@@ -255,15 +255,7 @@ namespace QuanLyQuanCaPhe.Forms
                 HoaDon hd = new HoaDon();
                 hd.TaiKhoanID = idTaiKhoan;
                 hd.NgayLap = DateTime.Now;
-                decimal tongTien = 0;
-                foreach (var ct in hoaDonChiTiet)
-                {
-                    var thucUong = context.ThucUong.Find(ct.ThucUongID);
-                    if (thucUong != null)
-                    {
-                        tongTien += ct.SoLuong * thucUong.DonGia;
-                    }
-                }
+                
                 hd.GiamGia = numGiamGia.Value;
                 hd.BanID = idBan;
                 context.HoaDon.Add(hd);
