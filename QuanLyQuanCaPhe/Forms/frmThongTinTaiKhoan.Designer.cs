@@ -59,9 +59,9 @@
             grpDoiMatKhau.Controls.Add(label4);
             grpDoiMatKhau.Controls.Add(txtMatKhauHienTai);
             grpDoiMatKhau.Controls.Add(label3);
-            grpDoiMatKhau.Location = new Point(93, 314);
+            grpDoiMatKhau.Location = new Point(455, 115);
             grpDoiMatKhau.Name = "grpDoiMatKhau";
-            grpDoiMatKhau.Size = new Size(562, 177);
+            grpDoiMatKhau.Size = new Size(428, 363);
             grpDoiMatKhau.TabIndex = 7;
             grpDoiMatKhau.TabStop = false;
             grpDoiMatKhau.Text = "Đổi mật khẩu";
@@ -69,9 +69,9 @@
             // btnCapNhatMatKhau
             // 
             btnCapNhatMatKhau.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCapNhatMatKhau.Location = new Point(419, 22);
+            btnCapNhatMatKhau.Location = new Point(0, 306);
             btnCapNhatMatKhau.Name = "btnCapNhatMatKhau";
-            btnCapNhatMatKhau.Size = new Size(137, 129);
+            btnCapNhatMatKhau.Size = new Size(415, 51);
             btnCapNhatMatKhau.TabIndex = 6;
             btnCapNhatMatKhau.Text = "Cập nhật mật khẩu";
             btnCapNhatMatKhau.UseVisualStyleBackColor = true;
@@ -80,17 +80,17 @@
             // txtXacNhanMatKhau
             // 
             txtXacNhanMatKhau.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtXacNhanMatKhau.Location = new Point(185, 118);
+            txtXacNhanMatKhau.Location = new Point(6, 251);
             txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
             txtXacNhanMatKhau.PasswordChar = '⚫';
-            txtXacNhanMatKhau.Size = new Size(228, 33);
+            txtXacNhanMatKhau.Size = new Size(418, 33);
             txtXacNhanMatKhau.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(4, 122);
+            label5.Location = new Point(0, 219);
             label5.Name = "label5";
             label5.Size = new Size(177, 25);
             label5.TabIndex = 4;
@@ -99,17 +99,17 @@
             // txtMatKhauMoi
             // 
             txtMatKhauMoi.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtMatKhauMoi.Location = new Point(185, 70);
+            txtMatKhauMoi.Location = new Point(6, 168);
             txtMatKhauMoi.Name = "txtMatKhauMoi";
             txtMatKhauMoi.PasswordChar = '⚫';
-            txtMatKhauMoi.Size = new Size(228, 33);
+            txtMatKhauMoi.Size = new Size(418, 33);
             txtMatKhauMoi.TabIndex = 3;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(4, 74);
+            label4.Location = new Point(0, 130);
             label4.Name = "label4";
             label4.Size = new Size(132, 25);
             label4.TabIndex = 2;
@@ -118,17 +118,17 @@
             // txtMatKhauHienTai
             // 
             txtMatKhauHienTai.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtMatKhauHienTai.Location = new Point(185, 22);
+            txtMatKhauHienTai.Location = new Point(6, 78);
             txtMatKhauHienTai.Name = "txtMatKhauHienTai";
             txtMatKhauHienTai.PasswordChar = '⚫';
-            txtMatKhauHienTai.Size = new Size(228, 33);
+            txtMatKhauHienTai.Size = new Size(418, 33);
             txtMatKhauHienTai.TabIndex = 1;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(4, 26);
+            label3.Location = new Point(0, 50);
             label3.Name = "label3";
             label3.Size = new Size(163, 25);
             label3.TabIndex = 0;
@@ -137,9 +137,9 @@
             // btnLuu
             // 
             btnLuu.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLuu.Location = new Point(492, 221);
+            btnLuu.Location = new Point(203, 433);
             btnLuu.Name = "btnLuu";
-            btnLuu.Size = new Size(163, 70);
+            btnLuu.Size = new Size(103, 45);
             btnLuu.TabIndex = 6;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
@@ -148,9 +148,9 @@
             // btnSua
             // 
             btnSua.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSua.Location = new Point(314, 221);
+            btnSua.Location = new Point(90, 433);
             btnSua.Name = "btnSua";
-            btnSua.Size = new Size(153, 70);
+            btnSua.Size = new Size(93, 45);
             btnSua.TabIndex = 5;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@
             dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             dtpNgaySinh.Font = new Font("Segoe UI", 14F);
             dtpNgaySinh.Format = DateTimePickerFormat.Custom;
-            dtpNgaySinh.Location = new Point(427, 159);
+            dtpNgaySinh.Location = new Point(203, 371);
             dtpNgaySinh.Name = "dtpNgaySinh";
             dtpNgaySinh.Size = new Size(228, 32);
             dtpNgaySinh.TabIndex = 4;
@@ -170,7 +170,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(314, 163);
+            label2.Location = new Point(90, 375);
             label2.Name = "label2";
             label2.Size = new Size(100, 25);
             label2.TabIndex = 3;
@@ -179,7 +179,7 @@
             // txtTenDayDu
             // 
             txtTenDayDu.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTenDayDu.Location = new Point(427, 94);
+            txtTenDayDu.Location = new Point(203, 306);
             txtTenDayDu.Name = "txtTenDayDu";
             txtTenDayDu.Size = new Size(228, 33);
             txtTenDayDu.TabIndex = 2;
@@ -188,7 +188,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(314, 98);
+            label1.Location = new Point(90, 310);
             label1.Name = "label1";
             label1.Size = new Size(107, 25);
             label1.TabIndex = 1;
@@ -197,9 +197,9 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(picHinhAnh);
-            groupBox1.Location = new Point(90, 52);
+            groupBox1.Location = new Point(160, 43);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(200, 242);
+            groupBox1.Size = new Size(206, 257);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Hình ảnh";
@@ -209,7 +209,7 @@
             picHinhAnh.Dock = DockStyle.Fill;
             picHinhAnh.Location = new Point(3, 19);
             picHinhAnh.Name = "picHinhAnh";
-            picHinhAnh.Size = new Size(194, 220);
+            picHinhAnh.Size = new Size(200, 235);
             picHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
             picHinhAnh.TabIndex = 0;
             picHinhAnh.TabStop = false;
@@ -217,7 +217,7 @@
             // frmThongTinTaiKhoan
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(755, 539);
+            ClientSize = new Size(946, 522);
             Controls.Add(grpDoiMatKhau);
             Controls.Add(btnLuu);
             Controls.Add(btnSua);
