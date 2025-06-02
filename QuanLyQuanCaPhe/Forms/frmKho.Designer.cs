@@ -60,13 +60,13 @@
             label1 = new Label();
             lblID = new Label();
             dataGridView = new DataGridView();
+            helpProvider1 = new HelpProvider();
             NguyenLieu = new DataGridViewTextBoxColumn();
             MoTa = new DataGridViewTextBoxColumn();
             SoLuong = new DataGridViewTextBoxColumn();
             DonVi = new DataGridViewTextBoxColumn();
             Gia = new DataGridViewTextBoxColumn();
             NgayHetHan = new DataGridViewTextBoxColumn();
-            helpProvider1 = new HelpProvider();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numGia).BeginInit();
@@ -371,7 +371,7 @@
             // 
             // NguyenLieu
             // 
-            NguyenLieu.DataPropertyName = "NguyenLieu";
+            NguyenLieu.DataPropertyName = "TenNguyenLieu";
             NguyenLieu.HeaderText = "Nguyên liệu";
             NguyenLieu.Name = "NguyenLieu";
             NguyenLieu.ReadOnly = true;
@@ -474,12 +474,12 @@
         private Button btnSua;
         private Button btnThem;
         private DataGridView dataGridView;
+        private HelpProvider helpProvider1;
         private DataGridViewTextBoxColumn NguyenLieu;
         private DataGridViewTextBoxColumn MoTa;
         private DataGridViewTextBoxColumn SoLuong;
         private DataGridViewTextBoxColumn DonVi;
         private DataGridViewTextBoxColumn Gia;
         private DataGridViewTextBoxColumn NgayHetHan;
-        private HelpProvider helpProvider1;
     }
 }
