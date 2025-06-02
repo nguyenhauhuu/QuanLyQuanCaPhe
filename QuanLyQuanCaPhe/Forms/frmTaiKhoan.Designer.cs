@@ -421,7 +421,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmTaiKhoan";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmTaiKhoan";
+            Text = "Quản lý tài khoản";
             Load += frmTaiKhoan_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

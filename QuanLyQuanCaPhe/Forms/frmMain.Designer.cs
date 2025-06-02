@@ -88,6 +88,8 @@
             panel2 = new Panel();
             lblTieuDe = new Label();
             pnlFormLoader = new Panel();
+            panel5 = new Panel();
+            btnHoaDon = new Button();
             statusStrip1.SuspendLayout();
             OrderContainer.SuspendLayout();
             panel4.SuspendLayout();
@@ -116,6 +118,7 @@
             panel23.SuspendLayout();
             panel24.SuspendLayout();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // statusStrip1
@@ -323,6 +326,7 @@
             // QuanLyContainer
             // 
             QuanLyContainer.BackColor = Color.FromArgb(50, 55, 60);
+            QuanLyContainer.Controls.Add(panel5);
             QuanLyContainer.Controls.Add(panel13);
             QuanLyContainer.Controls.Add(panel12);
             QuanLyContainer.Controls.Add(panel11);
@@ -331,7 +335,7 @@
             QuanLyContainer.Controls.Add(panel6);
             QuanLyContainer.Controls.Add(panel9);
             QuanLyContainer.Location = new Point(3, 218);
-            QuanLyContainer.MaximumSize = new Size(235, 315);
+            QuanLyContainer.MaximumSize = new Size(235, 370);
             QuanLyContainer.MinimumSize = new Size(0, 48);
             QuanLyContainer.Name = "QuanLyContainer";
             QuanLyContainer.Size = new Size(235, 48);
@@ -803,6 +807,32 @@
             pnlFormLoader.Size = new Size(852, 647);
             pnlFormLoader.TabIndex = 7;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(btnHoaDon);
+            panel5.Location = new Point(1, 319);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(235, 47);
+            panel5.TabIndex = 15;
+            // 
+            // btnHoaDon
+            // 
+            btnHoaDon.FlatStyle = FlatStyle.Flat;
+            btnHoaDon.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnHoaDon.ForeColor = Color.White;
+            btnHoaDon.Image = (Image)resources.GetObject("btnHoaDon.Image");
+            btnHoaDon.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHoaDon.Location = new Point(-11, 0);
+            btnHoaDon.Name = "btnHoaDon";
+            btnHoaDon.Padding = new Padding(20, 5, 5, 5);
+            btnHoaDon.Size = new Size(249, 49);
+            btnHoaDon.TabIndex = 0;
+            btnHoaDon.Text = "    Hoá đơn...";
+            btnHoaDon.TextAlign = ContentAlignment.MiddleLeft;
+            btnHoaDon.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHoaDon.UseVisualStyleBackColor = true;
+            btnHoaDon.Click += btnHoaDon_Click;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -813,7 +843,7 @@
             Controls.Add(sidebar);
             Controls.Add(statusStrip1);
             Name = "frmMain";
-            Text = " ";
+            Text = "Phần mềm quản lý quán cà phê";
             Load += frmMain_Load;
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -846,6 +876,7 @@
             panel24.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -911,5 +942,7 @@
         private Button btnTroGiup;
         private Panel DangNhapContainer;
         private Button btnDangNhap;
+        private Panel panel5;
+        private Button btnHoaDon;
     }
 }

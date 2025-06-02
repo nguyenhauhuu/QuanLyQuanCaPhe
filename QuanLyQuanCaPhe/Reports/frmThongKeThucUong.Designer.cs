@@ -93,7 +93,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(91, 16);
             label1.Name = "label1";
-            label1.Size = new Size(53, 15);
+            label1.Size = new Size(52, 15);
             label1.TabIndex = 4;
             label1.Text = "Từ ngày:";
             // 
@@ -133,7 +133,7 @@
             Controls.Add(panel1);
             Name = "frmThongKeThucUong";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmThongKeThucUong";
+            Text = "Thống kê thức uống";
             WindowState = FormWindowState.Maximized;
             Load += frmThongKeThucUong_Load;
             panel1.ResumeLayout(false);

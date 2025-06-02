@@ -164,7 +164,7 @@
             MinimizeBox = false;
             Name = "frmDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmDangNhap";
+            Text = "Đăng nhập";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

@@ -34,6 +34,7 @@ namespace QuanLyQuanCaPhe.Forms
         frmNguyenLieu? nguyenLieu = null;
         frmKho? kho = null;
         frmTaiKhoan? taiKhoan = null;
+        frmHoaDon? hoaDon = null;
         frmThongTinTaiKhoan? thongTinTaiKhoan = null;
         frmThongKeDoanhThu? thongKeDoanhThu = null;
         frmThongKeThucUong? thongKeThucUong = null;
@@ -207,7 +208,7 @@ namespace QuanLyQuanCaPhe.Forms
             TroGiupContainer.Visible = false;
             DangNhapContainer.Visible = true;
             lblTieuDe.Text = "";
-
+            lblTrangThai.Text = "Chưa đăng nhập";
             if (dangNhap != null)
             {
                 dangNhap.txtTenDangNhap.Text = "";
@@ -276,7 +277,7 @@ namespace QuanLyQuanCaPhe.Forms
                         {
                             idTaiKhoan = taikhoan.ID;
                             tenHienThi = taikhoan.TenDayDu;
-
+                            lblTrangThai.Text = "Xin chào: " + tenHienThi;
                             if (taikhoan.QuyenTruyCap == "admin")
                                 QuyenAdmin();
                             else if (taikhoan.QuyenTruyCap == "user")
@@ -425,6 +426,16 @@ namespace QuanLyQuanCaPhe.Forms
                 FileName = "https://chanhdang.com/helper",
                 UseShellExecute = true
             });
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            lblTieuDe.Text = "Danh sách hoá đơn";
+            this.pnlFormLoader.Controls.Clear();
+            hoaDon = new frmHoaDon() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            hoaDon.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(hoaDon);
+            hoaDon.Show();
         }
     }
 }

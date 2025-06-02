@@ -175,7 +175,7 @@
             Controls.Add(label1);
             Name = "frmXacNhanThanhToan";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmXacNhanThanhToan";
+            Text = "Xác nhận thanh toán";
             Load += frmXacNhanThanhToan_Load;
             ResumeLayout(false);
             PerformLayout();

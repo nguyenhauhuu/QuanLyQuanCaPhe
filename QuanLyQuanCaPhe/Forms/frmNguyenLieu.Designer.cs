@@ -50,7 +50,6 @@
             btnSua = new Button();
             btnThem = new Button();
             dataGridView = new ReaLTaiizor.Controls.PoisonDataGridView();
-            ID = new DataGridViewTextBoxColumn();
             TenNguyenLieu = new DataGridViewTextBoxColumn();
             panel.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -250,7 +249,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenNguyenLieu });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { TenNguyenLieu });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -280,13 +279,6 @@
             dataGridView.Size = new Size(451, 450);
             dataGridView.TabIndex = 0;
             // 
-            // ID
-            // 
-            ID.DataPropertyName = "ID";
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
             // TenNguyenLieu
             // 
             TenNguyenLieu.DataPropertyName = "TenNguyenLieu";
@@ -302,7 +294,7 @@
             Controls.Add(dataGridView);
             Controls.Add(panel);
             Name = "frmNguyenLieu";
-            Text = "frmNguyenLieu";
+            Text = "Quản lý nguyên liệu";
             Load += frmNguyenLieu_Load;
             panel.ResumeLayout(false);
             panel.PerformLayout();
@@ -318,8 +310,6 @@
         private Label lblTenNguyenLieu;
         private Label lblID;
         private ReaLTaiizor.Controls.PoisonDataGridView dataGridView;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TenNguyenLieu;
         private Button btnThoat;
         private Button btnHuyBo;
         private Button btnLuu;
@@ -334,5 +324,6 @@
         private ToolStripButton btnXuat;
         private TextBox txtTenNguyenLieu;
         private TextBox txtID;
+        private DataGridViewTextBoxColumn TenNguyenLieu;
     }
 }

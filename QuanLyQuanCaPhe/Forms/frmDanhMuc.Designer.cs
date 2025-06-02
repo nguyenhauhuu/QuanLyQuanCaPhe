@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMuc));
-            dataGridView = new ReaLTaiizor.Controls.PoisonDataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            TenDanhMuc = new DataGridViewTextBoxColumn();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnThoat = new Button();
             txtTenDanhMuc = new TextBox();
@@ -53,73 +48,13 @@
             btnThem = new Button();
             lblID = new Label();
             helpProvider1 = new HelpProvider();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            dataGridView = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            TenDanhMuc = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridView
-            // 
-            dataGridView.AllowUserToAddRows = false;
-            dataGridView.AllowUserToDeleteRows = false;
-            dataGridView.AllowUserToResizeRows = false;
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView.BackgroundColor = Color.FromArgb(255, 255, 255);
-            dataGridView.BorderStyle = BorderStyle.None;
-            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenDanhMuc });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView.Dock = DockStyle.Fill;
-            dataGridView.EnableHeadersVisualStyles = false;
-            dataGridView.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridView.GridColor = Color.White;
-            dataGridView.Location = new Point(0, 0);
-            dataGridView.Name = "dataGridView";
-            dataGridView.ReadOnly = true;
-            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView.Size = new Size(475, 450);
-            dataGridView.TabIndex = 0;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "ID";
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // TenDanhMuc
-            // 
-            TenDanhMuc.DataPropertyName = "TenDanhMuc";
-            TenDanhMuc.HeaderText = "Tên danh mục";
-            TenDanhMuc.Name = "TenDanhMuc";
-            TenDanhMuc.ReadOnly = true;
             // 
             // panel1
             // 
@@ -295,6 +230,37 @@
             lblID.TabIndex = 1;
             lblID.Text = "ID:";
             // 
+            // dataGridView
+            // 
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenDanhMuc });
+            dataGridView.Dock = DockStyle.Fill;
+            dataGridView.Location = new Point(0, 0);
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.Size = new Size(475, 450);
+            dataGridView.TabIndex = 3;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ID";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            ID.DefaultCellStyle = dataGridViewCellStyle1;
+            ID.FillWeight = 20F;
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // TenDanhMuc
+            // 
+            TenDanhMuc.DataPropertyName = "TenDanhMuc";
+            TenDanhMuc.HeaderText = "Tên danh mục";
+            TenDanhMuc.Name = "TenDanhMuc";
+            TenDanhMuc.ReadOnly = true;
+            // 
             // frmDanhMuc
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,23 +271,20 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmDanhMuc";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmDanhMuc";
+            Text = "Quản lý danh mục";
             Load += frmDanhMuc_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private ReaLTaiizor.Controls.PoisonDataGridView dataGridView;
         private Panel panel1;
         private Label lblTenDanhMuc;
         private Label lblID;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TenDanhMuc;
         private ToolStrip toolStrip1;
         private ToolStripTextBox txtTuKhoa;
         private ToolStripButton btnTimKiem;
@@ -337,5 +300,8 @@
         private Button btnSua;
         private Button btnThem;
         private HelpProvider helpProvider1;
+        private DataGridView dataGridView;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn TenDanhMuc;
     }
 }

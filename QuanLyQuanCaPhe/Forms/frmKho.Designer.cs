@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKho));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnThoat = new Button();
             toolStrip1 = new ToolStrip();
@@ -57,7 +60,6 @@
             label1 = new Label();
             lblID = new Label();
             dataGridView = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
             NguyenLieu = new DataGridViewTextBoxColumn();
             MoTa = new DataGridViewTextBoxColumn();
             SoLuong = new DataGridViewTextBoxColumn();
@@ -357,7 +359,7 @@
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, NguyenLieu, MoTa, SoLuong, DonVi, Gia, NgayHetHan });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { NguyenLieu, MoTa, SoLuong, DonVi, Gia, NgayHetHan });
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.Location = new Point(0, 0);
             dataGridView.Name = "dataGridView";
@@ -365,14 +367,6 @@
             dataGridView.Size = new Size(794, 450);
             dataGridView.TabIndex = 0;
             dataGridView.RowPrePaint += dataGridView_RowPrePaint;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "ID";
-            ID.FillWeight = 30F;
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
             // 
             // NguyenLieu
             // 
@@ -391,6 +385,10 @@
             // SoLuong
             // 
             SoLuong.DataPropertyName = "SoLuong";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            SoLuong.DefaultCellStyle = dataGridViewCellStyle1;
             SoLuong.HeaderText = "Số lượng";
             SoLuong.Name = "SoLuong";
             SoLuong.ReadOnly = true;
@@ -398,6 +396,10 @@
             // DonVi
             // 
             DonVi.DataPropertyName = "DonVi";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            DonVi.DefaultCellStyle = dataGridViewCellStyle2;
             DonVi.HeaderText = "Đơn vị";
             DonVi.Name = "DonVi";
             DonVi.ReadOnly = true;
@@ -405,6 +407,10 @@
             // Gia
             // 
             Gia.DataPropertyName = "Gia";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            Gia.DefaultCellStyle = dataGridViewCellStyle3;
             Gia.HeaderText = "Giá";
             Gia.Name = "Gia";
             Gia.ReadOnly = true;
@@ -424,7 +430,7 @@
             Controls.Add(dataGridView);
             Controls.Add(panel1);
             Name = "frmKho";
-            Text = "frmKho";
+            Text = "Quản lý kho";
             Load += frmKho_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -467,7 +473,6 @@
         private Button btnSua;
         private Button btnThem;
         private DataGridView dataGridView;
-        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn NguyenLieu;
         private DataGridViewTextBoxColumn MoTa;
         private DataGridViewTextBoxColumn SoLuong;

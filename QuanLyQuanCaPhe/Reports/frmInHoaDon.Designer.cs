@@ -50,7 +50,7 @@ namespace QuanLyQuanCaPhe.Reports
             Controls.Add(reportViewer);
             Name = "frmInHoaDon";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmInHoaDon";
+            Text = "In hoá đơn";
             WindowState = FormWindowState.Maximized;
             Load += frmInHoaDon_Load;
             ResumeLayout(false);

@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThucUong));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             lblTenDanhMuc = new Label();
             lblID = new Label();
             panel1 = new Panel();
@@ -51,12 +52,12 @@
             numGia = new NumericUpDown();
             label2 = new Label();
             label1 = new Label();
+            helpProvider1 = new HelpProvider();
             dataGridView = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             TenDanhMuc = new DataGridViewTextBoxColumn();
             TenThucUong = new DataGridViewTextBoxColumn();
             DonGia = new DataGridViewTextBoxColumn();
-            helpProvider1 = new HelpProvider();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numGia).BeginInit();
@@ -292,11 +293,14 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.Size = new Size(581, 450);
-            dataGridView.TabIndex = 0;
+            dataGridView.TabIndex = 5;
             // 
             // ID
             // 
             ID.DataPropertyName = "ID";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            ID.DefaultCellStyle = dataGridViewCellStyle3;
+            ID.FillWeight = 20F;
             ID.HeaderText = "ID";
             ID.Name = "ID";
             ID.ReadOnly = true;
@@ -310,7 +314,7 @@
             // 
             // TenThucUong
             // 
-            TenThucUong.DataPropertyName = "TenThucUong";
+            TenThucUong.DataPropertyName = "TenDanhMuc";
             TenThucUong.HeaderText = "Tên thức uống";
             TenThucUong.Name = "TenThucUong";
             TenThucUong.ReadOnly = true;
@@ -318,9 +322,10 @@
             // DonGia
             // 
             DonGia.DataPropertyName = "DonGia";
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            DonGia.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            DonGia.DefaultCellStyle = dataGridViewCellStyle4;
             DonGia.HeaderText = "Đơn giá";
             DonGia.Name = "DonGia";
             DonGia.ReadOnly = true;
@@ -335,7 +340,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmThucUong";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmThucUong";
+            Text = "Quản lý thức uống";
             Load += frmThucUong_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -359,11 +364,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton btnNhap;
         private ToolStripButton btnXuat;
-        private DataGridView dataGridView;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TenDanhMuc;
-        private DataGridViewTextBoxColumn TenThucUong;
-        private DataGridViewTextBoxColumn DonGia;
         private TextBox txtTenThucUong;
         private TextBox txtID;
         private ComboBox cboDanhMuc;
@@ -374,5 +374,10 @@
         private Button btnSua;
         private Button btnThem;
         private HelpProvider helpProvider1;
+        private DataGridView dataGridView;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn TenDanhMuc;
+        private DataGridViewTextBoxColumn TenThucUong;
+        private DataGridViewTextBoxColumn DonGia;
     }
 }

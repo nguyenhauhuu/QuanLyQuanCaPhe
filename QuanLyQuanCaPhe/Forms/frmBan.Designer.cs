@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBan));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnThoat = new Button();
             btnHuyBo = new Button();
@@ -49,11 +47,10 @@
             toolStripSeparator1 = new ToolStripSeparator();
             btnNhap = new ToolStripButton();
             btnXuat = new ToolStripButton();
-            dataGridView = new ReaLTaiizor.Controls.PoisonDataGridView();
+            helpProvider1 = new HelpProvider();
+            dataGridView = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             TenBan = new DataGridViewTextBoxColumn();
-            TrangThai = new DataGridViewTextBoxColumn();
-            helpProvider1 = new HelpProvider();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
@@ -237,54 +234,22 @@
             // 
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
-            dataGridView.AllowUserToResizeRows = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView.BackgroundColor = Color.FromArgb(255, 255, 255);
-            dataGridView.BorderStyle = BorderStyle.None;
-            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenBan, TrangThai });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenBan });
             dataGridView.Dock = DockStyle.Fill;
-            dataGridView.EnableHeadersVisualStyles = false;
-            dataGridView.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridView.GridColor = Color.FromArgb(255, 255, 255);
             dataGridView.Location = new Point(0, 0);
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
-            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(463, 450);
-            dataGridView.TabIndex = 0;
+            dataGridView.TabIndex = 1;
             // 
             // ID
             // 
             ID.DataPropertyName = "ID";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            ID.DefaultCellStyle = dataGridViewCellStyle2;
+            ID.FillWeight = 20F;
             ID.HeaderText = "ID";
             ID.Name = "ID";
             ID.ReadOnly = true;
@@ -296,13 +261,6 @@
             TenBan.Name = "TenBan";
             TenBan.ReadOnly = true;
             // 
-            // TrangThai
-            // 
-            TrangThai.DataPropertyName = "TrangThai";
-            TrangThai.HeaderText = "Trạng Thái";
-            TrangThai.Name = "TrangThai";
-            TrangThai.ReadOnly = true;
-            // 
             // frmBan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -313,7 +271,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmBan";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmBan";
+            Text = "Quản lý bàn";
             WindowState = FormWindowState.Maximized;
             Load += frmBan_Load;
             panel1.ResumeLayout(false);
@@ -327,10 +285,6 @@
         #endregion
 
         private Panel panel1;
-        private ReaLTaiizor.Controls.PoisonDataGridView dataGridView;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TenBan;
-        private DataGridViewTextBoxColumn TrangThai;
         private ToolStrip toolStrip1;
         private ToolStripTextBox txtTuKhoa;
         private ToolStripButton btnTimKiem;
@@ -348,5 +302,8 @@
         private Button btnSua;
         private Button btnThem;
         private HelpProvider helpProvider1;
+        private DataGridView dataGridView;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn TenBan;
     }
 }

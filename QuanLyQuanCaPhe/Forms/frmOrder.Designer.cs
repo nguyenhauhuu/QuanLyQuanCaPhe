@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox = new GroupBox();
             btnLuu = new Button();
             btnXoa = new Button();
@@ -319,9 +319,9 @@
             // DonGia
             // 
             DonGia.DataPropertyName = "DonGia";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            DonGia.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            DonGia.DefaultCellStyle = dataGridViewCellStyle1;
             DonGia.HeaderText = "Đơn giá";
             DonGia.Name = "DonGia";
             DonGia.ReadOnly = true;
@@ -336,9 +336,9 @@
             // ThanhTien
             // 
             ThanhTien.DataPropertyName = "ThanhTien";
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            ThanhTien.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            ThanhTien.DefaultCellStyle = dataGridViewCellStyle2;
             ThanhTien.HeaderText = "Thành tiền";
             ThanhTien.Name = "ThanhTien";
             ThanhTien.ReadOnly = true;
@@ -406,7 +406,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmOrder";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmChucNang";
+            Text = "Order";
             WindowState = FormWindowState.Maximized;
             Activated += frmChucNang_Activated;
             Load += frmChucNang_Load;

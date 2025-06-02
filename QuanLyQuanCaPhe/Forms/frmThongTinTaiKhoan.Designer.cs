@@ -230,7 +230,7 @@
             MinimizeBox = false;
             Name = "frmThongTinTaiKhoan";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "x";
+            Text = "Thông tin tài khoản";
             Load += frmThongTinTaiKhoan_Load;
             grpDoiMatKhau.ResumeLayout(false);
             grpDoiMatKhau.PerformLayout();

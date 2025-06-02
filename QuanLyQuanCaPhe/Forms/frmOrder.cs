@@ -53,6 +53,7 @@ namespace QuanLyQuanCaPhe.Forms
                 cboDanhMuc.Enabled = true;
                 numSoLuong.Enabled = true;
                 btnThem.Enabled = true;
+                btnXoa.Enabled = true;
             }
 
             // Nút lưu và xóa chỉ sáng khi có sản phẩm 

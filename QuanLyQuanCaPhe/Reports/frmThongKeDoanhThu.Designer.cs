@@ -133,7 +133,7 @@
             Controls.Add(panel1);
             Name = "frmThongKeDoanhThu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmThongKeDoanhThu";
+            Text = "Thống kê doanh thu";
             WindowState = FormWindowState.Maximized;
             Load += frmThongKeDoanhThu_Load;
             panel1.ResumeLayout(false);
