@@ -32,10 +32,6 @@ namespace QuanLyQuanCaPhe.Forms
         frmThongTinTaiKhoan? thongTinTaiKhoan = null;
         string tenHienThi = "";
         int idTaiKhoan;
-
-
-
-
         public Form1()
         {
             InitializeComponent();

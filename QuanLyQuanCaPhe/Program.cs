@@ -16,16 +16,16 @@ namespace QuanLyQuanCaPhe
         {
 
             // Tạo DbContext
-            using (var context = new QLQCPContext())
-            {
-                context.Database.Migrate();
-                // Seed dữ liệu mặc định (tài khoản admin)
-                SeedInitialData(context);
-            }
+            //using (var context = new QLQCPContext())
+            //{
+            //    context.Database.Migrate();
+            //    // Seed dữ liệu mặc định (tài khoản admin)
+            //    SeedInitialData(context);
+            //}
 
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmMain());
+            Application.Run(new Form2());
         }
         private static void SeedInitialData(QLQCPContext context)
         {
