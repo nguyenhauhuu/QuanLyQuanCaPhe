@@ -36,6 +36,7 @@
             dtpTuNgay = new DateTimePicker();
             label1 = new Label();
             reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            helpProvider1 = new HelpProvider();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -150,5 +151,6 @@
         private Button btnLocKetQua;
         private DateTimePicker dtpDenNgay;
         private Label label2;
+        private HelpProvider helpProvider1;
     }
 }

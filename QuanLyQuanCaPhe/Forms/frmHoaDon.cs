@@ -24,6 +24,12 @@ namespace QuanLyQuanCaPhe.Forms
         public frmHoaDon()
         {
             InitializeComponent();
+            helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/hoadonbanhang.html");
+            this.HelpRequested += (s, e) =>
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         private void frmHoaDon_Load(object sender, EventArgs e)

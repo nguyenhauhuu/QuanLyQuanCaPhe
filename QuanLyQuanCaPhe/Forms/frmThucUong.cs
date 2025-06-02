@@ -19,7 +19,7 @@ namespace QuanLyQuanCaPhe.Forms
         public frmThucUong()
         {
             InitializeComponent();
-            helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/sanpham.html");
+            helpProvider1.SetHelpString(this, "https://chanhdang.com/helper");
             this.HelpRequested += (s, e) =>
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });

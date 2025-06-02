@@ -17,7 +17,7 @@ namespace QuanLyQuanCaPhe.Forms
         public frmTaiKhoan()
         {
             InitializeComponent();
-            helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
+            helpProvider1.SetHelpString(this, "https://chanhdang.com/helper#QLTK");
             this.HelpRequested += (s, e) =>
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });

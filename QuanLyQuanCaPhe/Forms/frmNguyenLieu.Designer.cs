@@ -51,6 +51,7 @@
             btnThem = new Button();
             dataGridView = new ReaLTaiizor.Controls.PoisonDataGridView();
             TenNguyenLieu = new DataGridViewTextBoxColumn();
+            helpProvider1 = new HelpProvider();
             panel.SuspendLayout();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
@@ -325,5 +326,6 @@
         private TextBox txtTenNguyenLieu;
         private TextBox txtID;
         private DataGridViewTextBoxColumn TenNguyenLieu;
+        private HelpProvider helpProvider1;
     }
 }

@@ -31,6 +31,7 @@ namespace QuanLyQuanCaPhe.Reports
         private void InitializeComponent()
         {
             reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            helpProvider1 = new HelpProvider();
             SuspendLayout();
             // 
             // reportViewer
@@ -59,5 +60,6 @@ namespace QuanLyQuanCaPhe.Reports
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+        private HelpProvider helpProvider1;
     }
 }

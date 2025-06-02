@@ -39,7 +39,7 @@
             txtTienKhachDua = new TextBox();
             txtTienThua = new TextBox();
             cboHinhThucThanhToan = new ComboBox();
-            h = new HelpProvider();
+            helpProvider1 = new HelpProvider();
             SuspendLayout();
             // 
             // label1
@@ -194,6 +194,6 @@
         private TextBox txtTienKhachDua;
         private TextBox txtTienThua;
         private ComboBox cboHinhThucThanhToan;
-        private HelpProvider h;
+        private HelpProvider helpProvider1;
     }
 }

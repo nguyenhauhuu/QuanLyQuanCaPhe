@@ -19,6 +19,12 @@ namespace QuanLyQuanCaPhe.Forms
         public frmNguyenLieu()
         {
             InitializeComponent();
+            helpProvider1.SetHelpString(this, "https://chanhdang.com/helper#QLNguyenLieu");
+            this.HelpRequested += (s, e) =>
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         private void BatTatChucNang(bool giaTri)

@@ -23,6 +23,12 @@ namespace QuanLyQuanCaPhe.Reports
         public frmThongKeDoanhThu()
         {
             InitializeComponent();
+            helpProvider1.SetHelpString(this, "https://chanhdang.com/helper#TKDoanhThu");
+            this.HelpRequested += (s, e) =>
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         private void btnLocKetQua_Click(object sender, EventArgs e)

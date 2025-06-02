@@ -47,6 +47,7 @@
             GiamGia = new DataGridViewTextBoxColumn();
             TongThanhToan = new DataGridViewTextBoxColumn();
             InHoaDon = new DataGridViewLinkColumn();
+            helpProvider1 = new HelpProvider();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -208,5 +209,6 @@
         private DataGridViewTextBoxColumn GiamGia;
         private DataGridViewTextBoxColumn TongThanhToan;
         private DataGridViewLinkColumn InHoaDon;
+        private HelpProvider helpProvider1;
     }
 }

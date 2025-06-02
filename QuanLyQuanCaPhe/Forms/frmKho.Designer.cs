@@ -66,6 +66,7 @@
             DonVi = new DataGridViewTextBoxColumn();
             Gia = new DataGridViewTextBoxColumn();
             NgayHetHan = new DataGridViewTextBoxColumn();
+            helpProvider1 = new HelpProvider();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numGia).BeginInit();
@@ -479,5 +480,6 @@
         private DataGridViewTextBoxColumn DonVi;
         private DataGridViewTextBoxColumn Gia;
         private DataGridViewTextBoxColumn NgayHetHan;
+        private HelpProvider helpProvider1;
     }
 }

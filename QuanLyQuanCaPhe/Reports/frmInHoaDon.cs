@@ -17,6 +17,12 @@ namespace QuanLyQuanCaPhe.Reports
         {
             InitializeComponent();
             id = maHoaDon;
+            helpProvider1.SetHelpString(this, "https://chanhdang.com/helper#TKDoanhThu");
+            this.HelpRequested += (s, e) =>
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
+                e.Handled = true;
+            };
         }
 
         private async void frmInHoaDon_Load(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace QuanLyQuanCaPhe.Forms
             InitializeComponent();
             id = idTaiKhoan;
             taiKhoan = context.TaiKhoan.Find(id)!;
-            helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
+            helpProvider1.SetHelpString(this, "https://chanhdang.com/helper#DoiMK");
             this.HelpRequested += (s, e) =>
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });

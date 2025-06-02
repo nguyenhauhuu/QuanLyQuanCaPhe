@@ -36,6 +36,7 @@
             dtpDenNgay = new DateTimePicker();
             label2 = new Label();
             reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            helpProvider1 = new HelpProvider();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -151,5 +152,6 @@
         private Label label2;
         private ReaLTaiizor.Controls.AloneComboBox cboTieuChi;
         private ReaLTaiizor.Controls.AloneButton btnThongKe;
+        private HelpProvider helpProvider1;
     }
 }
