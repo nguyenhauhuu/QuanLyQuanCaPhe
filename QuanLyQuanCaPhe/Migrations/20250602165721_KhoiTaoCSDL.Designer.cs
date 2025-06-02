@@ -12,8 +12,8 @@ using QuanLyQuanCaPhe.Data;
 namespace QuanLyQuanCaPhe.Migrations
 {
     [DbContext(typeof(QLQCPContext))]
-    [Migration("20250524064121_KhoiTaocSDL")]
-    partial class KhoiTaocSDL
+    [Migration("20250602165721_KhoiTaoCSDL")]
+    partial class KhoiTaoCSDL
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -151,8 +151,8 @@ namespace QuanLyQuanCaPhe.Migrations
                     b.Property<int>("NguyenLieuID")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("SoLuong")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 

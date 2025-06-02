@@ -11,7 +11,7 @@ namespace QuanLyQuanCaPhe.Data
         public int ID { get; set; }
         public int NguyenLieuID { get; set; }
         public string MoTa { get; set; } = null!;
-        public decimal SoLuong { get; set; }
+        public int SoLuong { get; set; }
         public string DonVi { get; set; } = null!;
         public decimal Gia { get; set; }
         public DateTime NgayHetHan { get; set; }

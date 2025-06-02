@@ -85,9 +85,10 @@
             btnThoat.Location = new Point(166, 363);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(138, 67);
-            btnThoat.TabIndex = 6;
+            btnThoat.TabIndex = 10;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = false;
+            btnThoat.Click += btnThoat_Click;
             // 
             // btnHuyBo
             // 
@@ -96,7 +97,7 @@
             btnHuyBo.Location = new Point(16, 363);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.Size = new Size(138, 67);
-            btnHuyBo.TabIndex = 6;
+            btnHuyBo.TabIndex = 9;
             btnHuyBo.Text = "Hủy";
             btnHuyBo.UseVisualStyleBackColor = false;
             btnHuyBo.Click += btnHuyBo_Click;
@@ -108,7 +109,7 @@
             btnLuu.Location = new Point(166, 275);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(138, 67);
-            btnLuu.TabIndex = 6;
+            btnLuu.TabIndex = 8;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = false;
             btnLuu.Click += btnLuu_Click;
@@ -120,7 +121,7 @@
             btnXoa.Location = new Point(16, 275);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(138, 67);
-            btnXoa.TabIndex = 6;
+            btnXoa.TabIndex = 7;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
             btnXoa.ClientSizeChanged += btnXoa_Click;
@@ -144,7 +145,7 @@
             btnThem.Location = new Point(16, 187);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(138, 67);
-            btnThem.TabIndex = 6;
+            btnThem.TabIndex = 5;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
@@ -155,7 +156,7 @@
             txtTenBan.Location = new Point(97, 124);
             txtTenBan.Name = "txtTenBan";
             txtTenBan.Size = new Size(207, 35);
-            txtTenBan.TabIndex = 5;
+            txtTenBan.TabIndex = 4;
             // 
             // txtID
             // 
@@ -164,7 +165,7 @@
             txtID.Location = new Point(97, 71);
             txtID.Name = "txtID";
             txtID.Size = new Size(207, 35);
-            txtID.TabIndex = 4;
+            txtID.TabIndex = 2;
             // 
             // lblTenBan
             // 
@@ -173,7 +174,7 @@
             lblTenBan.Location = new Point(16, 131);
             lblTenBan.Name = "lblTenBan";
             lblTenBan.Size = new Size(66, 21);
-            lblTenBan.TabIndex = 1;
+            lblTenBan.TabIndex = 3;
             lblTenBan.Text = "Tên bàn:";
             // 
             // lblID
@@ -279,7 +280,7 @@
             dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(463, 450);
-            dataGridView.TabIndex = 1;
+            dataGridView.TabIndex = 0;
             // 
             // ID
             // 

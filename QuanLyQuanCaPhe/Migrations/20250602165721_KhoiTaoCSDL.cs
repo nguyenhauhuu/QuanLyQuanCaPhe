@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace QuanLyQuanCaPhe.Migrations
 {
     /// <inheritdoc />
-    public partial class KhoiTaocSDL : Migration
+    public partial class KhoiTaoCSDL : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -98,7 +98,7 @@ namespace QuanLyQuanCaPhe.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NguyenLieuID = table.Column<int>(type: "int", nullable: false),
                     MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SoLuong = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SoLuong = table.Column<int>(type: "int", nullable: false),
                     DonVi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     NgayHetHan = table.Column<DateTime>(type: "datetime2", nullable: false)

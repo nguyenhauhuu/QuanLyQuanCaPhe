@@ -107,9 +107,10 @@
             btnThoat.Location = new Point(178, 386);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(129, 46);
-            btnThoat.TabIndex = 19;
+            btnThoat.TabIndex = 20;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = false;
+            btnThoat.Click += btnThoat_Click;
             // 
             // toolStrip1
             // 
@@ -117,7 +118,7 @@
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(337, 25);
-            toolStrip1.TabIndex = 9;
+            toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
             // txtTuKhoa
@@ -132,6 +133,7 @@
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.Size = new Size(47, 22);
             btnTimKiem.Text = "Tìm";
+            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // toolStripSeparator1
             // 
@@ -145,6 +147,7 @@
             btnNhap.Name = "btnNhap";
             btnNhap.Size = new Size(65, 22);
             btnNhap.Text = "Nhập...";
+            btnNhap.Click += btnNhap_Click;
             // 
             // btnXuat
             // 
@@ -153,6 +156,7 @@
             btnXuat.Name = "btnXuat";
             btnXuat.Size = new Size(60, 22);
             btnXuat.Text = "Xuất...";
+            btnXuat.Click += btnXuat_Click;
             // 
             // btnHuyBo
             // 
@@ -161,7 +165,7 @@
             btnHuyBo.Location = new Point(19, 386);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.Size = new Size(129, 46);
-            btnHuyBo.TabIndex = 20;
+            btnHuyBo.TabIndex = 19;
             btnHuyBo.Text = "Hủy";
             btnHuyBo.UseVisualStyleBackColor = false;
             btnHuyBo.Click += btnHuyBo_Click;
@@ -174,7 +178,7 @@
             dtpNgayHetHan.MinDate = new DateTime(2025, 5, 30, 0, 0, 0, 0);
             dtpNgayHetHan.Name = "dtpNgayHetHan";
             dtpNgayHetHan.Size = new Size(200, 23);
-            dtpNgayHetHan.TabIndex = 8;
+            dtpNgayHetHan.TabIndex = 14;
             dtpNgayHetHan.Value = new DateTime(2025, 5, 30, 20, 59, 28, 0);
             // 
             // btnLuu
@@ -184,7 +188,7 @@
             btnLuu.Location = new Point(178, 322);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(129, 46);
-            btnLuu.TabIndex = 21;
+            btnLuu.TabIndex = 18;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = false;
             btnLuu.Click += btnLuu_Click;
@@ -192,10 +196,11 @@
             // cboDonVi
             // 
             cboDonVi.FormattingEnabled = true;
+            cboDonVi.Items.AddRange(new object[] { "g", "kg", "ml", "l", "cái", "thùng" });
             cboDonVi.Location = new Point(231, 151);
             cboDonVi.Name = "cboDonVi";
             cboDonVi.Size = new Size(81, 23);
-            cboDonVi.TabIndex = 7;
+            cboDonVi.TabIndex = 10;
             // 
             // btnXoa
             // 
@@ -204,7 +209,7 @@
             btnXoa.Location = new Point(19, 322);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(129, 46);
-            btnXoa.TabIndex = 22;
+            btnXoa.TabIndex = 17;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
             btnXoa.Click += btnXoa_Click;
@@ -216,7 +221,7 @@
             numGia.Minimum = new decimal(new int[] { 1000, 0, 0, 0 });
             numGia.Name = "numGia";
             numGia.Size = new Size(225, 23);
-            numGia.TabIndex = 6;
+            numGia.TabIndex = 12;
             numGia.ThousandsSeparator = true;
             numGia.Value = new decimal(new int[] { 1000, 0, 0, 0 });
             // 
@@ -227,7 +232,7 @@
             btnSua.Location = new Point(178, 258);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(129, 46);
-            btnSua.TabIndex = 23;
+            btnSua.TabIndex = 16;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = false;
             btnSua.Click += btnSua_Click;
@@ -238,7 +243,7 @@
             numSoLuong.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numSoLuong.Name = "numSoLuong";
             numSoLuong.Size = new Size(84, 23);
-            numSoLuong.TabIndex = 6;
+            numSoLuong.TabIndex = 8;
             numSoLuong.ThousandsSeparator = true;
             // 
             // btnThem
@@ -248,7 +253,7 @@
             btnThem.Location = new Point(19, 258);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(129, 46);
-            btnThem.TabIndex = 24;
+            btnThem.TabIndex = 15;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
@@ -259,14 +264,14 @@
             cboNguyenLieu.Location = new Point(103, 77);
             cboNguyenLieu.Name = "cboNguyenLieu";
             cboNguyenLieu.Size = new Size(209, 23);
-            cboNguyenLieu.TabIndex = 5;
+            cboNguyenLieu.TabIndex = 4;
             // 
             // txtMoTa
             // 
             txtMoTa.Location = new Point(71, 109);
             txtMoTa.Name = "txtMoTa";
             txtMoTa.Size = new Size(241, 23);
-            txtMoTa.TabIndex = 4;
+            txtMoTa.TabIndex = 6;
             // 
             // txtID
             // 
@@ -274,7 +279,7 @@
             txtID.Location = new Point(46, 33);
             txtID.Name = "txtID";
             txtID.Size = new Size(266, 23);
-            txtID.TabIndex = 4;
+            txtID.TabIndex = 2;
             // 
             // label6
             // 
@@ -283,7 +288,7 @@
             label6.Location = new Point(17, 222);
             label6.Name = "label6";
             label6.Size = new Size(89, 17);
-            label6.TabIndex = 1;
+            label6.TabIndex = 13;
             label6.Text = "Ngày hết hạn:";
             // 
             // label5
@@ -293,7 +298,7 @@
             label5.Location = new Point(19, 185);
             label5.Name = "label5";
             label5.Size = new Size(30, 17);
-            label5.TabIndex = 1;
+            label5.TabIndex = 11;
             label5.Text = "Giá:";
             // 
             // label4
@@ -303,7 +308,7 @@
             label4.Location = new Point(177, 151);
             label4.Name = "label4";
             label4.Size = new Size(48, 17);
-            label4.TabIndex = 1;
+            label4.TabIndex = 9;
             label4.Text = "Đơn vị:";
             // 
             // label3
@@ -313,7 +318,7 @@
             label3.Location = new Point(17, 151);
             label3.Name = "label3";
             label3.Size = new Size(64, 17);
-            label3.TabIndex = 1;
+            label3.TabIndex = 7;
             label3.Text = "Số lượng:";
             // 
             // label2
@@ -323,7 +328,7 @@
             label2.Location = new Point(19, 115);
             label2.Name = "label2";
             label2.Size = new Size(46, 17);
-            label2.TabIndex = 1;
+            label2.TabIndex = 5;
             label2.Text = "Mô tả:";
             // 
             // label1
@@ -333,7 +338,7 @@
             label1.Location = new Point(17, 80);
             label1.Name = "label1";
             label1.Size = new Size(80, 17);
-            label1.TabIndex = 1;
+            label1.TabIndex = 3;
             label1.Text = "Nguyên liệu:";
             // 
             // lblID
@@ -358,7 +363,7 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.Size = new Size(794, 450);
-            dataGridView.TabIndex = 5;
+            dataGridView.TabIndex = 0;
             dataGridView.RowPrePaint += dataGridView_RowPrePaint;
             // 
             // ID

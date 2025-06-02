@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanCaPhe.Forms
 {
-    partial class frmChucNang
+    partial class frmOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             groupBox = new GroupBox();
             btnLuu = new Button();
             btnXoa = new Button();
@@ -48,6 +48,10 @@
             cboBanDich = new ReaLTaiizor.Controls.AloneComboBox();
             cboBanDau = new ReaLTaiizor.Controls.AloneComboBox();
             dgvDanhSachThucUong = new DataGridView();
+            TenThucUong = new DataGridViewTextBoxColumn();
+            DonGia = new DataGridViewTextBoxColumn();
+            SoLuong = new DataGridViewTextBoxColumn();
+            ThanhTien = new DataGridViewTextBoxColumn();
             label4 = new Label();
             label7 = new Label();
             label3 = new Label();
@@ -55,10 +59,6 @@
             label1 = new Label();
             flpDanhSachBan = new FlowLayoutPanel();
             helpProvider1 = new HelpProvider();
-            TenThucUong = new DataGridViewTextBoxColumn();
-            DonGia = new DataGridViewTextBoxColumn();
-            SoLuong = new DataGridViewTextBoxColumn();
-            ThanhTien = new DataGridViewTextBoxColumn();
             groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numSoLuong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numGiamGia).BeginInit();
@@ -93,7 +93,7 @@
             groupBox.Location = new Point(346, 0);
             groupBox.Name = "groupBox";
             groupBox.Size = new Size(492, 450);
-            groupBox.TabIndex = 2;
+            groupBox.TabIndex = 1;
             groupBox.TabStop = false;
             groupBox.Text = "Bàn";
             // 
@@ -104,7 +104,7 @@
             btnLuu.Location = new Point(396, 34);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(62, 30);
-            btnLuu.TabIndex = 17;
+            btnLuu.TabIndex = 21;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = false;
             btnLuu.Click += btnLuu_Click;
@@ -116,7 +116,7 @@
             btnXoa.Location = new Point(328, 34);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(62, 30);
-            btnXoa.TabIndex = 18;
+            btnXoa.TabIndex = 20;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
             btnXoa.Click += btnXoa_Click;
@@ -136,16 +136,18 @@
             // numSoLuong
             // 
             numSoLuong.Location = new Point(351, 84);
+            numSoLuong.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numSoLuong.Name = "numSoLuong";
             numSoLuong.Size = new Size(106, 23);
-            numSoLuong.TabIndex = 16;
+            numSoLuong.TabIndex = 7;
+            numSoLuong.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // txtMoTa
             // 
             txtMoTa.Location = new Point(74, 121);
             txtMoTa.Name = "txtMoTa";
             txtMoTa.Size = new Size(383, 23);
-            txtMoTa.TabIndex = 15;
+            txtMoTa.TabIndex = 5;
             // 
             // cboThucUong
             // 
@@ -153,7 +155,7 @@
             cboThucUong.Location = new Point(90, 81);
             cboThucUong.Name = "cboThucUong";
             cboThucUong.Size = new Size(164, 23);
-            cboThucUong.TabIndex = 14;
+            cboThucUong.TabIndex = 3;
             // 
             // cboDanhMuc
             // 
@@ -161,7 +163,7 @@
             cboDanhMuc.Location = new Point(90, 38);
             cboDanhMuc.Name = "cboDanhMuc";
             cboDanhMuc.Size = new Size(164, 23);
-            cboDanhMuc.TabIndex = 14;
+            cboDanhMuc.TabIndex = 1;
             cboDanhMuc.SelectedIndexChanged += cboDanhMuc_SelectedIndexChanged;
             // 
             // btnTinhTien
@@ -178,8 +180,8 @@
             btnTinhTien.Name = "btnTinhTien";
             btnTinhTien.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnTinhTien.PressedColor = Color.FromArgb(165, 37, 37);
-            btnTinhTien.Size = new Size(100, 59);
-            btnTinhTien.TabIndex = 12;
+            btnTinhTien.Size = new Size(122, 59);
+            btnTinhTien.TabIndex = 3;
             btnTinhTien.Text = "TÍNH TIỀN";
             btnTinhTien.TextAlignment = StringAlignment.Center;
             btnTinhTien.Click += btnTinhTien_Click;
@@ -196,7 +198,7 @@
             txtTongTien.Name = "txtTongTien";
             txtTongTien.ReadOnly = false;
             txtTongTien.Size = new Size(120, 29);
-            txtTongTien.TabIndex = 11;
+            txtTongTien.TabIndex = 5;
             txtTongTien.TextAlign = HorizontalAlignment.Left;
             txtTongTien.UseSystemPasswordChar = false;
             // 
@@ -207,7 +209,7 @@
             label6.Location = new Point(255, 388);
             label6.Name = "label6";
             label6.Size = new Size(75, 21);
-            label6.TabIndex = 10;
+            label6.TabIndex = 4;
             label6.Text = "Tổng tiền";
             // 
             // label5
@@ -217,7 +219,7 @@
             label5.Location = new Point(167, 391);
             label5.Name = "label5";
             label5.Size = new Size(75, 15);
-            label5.TabIndex = 10;
+            label5.TabIndex = 17;
             label5.Text = "Giảm giá (%)";
             // 
             // numGiamGia
@@ -226,7 +228,7 @@
             numGiamGia.Location = new Point(167, 419);
             numGiamGia.Name = "numGiamGia";
             numGiamGia.Size = new Size(59, 25);
-            numGiamGia.TabIndex = 9;
+            numGiamGia.TabIndex = 18;
             // 
             // btnGopBan
             // 
@@ -243,7 +245,7 @@
             btnGopBan.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnGopBan.PressedColor = Color.FromArgb(165, 37, 37);
             btnGopBan.Size = new Size(71, 27);
-            btnGopBan.TabIndex = 8;
+            btnGopBan.TabIndex = 2;
             btnGopBan.Text = "Gộp bàn";
             btnGopBan.TextAlignment = StringAlignment.Center;
             btnGopBan.Click += btnGopBan_Click;
@@ -263,7 +265,7 @@
             btnChuyenBan.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnChuyenBan.PressedColor = Color.FromArgb(165, 37, 37);
             btnChuyenBan.Size = new Size(71, 27);
-            btnChuyenBan.TabIndex = 8;
+            btnChuyenBan.TabIndex = 1;
             btnChuyenBan.Text = "Chuyển bàn";
             btnChuyenBan.TextAlignment = StringAlignment.Center;
             btnChuyenBan.Click += btnChuyenBan_Click;
@@ -305,7 +307,41 @@
             dgvDanhSachThucUong.Name = "dgvDanhSachThucUong";
             dgvDanhSachThucUong.ReadOnly = true;
             dgvDanhSachThucUong.Size = new Size(466, 212);
-            dgvDanhSachThucUong.TabIndex = 6;
+            dgvDanhSachThucUong.TabIndex = 0;
+            // 
+            // TenThucUong
+            // 
+            TenThucUong.DataPropertyName = "TenThucUong";
+            TenThucUong.HeaderText = "Tên thức uống";
+            TenThucUong.Name = "TenThucUong";
+            TenThucUong.ReadOnly = true;
+            // 
+            // DonGia
+            // 
+            DonGia.DataPropertyName = "DonGia";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            DonGia.DefaultCellStyle = dataGridViewCellStyle3;
+            DonGia.HeaderText = "Đơn giá";
+            DonGia.Name = "DonGia";
+            DonGia.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            SoLuong.DataPropertyName = "SoLuong";
+            SoLuong.HeaderText = "Số lượng";
+            SoLuong.Name = "SoLuong";
+            SoLuong.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            ThanhTien.DataPropertyName = "ThanhTien";
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            ThanhTien.DefaultCellStyle = dataGridViewCellStyle4;
+            ThanhTien.HeaderText = "Thành tiền";
+            ThanhTien.Name = "ThanhTien";
+            ThanhTien.ReadOnly = true;
             // 
             // label4
             // 
@@ -313,7 +349,7 @@
             label4.Location = new Point(287, 85);
             label4.Name = "label4";
             label4.Size = new Size(57, 15);
-            label4.TabIndex = 4;
+            label4.TabIndex = 6;
             label4.Text = "Số lượng:";
             // 
             // label7
@@ -322,7 +358,7 @@
             label7.Location = new Point(13, 125);
             label7.Name = "label7";
             label7.Size = new Size(41, 15);
-            label7.TabIndex = 2;
+            label7.TabIndex = 4;
             label7.Text = "Mô tả:";
             // 
             // label3
@@ -340,7 +376,7 @@
             label2.Location = new Point(14, 42);
             label2.Name = "label2";
             label2.Size = new Size(65, 15);
-            label2.TabIndex = 2;
+            label2.TabIndex = 0;
             label2.Text = "Danh mục:";
             // 
             // label1
@@ -358,43 +394,9 @@
             flpDanhSachBan.Location = new Point(0, 0);
             flpDanhSachBan.Name = "flpDanhSachBan";
             flpDanhSachBan.Size = new Size(346, 450);
-            flpDanhSachBan.TabIndex = 3;
+            flpDanhSachBan.TabIndex = 0;
             // 
-            // TenThucUong
-            // 
-            TenThucUong.DataPropertyName = "TenThucUong";
-            TenThucUong.HeaderText = "Tên thức uống";
-            TenThucUong.Name = "TenThucUong";
-            TenThucUong.ReadOnly = true;
-            // 
-            // DonGia
-            // 
-            DonGia.DataPropertyName = "DonGia";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            DonGia.DefaultCellStyle = dataGridViewCellStyle1;
-            DonGia.HeaderText = "Đơn giá";
-            DonGia.Name = "DonGia";
-            DonGia.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            SoLuong.DataPropertyName = "SoLuong";
-            SoLuong.HeaderText = "Số lượng";
-            SoLuong.Name = "SoLuong";
-            SoLuong.ReadOnly = true;
-            // 
-            // ThanhTien
-            // 
-            ThanhTien.DataPropertyName = "ThanhTien";
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            ThanhTien.DefaultCellStyle = dataGridViewCellStyle2;
-            ThanhTien.HeaderText = "Thành tiền";
-            ThanhTien.Name = "ThanhTien";
-            ThanhTien.ReadOnly = true;
-            // 
-            // frmChucNang
+            // frmOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -402,7 +404,7 @@
             Controls.Add(flpDanhSachBan);
             Controls.Add(groupBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "frmChucNang";
+            Name = "frmOrder";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmChucNang";
             WindowState = FormWindowState.Maximized;

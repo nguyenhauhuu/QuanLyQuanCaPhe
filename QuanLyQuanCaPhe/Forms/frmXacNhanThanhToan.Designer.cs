@@ -59,7 +59,7 @@
             label2.Location = new Point(30, 101);
             label2.Name = "label2";
             label2.Size = new Size(74, 19);
-            label2.TabIndex = 0;
+            label2.TabIndex = 2;
             label2.Text = "Thành tiền:";
             // 
             // label3
@@ -69,7 +69,7 @@
             label3.Location = new Point(30, 158);
             label3.Name = "label3";
             label3.Size = new Size(144, 19);
-            label3.TabIndex = 0;
+            label3.TabIndex = 4;
             label3.Text = "Hình thức thanh thoán:";
             // 
             // label4
@@ -79,7 +79,7 @@
             label4.Location = new Point(30, 215);
             label4.Name = "label4";
             label4.Size = new Size(102, 19);
-            label4.TabIndex = 0;
+            label4.TabIndex = 6;
             label4.Text = "Tiền khách đưa";
             // 
             // label5
@@ -89,7 +89,7 @@
             label5.Location = new Point(30, 272);
             label5.Name = "label5";
             label5.Size = new Size(68, 19);
-            label5.TabIndex = 0;
+            label5.TabIndex = 8;
             label5.Text = "Tiền thừa:";
             // 
             // btnXacNhan
@@ -106,7 +106,7 @@
             btnXacNhan.Name = "btnXacNhan";
             btnXacNhan.NoAccentTextColor = Color.Empty;
             btnXacNhan.Size = new Size(95, 36);
-            btnXacNhan.TabIndex = 2;
+            btnXacNhan.TabIndex = 10;
             btnXacNhan.Text = "Xác nhận";
             btnXacNhan.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnXacNhan.UseAccentColor = false;
@@ -119,7 +119,7 @@
             txtID.Location = new Point(185, 40);
             txtID.Name = "txtID";
             txtID.Size = new Size(176, 23);
-            txtID.TabIndex = 5;
+            txtID.TabIndex = 1;
             // 
             // txtThanhTien
             // 
@@ -127,7 +127,7 @@
             txtThanhTien.Location = new Point(185, 98);
             txtThanhTien.Name = "txtThanhTien";
             txtThanhTien.Size = new Size(176, 23);
-            txtThanhTien.TabIndex = 6;
+            txtThanhTien.TabIndex = 3;
             // 
             // txtTienKhachDua
             // 
@@ -135,7 +135,7 @@
             txtTienKhachDua.Location = new Point(185, 215);
             txtTienKhachDua.Name = "txtTienKhachDua";
             txtTienKhachDua.Size = new Size(176, 23);
-            txtTienKhachDua.TabIndex = 6;
+            txtTienKhachDua.TabIndex = 7;
             txtTienKhachDua.TextChanged += txtTienKhachDua_TextChanged;
             txtTienKhachDua.KeyDown += txtTienKhachDua_KeyDown;
             // 
@@ -145,7 +145,7 @@
             txtTienThua.Location = new Point(185, 268);
             txtTienThua.Name = "txtTienThua";
             txtTienThua.Size = new Size(176, 23);
-            txtTienThua.TabIndex = 6;
+            txtTienThua.TabIndex = 9;
             // 
             // cboHinhThucThanhToan
             // 
@@ -154,7 +154,7 @@
             cboHinhThucThanhToan.Location = new Point(185, 160);
             cboHinhThucThanhToan.Name = "cboHinhThucThanhToan";
             cboHinhThucThanhToan.Size = new Size(176, 23);
-            cboHinhThucThanhToan.TabIndex = 7;
+            cboHinhThucThanhToan.TabIndex = 5;
             cboHinhThucThanhToan.SelectedIndexChanged += cboHinhThucThanhToan_SelectedIndexChanged;
             // 
             // frmXacNhanThanhToan

@@ -244,5 +244,10 @@ namespace QuanLyQuanCaPhe.Forms
             .ToList();
             dataGridView.DataSource = nguyenLieu;
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

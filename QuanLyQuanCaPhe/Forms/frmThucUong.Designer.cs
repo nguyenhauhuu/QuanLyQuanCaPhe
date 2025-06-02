@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThucUong));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblTenDanhMuc = new Label();
             lblID = new Label();
             panel1 = new Panel();
@@ -70,7 +70,7 @@
             lblTenDanhMuc.Location = new Point(28, 158);
             lblTenDanhMuc.Name = "lblTenDanhMuc";
             lblTenDanhMuc.Size = new Size(110, 21);
-            lblTenDanhMuc.TabIndex = 1;
+            lblTenDanhMuc.TabIndex = 5;
             lblTenDanhMuc.Text = "Tên thức uống:";
             // 
             // lblID
@@ -113,9 +113,10 @@
             btnThoat.Location = new Point(186, 396);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(129, 46);
-            btnThoat.TabIndex = 13;
+            btnThoat.TabIndex = 14;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = false;
+            btnThoat.Click += btnThoat_Click;
             // 
             // btnHuyBo
             // 
@@ -124,7 +125,7 @@
             btnHuyBo.Location = new Point(27, 396);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.Size = new Size(129, 46);
-            btnHuyBo.TabIndex = 14;
+            btnHuyBo.TabIndex = 13;
             btnHuyBo.Text = "Hủy";
             btnHuyBo.UseVisualStyleBackColor = false;
             btnHuyBo.Click += btnHuyBo_Click;
@@ -136,7 +137,7 @@
             btnLuu.Location = new Point(186, 332);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(129, 46);
-            btnLuu.TabIndex = 15;
+            btnLuu.TabIndex = 12;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = false;
             btnLuu.Click += btnLuu_Click;
@@ -148,7 +149,7 @@
             btnXoa.Location = new Point(27, 332);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(129, 46);
-            btnXoa.TabIndex = 16;
+            btnXoa.TabIndex = 11;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
             btnXoa.Click += btnXoa_Click;
@@ -160,7 +161,7 @@
             btnSua.Location = new Point(186, 268);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(129, 46);
-            btnSua.TabIndex = 17;
+            btnSua.TabIndex = 10;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = false;
             btnSua.Click += btnSua_Click;
@@ -172,7 +173,7 @@
             btnThem.Location = new Point(27, 268);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(129, 46);
-            btnThem.TabIndex = 18;
+            btnThem.TabIndex = 9;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
@@ -182,14 +183,15 @@
             txtTenThucUong.Location = new Point(27, 182);
             txtTenThucUong.Name = "txtTenThucUong";
             txtTenThucUong.Size = new Size(276, 23);
-            txtTenThucUong.TabIndex = 11;
+            txtTenThucUong.TabIndex = 6;
             // 
             // txtID
             // 
+            txtID.Enabled = false;
             txtID.Location = new Point(62, 35);
             txtID.Name = "txtID";
             txtID.Size = new Size(242, 23);
-            txtID.TabIndex = 10;
+            txtID.TabIndex = 2;
             // 
             // cboDanhMuc
             // 
@@ -197,7 +199,7 @@
             cboDanhMuc.Location = new Point(27, 113);
             cboDanhMuc.Name = "cboDanhMuc";
             cboDanhMuc.Size = new Size(276, 23);
-            cboDanhMuc.TabIndex = 9;
+            cboDanhMuc.TabIndex = 4;
             // 
             // toolStrip1
             // 
@@ -205,7 +207,7 @@
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(333, 25);
-            toolStrip1.TabIndex = 8;
+            toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
             // txtTuKhoa
@@ -253,7 +255,7 @@
             numGia.Minimum = new decimal(new int[] { 1000, 0, 0, 0 });
             numGia.Name = "numGia";
             numGia.Size = new Size(276, 23);
-            numGia.TabIndex = 7;
+            numGia.TabIndex = 8;
             numGia.Tag = "";
             numGia.ThousandsSeparator = true;
             numGia.Value = new decimal(new int[] { 1000, 0, 0, 0 });
@@ -265,7 +267,7 @@
             label2.Location = new Point(27, 215);
             label2.Name = "label2";
             label2.Size = new Size(36, 21);
-            label2.TabIndex = 6;
+            label2.TabIndex = 7;
             label2.Text = "Giá:";
             // 
             // label1
@@ -275,7 +277,7 @@
             label1.Location = new Point(27, 90);
             label1.Name = "label1";
             label1.Size = new Size(109, 21);
-            label1.TabIndex = 4;
+            label1.TabIndex = 3;
             label1.Text = "Tên danh mục:";
             // 
             // dataGridView
@@ -290,7 +292,7 @@
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.Size = new Size(581, 450);
-            dataGridView.TabIndex = 5;
+            dataGridView.TabIndex = 0;
             // 
             // ID
             // 
@@ -316,9 +318,9 @@
             // DonGia
             // 
             DonGia.DataPropertyName = "DonGia";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            DonGia.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            DonGia.DefaultCellStyle = dataGridViewCellStyle2;
             DonGia.HeaderText = "Đơn giá";
             DonGia.Name = "DonGia";
             DonGia.ReadOnly = true;

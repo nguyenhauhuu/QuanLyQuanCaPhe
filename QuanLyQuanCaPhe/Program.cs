@@ -15,17 +15,17 @@ namespace QuanLyQuanCaPhe
         static void Main()
         {
 
-            // Tạo DbContext
-            //using (var context = new QLQCPContext())
-            //{
-            //    context.Database.Migrate();
-            //    // Seed dữ liệu mặc định (tài khoản admin)
-            //    SeedInitialData(context);
-            //}
+            //Tạo DbContext
+            using (var context = new QLQCPContext())
+            {
+                context.Database.Migrate();
+                // Seed dữ liệu mặc định (tài khoản admin)
+                SeedInitialData(context);
+            }
 
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form2());
+            Application.Run(new frmMain());
         }
         private static void SeedInitialData(QLQCPContext context)
         {
@@ -34,7 +34,7 @@ namespace QuanLyQuanCaPhe
                 context.TaiKhoan.Add(new TaiKhoan
                 {
                     TenDangNhap = "admin",
-                    MatKhau = BC.HashPassword("123"), 
+                    MatKhau = BC.HashPassword("123"),
                     TenDayDu = "Administrator",
                     QuyenTruyCap = "admin",
                     NgaySinh = new DateTime(1990, 1, 1),

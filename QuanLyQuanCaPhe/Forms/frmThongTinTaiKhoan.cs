@@ -28,7 +28,8 @@ namespace QuanLyQuanCaPhe.Forms
             id = idTaiKhoan;
             taiKhoan = context.TaiKhoan.Find(id)!;
             helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
-            this.HelpRequested += (s, e) => {
+            this.HelpRequested += (s, e) =>
+            {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
                 e.Handled = true;
             };
@@ -110,9 +111,10 @@ namespace QuanLyQuanCaPhe.Forms
             }
             else
             {
-                taiKhoan.MatKhau = BC.HashPassword(matKhauHienTai);
+                taiKhoan.MatKhau = BC.HashPassword(matKhauMoi);
                 context.TaiKhoan.Update(taiKhoan);
                 context.SaveChanges();
+                MessageBox.Show("Cập nhật mật khẩu thành công!");
             }
         }
     }

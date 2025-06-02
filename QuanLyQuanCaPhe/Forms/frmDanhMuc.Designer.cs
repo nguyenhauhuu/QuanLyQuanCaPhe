@@ -105,7 +105,7 @@
             dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.Size = new Size(475, 450);
-            dataGridView.TabIndex = 3;
+            dataGridView.TabIndex = 0;
             // 
             // ID
             // 
@@ -147,9 +147,10 @@
             btnThoat.Location = new Point(166, 363);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(138, 67);
-            btnThoat.TabIndex = 7;
+            btnThoat.TabIndex = 10;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = false;
+            btnThoat.Click += btnThoat_Click;
             // 
             // txtTenDanhMuc
             // 
@@ -157,7 +158,7 @@
             txtTenDanhMuc.Location = new Point(28, 131);
             txtTenDanhMuc.Name = "txtTenDanhMuc";
             txtTenDanhMuc.Size = new Size(276, 35);
-            txtTenDanhMuc.TabIndex = 6;
+            txtTenDanhMuc.TabIndex = 4;
             // 
             // btnHuyBo
             // 
@@ -166,18 +167,19 @@
             btnHuyBo.Location = new Point(16, 363);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.Size = new Size(138, 67);
-            btnHuyBo.TabIndex = 8;
+            btnHuyBo.TabIndex = 9;
             btnHuyBo.Text = "Hủy";
             btnHuyBo.UseVisualStyleBackColor = false;
             btnHuyBo.Click += btnHuyBo_Click;
             // 
             // txtID
             // 
+            txtID.Enabled = false;
             txtID.Font = new Font("Segoe UI", 15.75F);
             txtID.Location = new Point(62, 38);
             txtID.Name = "txtID";
             txtID.Size = new Size(242, 35);
-            txtID.TabIndex = 5;
+            txtID.TabIndex = 2;
             // 
             // btnLuu
             // 
@@ -186,7 +188,7 @@
             btnLuu.Location = new Point(166, 275);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(138, 67);
-            btnLuu.TabIndex = 9;
+            btnLuu.TabIndex = 8;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = false;
             btnLuu.Click += btnLuu_Click;
@@ -197,7 +199,7 @@
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(325, 25);
-            toolStrip1.TabIndex = 4;
+            toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
             // txtTuKhoa
@@ -244,7 +246,7 @@
             btnXoa.Location = new Point(16, 275);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(138, 67);
-            btnXoa.TabIndex = 10;
+            btnXoa.TabIndex = 7;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
             btnXoa.Click += btnXoa_Click;
@@ -256,7 +258,7 @@
             lblTenDanhMuc.Location = new Point(28, 107);
             lblTenDanhMuc.Name = "lblTenDanhMuc";
             lblTenDanhMuc.Size = new Size(109, 21);
-            lblTenDanhMuc.TabIndex = 1;
+            lblTenDanhMuc.TabIndex = 3;
             lblTenDanhMuc.Text = "Tên danh mục:";
             // 
             // btnSua
@@ -266,7 +268,7 @@
             btnSua.Location = new Point(166, 187);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(138, 67);
-            btnSua.TabIndex = 11;
+            btnSua.TabIndex = 6;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = false;
             btnSua.Click += btnSua_Click;
@@ -278,7 +280,7 @@
             btnThem.Location = new Point(16, 187);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(138, 67);
-            btnThem.TabIndex = 12;
+            btnThem.TabIndex = 5;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;

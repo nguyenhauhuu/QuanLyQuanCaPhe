@@ -18,7 +18,8 @@ namespace QuanLyQuanCaPhe.Forms
         {
             InitializeComponent();
             helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
-            this.HelpRequested += (s, e) => {
+            this.HelpRequested += (s, e) =>
+            {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
                 e.Handled = true;
             };
@@ -112,7 +113,8 @@ namespace QuanLyQuanCaPhe.Forms
             {
                 if (id == 0)
                 {
-                    if (context.TaiKhoan.FirstOrDefault(r => r.TenDangNhap == txtTenDangNhap.Text) != null) {
+                    if (context.TaiKhoan.FirstOrDefault(r => r.TenDangNhap == txtTenDangNhap.Text) != null)
+                    {
                         MessageBox.Show("Tên tài khoản đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
@@ -235,7 +237,7 @@ namespace QuanLyQuanCaPhe.Forms
                                 taiKhoan.TenDayDu = r["TenDayDu"].ToString() ?? "N/A";
                                 taiKhoan.QuyenTruyCap = r["QuyenTruyCap"].ToString() ?? "N/A";
                                 taiKhoan.NgaySinh = Convert.ToDateTime(r["NgaySinh"].ToString());
-                                taiKhoan.HinhAnh = r["HinhAnh"].ToString()?? "N/A";
+                                taiKhoan.HinhAnh = r["HinhAnh"].ToString() ?? "N/A";
                                 context.TaiKhoan.Add(taiKhoan);
                             }
                             context.SaveChanges();
@@ -353,7 +355,22 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnKhoiPhucMatKhau_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show($"Bạn có chắc chắn muốn khôi phục mật khẩu tài khoản id {id} không?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                var taiKhoan = context.TaiKhoan.Find(id)!;
+                if (taiKhoan != null)
+                {
+                    taiKhoan.MatKhau = BC.HashPassword(ConfigurationManager.AppSettings["MatKhauMacDinh"]);
+                    context.TaiKhoan.Update(taiKhoan);
+                    context.SaveChanges();
+                }
+            }
+        }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

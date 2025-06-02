@@ -62,7 +62,7 @@
             grpDoiMatKhau.Location = new Point(93, 314);
             grpDoiMatKhau.Name = "grpDoiMatKhau";
             grpDoiMatKhau.Size = new Size(562, 177);
-            grpDoiMatKhau.TabIndex = 15;
+            grpDoiMatKhau.TabIndex = 7;
             grpDoiMatKhau.TabStop = false;
             grpDoiMatKhau.Text = "Đổi mật khẩu";
             // 
@@ -72,17 +72,19 @@
             btnCapNhatMatKhau.Location = new Point(419, 22);
             btnCapNhatMatKhau.Name = "btnCapNhatMatKhau";
             btnCapNhatMatKhau.Size = new Size(137, 129);
-            btnCapNhatMatKhau.TabIndex = 9;
+            btnCapNhatMatKhau.TabIndex = 6;
             btnCapNhatMatKhau.Text = "Cập nhật mật khẩu";
             btnCapNhatMatKhau.UseVisualStyleBackColor = true;
+            btnCapNhatMatKhau.Click += btnCapNhatMatKhau_Click;
             // 
             // txtXacNhanMatKhau
             // 
             txtXacNhanMatKhau.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtXacNhanMatKhau.Location = new Point(185, 118);
             txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
+            txtXacNhanMatKhau.PasswordChar = '⚫';
             txtXacNhanMatKhau.Size = new Size(228, 33);
-            txtXacNhanMatKhau.TabIndex = 4;
+            txtXacNhanMatKhau.TabIndex = 5;
             // 
             // label5
             // 
@@ -91,7 +93,7 @@
             label5.Location = new Point(4, 122);
             label5.Name = "label5";
             label5.Size = new Size(177, 25);
-            label5.TabIndex = 3;
+            label5.TabIndex = 4;
             label5.Text = "Xác nhận mật khẩu:";
             // 
             // txtMatKhauMoi
@@ -99,8 +101,9 @@
             txtMatKhauMoi.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtMatKhauMoi.Location = new Point(185, 70);
             txtMatKhauMoi.Name = "txtMatKhauMoi";
+            txtMatKhauMoi.PasswordChar = '⚫';
             txtMatKhauMoi.Size = new Size(228, 33);
-            txtMatKhauMoi.TabIndex = 4;
+            txtMatKhauMoi.TabIndex = 3;
             // 
             // label4
             // 
@@ -109,7 +112,7 @@
             label4.Location = new Point(4, 74);
             label4.Name = "label4";
             label4.Size = new Size(132, 25);
-            label4.TabIndex = 3;
+            label4.TabIndex = 2;
             label4.Text = "Mật khẩu mới:";
             // 
             // txtMatKhauHienTai
@@ -117,8 +120,9 @@
             txtMatKhauHienTai.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtMatKhauHienTai.Location = new Point(185, 22);
             txtMatKhauHienTai.Name = "txtMatKhauHienTai";
+            txtMatKhauHienTai.PasswordChar = '⚫';
             txtMatKhauHienTai.Size = new Size(228, 33);
-            txtMatKhauHienTai.TabIndex = 4;
+            txtMatKhauHienTai.TabIndex = 1;
             // 
             // label3
             // 
@@ -127,7 +131,7 @@
             label3.Location = new Point(4, 26);
             label3.Name = "label3";
             label3.Size = new Size(163, 25);
-            label3.TabIndex = 3;
+            label3.TabIndex = 0;
             label3.Text = "Mật khẩu hiện tại:";
             // 
             // btnLuu
@@ -136,9 +140,10 @@
             btnLuu.Location = new Point(492, 221);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(163, 70);
-            btnLuu.TabIndex = 14;
+            btnLuu.TabIndex = 6;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.Click += btnLuu_Click;
             // 
             // btnSua
             // 
@@ -146,9 +151,10 @@
             btnSua.Location = new Point(314, 221);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(153, 70);
-            btnSua.TabIndex = 13;
+            btnSua.TabIndex = 5;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // dtpNgaySinh
             // 
@@ -158,7 +164,7 @@
             dtpNgaySinh.Location = new Point(427, 159);
             dtpNgaySinh.Name = "dtpNgaySinh";
             dtpNgaySinh.Size = new Size(228, 32);
-            dtpNgaySinh.TabIndex = 12;
+            dtpNgaySinh.TabIndex = 4;
             // 
             // label2
             // 
@@ -167,7 +173,7 @@
             label2.Location = new Point(314, 163);
             label2.Name = "label2";
             label2.Size = new Size(100, 25);
-            label2.TabIndex = 9;
+            label2.TabIndex = 3;
             label2.Text = "Ngày sinh:";
             // 
             // txtTenDayDu
@@ -176,7 +182,7 @@
             txtTenDayDu.Location = new Point(427, 94);
             txtTenDayDu.Name = "txtTenDayDu";
             txtTenDayDu.Size = new Size(228, 33);
-            txtTenDayDu.TabIndex = 11;
+            txtTenDayDu.TabIndex = 2;
             // 
             // label1
             // 
@@ -185,7 +191,7 @@
             label1.Location = new Point(314, 98);
             label1.Name = "label1";
             label1.Size = new Size(107, 25);
-            label1.TabIndex = 10;
+            label1.TabIndex = 1;
             label1.Text = "Tên đầy đủ:";
             // 
             // groupBox1
@@ -194,7 +200,7 @@
             groupBox1.Location = new Point(90, 52);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(200, 242);
-            groupBox1.TabIndex = 8;
+            groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Hình ảnh";
             // 

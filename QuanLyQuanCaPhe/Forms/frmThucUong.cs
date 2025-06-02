@@ -20,7 +20,8 @@ namespace QuanLyQuanCaPhe.Forms
         {
             InitializeComponent();
             helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/sanpham.html");
-            this.HelpRequested += (s, e) => {
+            this.HelpRequested += (s, e) =>
+            {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
                 e.Handled = true;
             };
@@ -51,6 +52,7 @@ namespace QuanLyQuanCaPhe.Forms
             btnHuyBo.Enabled = giaTri;
             txtTenThucUong.Enabled = giaTri;
             cboDanhMuc.Enabled = giaTri;
+            numGia.Enabled = giaTri;
 
             btnThem.Enabled = !giaTri;
             btnSua.Enabled = !giaTri;
@@ -110,6 +112,12 @@ namespace QuanLyQuanCaPhe.Forms
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (cboDanhMuc.Text == "Chưa có danh mục")
+            {
+                MessageBox.Show("Vui lòng thêm danh mục!!!!");
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txtTenThucUong.Text))
                 MessageBox.Show("Vui lòng nhập tên thức uống?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
@@ -287,6 +295,11 @@ namespace QuanLyQuanCaPhe.Forms
             .Where(r => r.TenThucUong.Contains(txtTuKhoa.Text))
             .ToList();
             dataGridView.DataSource = thucUong;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

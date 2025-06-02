@@ -16,7 +16,8 @@ namespace QuanLyQuanCaPhe.Forms
         {
             InitializeComponent();
             helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/dangnhap.html");
-            this.HelpRequested += (s, e) => {
+            this.HelpRequested += (s, e) =>
+            {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
                 e.Handled = true;
             };
@@ -37,6 +38,24 @@ namespace QuanLyQuanCaPhe.Forms
             if (e.KeyCode == Keys.Enter)
             {
                 btnDangNhap_Click(sender, e);
+            }
+        }
+
+
+
+        
+
+        private void chkHienMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkHienMatKhau.Checked)
+            {
+                chkHienMatKhau.Text = "Ẩn mật khẩu";
+                txtMatKhau.PasswordChar = '\0';
+            }
+            else
+            {
+                chkHienMatKhau.Text = "Hiện mật khẩu";
+                txtMatKhau.PasswordChar = '⚫';
             }
         }
     }

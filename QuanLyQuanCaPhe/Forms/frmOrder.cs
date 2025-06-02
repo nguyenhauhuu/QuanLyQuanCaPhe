@@ -15,17 +15,18 @@ using static QuanLyQuanCaPhe.Reports.QLQCPDataset;
 
 namespace QuanLyQuanCaPhe.Forms
 {
-    public partial class frmChucNang : Form
+    public partial class frmOrder : Form
     {
         QLQCPContext context; // Khởi tạo biến ngữ cảnh CSDL 
-        int idBan;
+        int idBan = 0;
         int idHD = 0;
         int idTaiKhoan;
         BindingList<DanhSachHoaDonChiTiet> hoaDonChiTiet = new BindingList<DanhSachHoaDonChiTiet>();
        
-        public frmChucNang(int maTaiKhoan)
+        public frmOrder(int maTaiKhoan)
         {
             InitializeComponent();
+            dgvDanhSachThucUong.AutoGenerateColumns = false;
             idTaiKhoan = maTaiKhoan;
             helpProvider1.SetHelpString(this, "https://nguyenhauhuu.github.io/demo/");
             this.HelpRequested += (s, e) => {
@@ -37,12 +38,21 @@ namespace QuanLyQuanCaPhe.Forms
         public void BatTatChucNang()
         {
             // Bật tắt chức năng khi Thêm hóa đơn 
-            if (idHD == 0 && dgvDanhSachThucUong.Rows.Count == 0)
+            if (idBan == 0)
             {
-                cboDanhMuc.Text = "";
-                cboThucUong.Text = "";
-                numSoLuong.Value = 1;
-                txtMoTa.Text = "";
+                txtMoTa.Enabled = false;
+                cboThucUong.Enabled = false;
+                cboDanhMuc.Enabled = false;
+                numSoLuong.Enabled = false;
+                btnThem.Enabled = false;
+            }
+            else
+            {
+                txtMoTa.Enabled = true;
+                cboThucUong.Enabled = true;
+                cboDanhMuc.Enabled = true;
+                numSoLuong.Enabled = true;
+                btnThem.Enabled = true;
             }
 
             // Nút lưu và xóa chỉ sáng khi có sản phẩm 
@@ -111,7 +121,6 @@ namespace QuanLyQuanCaPhe.Forms
         private void frmChucNang_Load(object sender, EventArgs e)
         {
             context = new QLQCPContext();
-            dgvDanhSachThucUong.AutoGenerateColumns = false;
             LayDanhMucVaoComboBox();
             LayBanVaoComboBox();
             LoadDanhSachBan();

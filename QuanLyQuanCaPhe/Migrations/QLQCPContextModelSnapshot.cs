@@ -148,8 +148,8 @@ namespace QuanLyQuanCaPhe.Migrations
                     b.Property<int>("NguyenLieuID")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("SoLuong")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 

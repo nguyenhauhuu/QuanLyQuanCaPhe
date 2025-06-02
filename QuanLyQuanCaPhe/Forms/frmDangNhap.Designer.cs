@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            chkHienMatKhau = new CheckBox();
             txtMatKhau = new TextBox();
             txtTenDangNhap = new TextBox();
             btnHuyBo = new ReaLTaiizor.Controls.Button();
@@ -42,6 +43,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(chkHienMatKhau);
             panel1.Controls.Add(txtMatKhau);
             panel1.Controls.Add(txtTenDangNhap);
             panel1.Controls.Add(btnHuyBo);
@@ -53,7 +55,18 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(684, 386);
-            panel1.TabIndex = 9;
+            panel1.TabIndex = 0;
+            // 
+            // chkHienMatKhau
+            // 
+            chkHienMatKhau.AutoSize = true;
+            chkHienMatKhau.Location = new Point(341, 209);
+            chkHienMatKhau.Name = "chkHienMatKhau";
+            chkHienMatKhau.Size = new Size(104, 19);
+            chkHienMatKhau.TabIndex = 5;
+            chkHienMatKhau.Text = "Hiện mật khẩu";
+            chkHienMatKhau.UseVisualStyleBackColor = true;
+            chkHienMatKhau.CheckedChanged += chkHienMatKhau_CheckedChanged;
             // 
             // txtMatKhau
             // 
@@ -61,7 +74,7 @@
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '⚫';
             txtMatKhau.Size = new Size(230, 23);
-            txtMatKhau.TabIndex = 17;
+            txtMatKhau.TabIndex = 4;
             txtMatKhau.KeyDown += txtMatKhau_KeyDown;
             // 
             // txtTenDangNhap
@@ -69,7 +82,7 @@
             txtTenDangNhap.Location = new Point(214, 124);
             txtTenDangNhap.Name = "txtTenDangNhap";
             txtTenDangNhap.Size = new Size(230, 23);
-            txtTenDangNhap.TabIndex = 16;
+            txtTenDangNhap.TabIndex = 2;
             // 
             // btnHuyBo
             // 
@@ -81,12 +94,12 @@
             btnHuyBo.Image = null;
             btnHuyBo.ImageAlign = ContentAlignment.MiddleLeft;
             btnHuyBo.InactiveColor = Color.Gray;
-            btnHuyBo.Location = new Point(341, 227);
+            btnHuyBo.Location = new Point(341, 238);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnHuyBo.PressedColor = Color.FromArgb(165, 37, 37);
             btnHuyBo.Size = new Size(103, 40);
-            btnHuyBo.TabIndex = 14;
+            btnHuyBo.TabIndex = 7;
             btnHuyBo.Text = "Hủy bỏ";
             btnHuyBo.TextAlignment = StringAlignment.Center;
             btnHuyBo.Click += btnHuyBo_Click;
@@ -101,12 +114,12 @@
             btnDangNhap.Image = null;
             btnDangNhap.ImageAlign = ContentAlignment.MiddleLeft;
             btnDangNhap.InactiveColor = Color.Black;
-            btnDangNhap.Location = new Point(214, 227);
+            btnDangNhap.Location = new Point(214, 238);
             btnDangNhap.Name = "btnDangNhap";
             btnDangNhap.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnDangNhap.PressedColor = Color.FromArgb(165, 37, 37);
             btnDangNhap.Size = new Size(103, 40);
-            btnDangNhap.TabIndex = 15;
+            btnDangNhap.TabIndex = 6;
             btnDangNhap.Text = "Đăng nhập";
             btnDangNhap.TextAlignment = StringAlignment.Center;
             btnDangNhap.Click += btnDangNhap_Click;
@@ -117,7 +130,7 @@
             label3.Location = new Point(214, 162);
             label3.Name = "label3";
             label3.Size = new Size(60, 15);
-            label3.TabIndex = 10;
+            label3.TabIndex = 3;
             label3.Text = "Mật khẩu:";
             // 
             // label2
@@ -126,7 +139,7 @@
             label2.Location = new Point(214, 106);
             label2.Name = "label2";
             label2.Size = new Size(88, 15);
-            label2.TabIndex = 11;
+            label2.TabIndex = 1;
             label2.Text = "Tên đăng nhập:";
             // 
             // label1
@@ -137,7 +150,7 @@
             label1.Location = new Point(232, 28);
             label1.Name = "label1";
             label1.Size = new Size(198, 42);
-            label1.TabIndex = 9;
+            label1.TabIndex = 0;
             label1.Text = "ĐĂNG NHẬP";
             // 
             // frmDangNhap
@@ -168,5 +181,6 @@
         private ReaLTaiizor.Controls.Button btnHuyBo;
         private ReaLTaiizor.Controls.Button btnDangNhap;
         private HelpProvider helpProvider1;
+        private CheckBox chkHienMatKhau;
     }
 }
