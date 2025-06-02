@@ -28,7 +28,7 @@ namespace QuanLyQuanCaPhe.Forms
             helpProvider1.SetHelpString(this, "https://chanhdang.com/helper#ThanhToan");
             this.HelpRequested += (s, e) =>
             {
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(h.GetHelpString(this)!) { UseShellExecute = true });
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(helpProvider1.GetHelpString(this)!) { UseShellExecute = true });
                 e.Handled = true;
             };
         }

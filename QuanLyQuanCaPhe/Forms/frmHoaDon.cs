@@ -230,7 +230,8 @@ namespace QuanLyQuanCaPhe.Forms
                         new DataColumn("TenThucUong", typeof(string)),
                         new DataColumn("SoLuong", typeof(int)),
                         new DataColumn("DonGia", typeof(decimal)),
-                        new DataColumn("GhiChu", typeof(string))
+                        new DataColumn("GhiChu", typeof(string)),
+                        new DataColumn("ThanhTien", typeof(decimal))
                         });
                     var ct = context.HoaDonChiTiet.Select(r => new DanhSachHoaDonChiTiet
                     {

@@ -86,15 +86,26 @@ namespace QuanLyQuanCaPhe.Reports
                 reportViewer.LocalReport.DataSources.Add(reportDataSource);
 
 
-                string bankId = ConfigurationManager.AppSettings["IDNganHang"]!;
-                string accountNo = ConfigurationManager.AppSettings["STKNganHang"]!;
-                string addInfo = ConfigurationManager.AppSettings["ThongTinThanhToan"]!;
-                string url = $"https://img.vietqr.io/image/{bankId}-{accountNo}-compact.png?amount={hoaDon.TongThanhToan}&addInfo=<{addInfo}>";
 
-                using HttpClient client = new HttpClient();
-                byte[] qrImage = await client.GetByteArrayAsync(url);
+                byte[] qrImage = new byte[0]; // Tạo mảng byte rỗng
+                try
+                {
+                    string bankId = ConfigurationManager.AppSettings["IDNganHang"]!;
+                    string accountNo = ConfigurationManager.AppSettings["STKNganHang"]!;
+                    string addInfo = ConfigurationManager.AppSettings["ThongTinThanhToan"]!;
+                    string url = $"https://img.vietqr.io/image/{bankId}-{accountNo}-compact.png?amount={hoaDon.TongThanhToan}&addInfo=<{addInfo}>";
 
-
+                    using (HttpClient client = new HttpClient())
+                    {
+                        qrImage = await client.GetByteArrayAsync(url);
+                    }
+                }
+                catch (Exception)
+                {
+                    // Nếu có lỗi (chẳng hạn không có kết nối mạng), gán qrImage là mảng byte rỗng
+                    qrImage = new byte[0];
+                }
+                
                 IList<ReportParameter> param = new List<ReportParameter>
                 {
                     new ReportParameter("IDHoaDon", hoaDon.ID.ToString()),

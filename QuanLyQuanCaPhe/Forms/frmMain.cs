@@ -231,7 +231,7 @@ namespace QuanLyQuanCaPhe.Forms
         public void QuyenUser()
         {
             OrderContainer.Visible = true;
-            ThongKeBaoCaoContainer.Visible = false;
+            ThongKeBaoCaoContainer.Visible = true;
             QuanLyContainer.Visible = false;
             HeThongContainer.Visible = true;
             TroGiupContainer.Visible = true;
